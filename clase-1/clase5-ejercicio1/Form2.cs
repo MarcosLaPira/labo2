@@ -26,7 +26,7 @@ namespace clase5_ejercicio1
         public Form2(string nombre,string materiaFav) : this()
         {
 
-            this.lblForm2.Text = $"hola {nombre}";
+            this.lblForm2.Text = $"hola   {nombre}";
         }
     }
 }
