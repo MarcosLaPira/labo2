@@ -75,7 +75,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clase5-ejercicio0.4", "clas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clase5-ejercicio1", "clase5-ejercicio1\clase5-ejercicio1.csproj", "{1FA6E6D8-3F61-404E-9D52-98D92A0D7770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clase5-ejercicio2", "clase5-ejercicio2\clase5-ejercicio2.csproj", "{69116310-7BC5-45FE-8F2B-A656683CEB29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clase5-ejercicio2", "clase5-ejercicio2\clase5-ejercicio2.csproj", "{69116310-7BC5-45FE-8F2B-A656683CEB29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clase5-Entidades", "clase5-Entidades\clase5-Entidades.csproj", "{BC28F4B8-BFC3-4494-8A19-B3E7F098F26D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -211,6 +213,10 @@ Global
 		{69116310-7BC5-45FE-8F2B-A656683CEB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69116310-7BC5-45FE-8F2B-A656683CEB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69116310-7BC5-45FE-8F2B-A656683CEB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC28F4B8-BFC3-4494-8A19-B3E7F098F26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC28F4B8-BFC3-4494-8A19-B3E7F098F26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC28F4B8-BFC3-4494-8A19-B3E7F098F26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC28F4B8-BFC3-4494-8A19-B3E7F098F26D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -248,6 +254,7 @@ Global
 		{4FE0C17F-D0C1-478F-93DA-CC2AE5E1F70B} = {467B2678-2BF8-4148-898A-973860F42B49}
 		{1FA6E6D8-3F61-404E-9D52-98D92A0D7770} = {467B2678-2BF8-4148-898A-973860F42B49}
 		{69116310-7BC5-45FE-8F2B-A656683CEB29} = {467B2678-2BF8-4148-898A-973860F42B49}
+		{BC28F4B8-BFC3-4494-8A19-B3E7F098F26D} = {467B2678-2BF8-4148-898A-973860F42B49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EEF50E80-9DD9-492F-9F34-CF8AE3741E30}
