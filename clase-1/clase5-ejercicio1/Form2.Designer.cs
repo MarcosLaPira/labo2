@@ -35,18 +35,20 @@
             // lblForm2
             // 
             this.lblForm2.AutoSize = true;
-            this.lblForm2.Location = new System.Drawing.Point(360, 234);
+            this.lblForm2.Font = new System.Drawing.Font("Wingdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblForm2.Location = new System.Drawing.Point(316, 234);
             this.lblForm2.Name = "lblForm2";
-            this.lblForm2.Size = new System.Drawing.Size(50, 20);
+            this.lblForm2.Size = new System.Drawing.Size(128, 22);
             this.lblForm2.TabIndex = 0;
             this.lblForm2.Text = "label1";
             // 
             // lblSaludoTitulo
             // 
             this.lblSaludoTitulo.AutoSize = true;
-            this.lblSaludoTitulo.Location = new System.Drawing.Point(333, 86);
+            this.lblSaludoTitulo.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSaludoTitulo.Location = new System.Drawing.Point(265, 92);
             this.lblSaludoTitulo.Name = "lblSaludoTitulo";
-            this.lblSaludoTitulo.Size = new System.Drawing.Size(132, 20);
+            this.lblSaludoTitulo.Size = new System.Drawing.Size(254, 29);
             this.lblSaludoTitulo.TabIndex = 1;
             this.lblSaludoTitulo.Text = "Hola,window form";
             // 
