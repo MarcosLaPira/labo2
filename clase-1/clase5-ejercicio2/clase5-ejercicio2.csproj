@@ -9,4 +9,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\clase5-Entidades\clase5-Entidades.csproj" />
+  </ItemGroup>
+
 </Project>

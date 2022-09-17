@@ -1,6 +1,8 @@
 ﻿using System.Net;
 using System;
 using System.Text;
+using System.Runtime.CompilerServices;
+
 namespace clase4_Entidades
 {
     public class Sumador
@@ -70,13 +72,103 @@ namespace clase4_Entidades
 
     }
 
-    public class Pesos
-    { 
+    public class Dolar
+    {
+        //ATRIBUTOS
+        private double cantidad;
+        static double cotzRespectoDolar;
+
+
+
+       
+
+        static Dolar()
+        {
+            cotzRespectoDolar = 102.65;
+        }
+        public Dolar(double cantidad)
+        {
+            this.cantidad = cantidad;
+        }
+
+        explicit operator Euro(Dolar d)
+        {
+            return ;
+        }
+
+        public double GetCantidad()
+        {
+            return this.cantidad;
+        }
+        static double GetCotizacion()
+        {
+            return cotzRespectoDolar;
+        }
     }
 
-    public class 
+    public class Peso
     {
+        //ATRIBUTOS
+        private double cantidad;
+        static double cotzRespectoDolar;
+
+
+        static Peso()
+        {
+            cotzRespectoDolar = 102.65;
+        }
+        public Peso(double cantidad)
+        {
+            this.cantidad = cantidad;
+        }
+        public Peso(double cantidad, double cotizacion)
+        {
+            this.cantidad = cantidad;
+            cotzRespectoDolar= cotizacion;
+        }
+        public double GetCantidad()
+        {
+            return this.cantidad;
+        }
+        static double GetCotizacion()
+        {
+            return cotzRespectoDolar;
+        }
+          
     }
+
+    public class Euro
+    {
+        //ATRIBUTOS
+        private double cantidad;
+        static double cotzRespectoDolar;
+
+
+        static Euro()
+        {
+            cotzRespectoDolar = 0.84;// es igual a un dolar
+        }
+        public Euro(double cantidad)
+        {
+            this.cantidad = cantidad;
+        }
+        public Euro(double cantidad, double cotizacion)
+        {
+            this.cantidad = cantidad;
+            cotzRespectoDolar = cotizacion;
+        }
+        public double GetCantidad()
+        {
+            return this.cantidad;
+        }
+        static double GetCotizacion()
+        {
+            return cotzRespectoDolar;
+        }
+
+    }
+
+
 
 
 }

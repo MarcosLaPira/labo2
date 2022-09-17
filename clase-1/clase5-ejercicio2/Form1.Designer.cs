@@ -32,21 +32,21 @@
             this.lblEdad = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nUpDownEdad = new System.Windows.Forms.NumericUpDown();
+            this.tbApellido = new System.Windows.Forms.TextBox();
+            this.tbNombre = new System.Windows.Forms.TextBox();
             this.gbGenero = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbNoBinario = new System.Windows.Forms.RadioButton();
+            this.rbFemenino = new System.Windows.Forms.RadioButton();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.gbCursos = new System.Windows.Forms.GroupBox();
             this.cbJavaScript = new System.Windows.Forms.CheckBox();
             this.cbCmas = new System.Windows.Forms.CheckBox();
             this.cbC = new System.Windows.Forms.CheckBox();
-            this.lbPais = new System.Windows.Forms.ListBox();
+            this.tbPais = new System.Windows.Forms.ListBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.gbDetallesUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpDownEdad)).BeginInit();
             this.gbGenero.SuspendLayout();
             this.gbCursos.SuspendLayout();
             this.SuspendLayout();
@@ -56,10 +56,10 @@
             this.gbDetallesUsuario.Controls.Add(this.lblEdad);
             this.gbDetallesUsuario.Controls.Add(this.lblApellido);
             this.gbDetallesUsuario.Controls.Add(this.lblNombre);
-            this.gbDetallesUsuario.Controls.Add(this.numericUpDown1);
-            this.gbDetallesUsuario.Controls.Add(this.textBox2);
-            this.gbDetallesUsuario.Controls.Add(this.textBox1);
-            this.gbDetallesUsuario.Location = new System.Drawing.Point(83, 38);
+            this.gbDetallesUsuario.Controls.Add(this.nUpDownEdad);
+            this.gbDetallesUsuario.Controls.Add(this.tbApellido);
+            this.gbDetallesUsuario.Controls.Add(this.tbNombre);
+            this.gbDetallesUsuario.Location = new System.Drawing.Point(81, 27);
             this.gbDetallesUsuario.Name = "gbDetallesUsuario";
             this.gbDetallesUsuario.Size = new System.Drawing.Size(319, 242);
             this.gbDetallesUsuario.TabIndex = 0;
@@ -93,32 +93,37 @@
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
             // 
-            // numericUpDown1
+            // nUpDownEdad
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(34, 188);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(125, 27);
-            this.numericUpDown1.TabIndex = 2;
+            this.nUpDownEdad.Location = new System.Drawing.Point(34, 188);
+            this.nUpDownEdad.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.nUpDownEdad.Name = "nUpDownEdad";
+            this.nUpDownEdad.Size = new System.Drawing.Size(125, 27);
+            this.nUpDownEdad.TabIndex = 2;
             // 
-            // textBox2
+            // tbApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(34, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 1;
+            this.tbApellido.Location = new System.Drawing.Point(34, 116);
+            this.tbApellido.Name = "tbApellido";
+            this.tbApellido.Size = new System.Drawing.Size(125, 27);
+            this.tbApellido.TabIndex = 1;
             // 
-            // textBox1
+            // tbNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(34, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 0;
+            this.tbNombre.Location = new System.Drawing.Point(34, 51);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(125, 27);
+            this.tbNombre.TabIndex = 0;
             // 
             // gbGenero
             // 
-            this.gbGenero.Controls.Add(this.radioButton3);
-            this.gbGenero.Controls.Add(this.radioButton2);
-            this.gbGenero.Controls.Add(this.radioButton1);
+            this.gbGenero.Controls.Add(this.rbNoBinario);
+            this.gbGenero.Controls.Add(this.rbFemenino);
+            this.gbGenero.Controls.Add(this.rbMasculino);
             this.gbGenero.Location = new System.Drawing.Point(494, 38);
             this.gbGenero.Name = "gbGenero";
             this.gbGenero.Size = new System.Drawing.Size(250, 188);
@@ -126,38 +131,38 @@
             this.gbGenero.TabStop = false;
             this.gbGenero.Text = "Genero";
             // 
-            // radioButton3
+            // rbNoBinario
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(55, 116);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(117, 24);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbNoBinario.AutoSize = true;
+            this.rbNoBinario.Location = new System.Drawing.Point(55, 116);
+            this.rbNoBinario.Name = "rbNoBinario";
+            this.rbNoBinario.Size = new System.Drawing.Size(97, 24);
+            this.rbNoBinario.TabIndex = 2;
+            this.rbNoBinario.TabStop = true;
+            this.rbNoBinario.Text = "NoBinario";
+            this.rbNoBinario.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbFemenino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(55, 71);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(117, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFemenino.AutoSize = true;
+            this.rbFemenino.Location = new System.Drawing.Point(55, 71);
+            this.rbFemenino.Name = "rbFemenino";
+            this.rbFemenino.Size = new System.Drawing.Size(95, 24);
+            this.rbFemenino.TabIndex = 1;
+            this.rbFemenino.TabStop = true;
+            this.rbFemenino.Text = "Femenino";
+            this.rbFemenino.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbMasculino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(55, 28);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(117, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(55, 28);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(97, 24);
+            this.rbMasculino.TabIndex = 0;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
             // 
             // gbCursos
             // 
@@ -201,18 +206,18 @@
             this.cbC.Text = "C#";
             this.cbC.UseVisualStyleBackColor = true;
             // 
-            // lbPais
+            // tbPais
             // 
-            this.lbPais.FormattingEnabled = true;
-            this.lbPais.ItemHeight = 20;
-            this.lbPais.Items.AddRange(new object[] {
+            this.tbPais.FormattingEnabled = true;
+            this.tbPais.ItemHeight = 20;
+            this.tbPais.Items.AddRange(new object[] {
             "Argentina",
             "Chile",
             "Uruguay"});
-            this.lbPais.Location = new System.Drawing.Point(125, 319);
-            this.lbPais.Name = "lbPais";
-            this.lbPais.Size = new System.Drawing.Size(150, 104);
-            this.lbPais.TabIndex = 5;
+            this.tbPais.Location = new System.Drawing.Point(125, 319);
+            this.tbPais.Name = "tbPais";
+            this.tbPais.Size = new System.Drawing.Size(150, 104);
+            this.tbPais.TabIndex = 5;
             // 
             // btnIngresar
             // 
@@ -222,6 +227,7 @@
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // Form1
             // 
@@ -229,7 +235,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.lbPais);
+            this.Controls.Add(this.tbPais);
             this.Controls.Add(this.gbCursos);
             this.Controls.Add(this.gbGenero);
             this.Controls.Add(this.gbDetallesUsuario);
@@ -237,7 +243,7 @@
             this.Text = "Form1";
             this.gbDetallesUsuario.ResumeLayout(false);
             this.gbDetallesUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpDownEdad)).EndInit();
             this.gbGenero.ResumeLayout(false);
             this.gbGenero.PerformLayout();
             this.gbCursos.ResumeLayout(false);
@@ -263,7 +269,13 @@
         private CheckBox cbJavaScript;
         private CheckBox cbCmas;
         private CheckBox cbC;
-        private ListBox lbPais;
+        private ListBox tbPais;
         private Button btnIngresar;
+        private TextBox tbApellido;
+        private TextBox tbNombre;
+        private NumericUpDown nUpDownEdad;
+        private RadioButton rbNoBinario;
+        private RadioButton rbFemenino;
+        private RadioButton rbMasculino;
     }
 }
