@@ -77,8 +77,7 @@ namespace clase5_ejercicio3
 
             if (comprobarPeso && comprobarEuro)//las cotizaciones pasan a ser solo readonly y seteo cotizacion
             {
-                this.txtCotizacionPeso.ReadOnly=true;
-                
+                this.txtCotizacionPeso.ReadOnly=true;               
                 Peso.SetCotizacion(auxPeso);
                 this.txtCotizacionEuro.ReadOnly=true;
                 Euro.SetCotizacion(auxEuro);
