@@ -85,11 +85,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clase-6", "clase-6", "{42A7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clase6-ejercicio2", "clase6-ejercicio2\clase6-ejercicio2.csproj", "{25509BFE-8986-4DB5-A50F-BD0947C489AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clase4-ejercicio5", "clase4-ejercicio5\clase4-ejercicio5.csproj", "{98D770FC-3B1A-4994-A2A1-7646B8B8C93E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clase4-ejercicio5", "clase4-ejercicio5\clase4-ejercicio5.csproj", "{98D770FC-3B1A-4994-A2A1-7646B8B8C93E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integradoresAnteriores", "integradoresAnteriores", "{88EE35FC-C355-4DC1-BDC2-17F5E1F17D39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "integrador2020", "integrador2020\integrador2020.csproj", "{F623554A-B4E0-4908-8110-F320EFC73CC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "integrador2020", "integrador2020\integrador2020.csproj", "{F623554A-B4E0-4908-8110-F320EFC73CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clase5-ejercicio3", "clase5-ejercicio3\clase5-ejercicio3.csproj", "{86BE3470-A42D-4F0A-B558-B6EFA6B21D44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -245,6 +247,10 @@ Global
 		{F623554A-B4E0-4908-8110-F320EFC73CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F623554A-B4E0-4908-8110-F320EFC73CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F623554A-B4E0-4908-8110-F320EFC73CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86BE3470-A42D-4F0A-B558-B6EFA6B21D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BE3470-A42D-4F0A-B558-B6EFA6B21D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86BE3470-A42D-4F0A-B558-B6EFA6B21D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86BE3470-A42D-4F0A-B558-B6EFA6B21D44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -287,6 +293,7 @@ Global
 		{25509BFE-8986-4DB5-A50F-BD0947C489AA} = {42A71C7B-B704-4908-9D81-AFF06C7542D0}
 		{98D770FC-3B1A-4994-A2A1-7646B8B8C93E} = {429FC159-56E4-4222-AF04-62E8FA02F623}
 		{F623554A-B4E0-4908-8110-F320EFC73CC3} = {88EE35FC-C355-4DC1-BDC2-17F5E1F17D39}
+		{86BE3470-A42D-4F0A-B558-B6EFA6B21D44} = {467B2678-2BF8-4148-898A-973860F42B49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EEF50E80-9DD9-492F-9F34-CF8AE3741E30}
