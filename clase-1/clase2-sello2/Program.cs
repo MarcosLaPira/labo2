@@ -5,12 +5,12 @@ namespace clase2_sello2
     {
         static void Main(string[] args)
         {
-            Sello.mensaje = "hola mundo";//asigno valpor a sello mensaje 
+            Sello.mensaje = "hola mundo2";//asigno valpor a sello mensaje 
 
 
             Sello.color = ConsoleColor.Red;
 
-
+                
             Sello.ImprimirEnColor();//llamo a imprimir en color
 
 
