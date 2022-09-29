@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="clase8_Libreria.Auto" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Auto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clase8_Libreria.Camion" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Camion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clase8_Libreria.DirectorTecnico">
+    <Position X="2.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAgAAAAAAAAAAAAAAAAAAAAAAAAiA=</HashCode>
+      <FileName>DirectorTecnico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clase8_Libreria.Equipo" Collapsed="true">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAIAACAQAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Equipo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clase8_Libreria.Jugador">
+    <Position X="6" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="clase8_Libreria.Persona" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="5" Y="6.584" />
+        <Point X="5" Y="7.662" />
+        <Point X="5.891" Y="7.662" />
+        <Point X="5.891" Y="7.895" />
+        <Point X="6" Y="7.895" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAoAAAACQAAAAAAABAAAAAQAAAAiA=</HashCode>
+      <FileName>Jugador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clase8_Libreria.Moto" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Moto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clase8_Libreria.Persona">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABAAAAAACAAAAAgAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clase8_Libreria.VehiculoTerrrestre" Collapsed="true">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAEAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>VehiculoTerrestre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="clase8_Libreria.colores" Collapsed="true">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAABAAAAAAAAAAAAQAAAAAAAAAAAAQAAAAACAAAAA=</HashCode>
+      <FileName>Colores.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
