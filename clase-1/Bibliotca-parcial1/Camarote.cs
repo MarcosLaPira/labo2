@@ -12,24 +12,29 @@
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
+        /// <summary>
+        /// inicializo la capacidad maxima del camarote y el conteador
+        /// </summary>
         static Camarote()
         {
             capacidadMaximaCamarote = 4;
             contadorDelCamarote = 0;
         }
-        public Camarote()
+
+        private Camarote()
         {
             this.pasajerosDelCamarote = new List<Pasajero>();
-            this.idCamarote = 0;
-            this.EstadoDelCamarote = false;
+            /*
+            this.camaroteLleno = false;
             this.tipoDeClaseCamarote = false;
-
+            */
         }
         public Camarote(bool estadoDelCamarote, int idCamarote):this()
         {
          
-            this.camaroteLLeno = estadoDelCamarote;
+            this.camaroteLleno = estadoDelCamarote;
             this.idCamarote = idCamarote;
+         
         }
         /*
         public Camarote( bool estadoDelCamarote, int idCamarote) : this (estadoDelCamarote,idCamarote)

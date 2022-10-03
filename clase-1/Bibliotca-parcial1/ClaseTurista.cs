@@ -7,25 +7,31 @@ using System.Threading.Tasks;
 
 namespace Bibliotca_parcial1
 {
-    /*
-    public class ClaseTurista:Persona
+
+    public class ClaseTurista : ClaseAViajar
     {
-        private float kgValija;
 
         static int cantMaxValija;
         static int cantMaxBolsoMano;
         static float maxKgValija;
-        public ClaseTurista(Pasaporte pasaporte, string nombre, string apellido, int edad, int cantEquipajeDeMano, int cantEquipajeBodega,float kgValija):base(pasaporte,  nombre,  apellido,  edad,  cantEquipajeDeMano,  cantEquipajeBodega)
+
+        static ClaseTurista ()
         {
-           this.kgValija=kgValija;
-        }
-        static ClaseTurista()
-        {
+            cantMaxValija = 1;
             cantMaxBolsoMano = 1;
             maxKgValija = 25;
-            cantMaxValija = 1;
         }
+       
+        public ClaseTurista(EClasePasajero clase,int cantValija, int cantBolsoDeMano, float kgValija) : base( clase,cantValija, cantBolsoDeMano, kgValija)
+        {
+            if (cantValija <= cantMaxValija && cantBolsoDeMano <= cantMaxBolsoMano && kgValija <= maxKgValija)
+            {
+                
+            }
+           
+        }
+        
 
     }
-    */
+    
 }

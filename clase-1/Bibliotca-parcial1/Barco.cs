@@ -37,10 +37,11 @@ namespace Bibliotca_parcial1
         /// <param name="estadoDelBarco"></param>
 
        
+       
         public Barco(string matricula, string nombre, int cantidadDeCamarotes, int cantidadDeSalones, 
             int cantidadDeCasinos, float capacidadDeBodega, int capacidadDePersonas, bool estadoDelBarco)
         {
-            this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//le doy un tamano a los camarotes
+            this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//defino cuantos camarotes tengo
             this.matricula = matricula;
             this.nombre = nombre;
             this.cantidadDeCamarotes = cantidadDeCamarotes;
@@ -56,17 +57,47 @@ namespace Bibliotca_parcial1
         #endregion CONSTRUCTORES
 
         #region PROPIEDADES
+        /// <summary>
+        /// retorna string de matricula
+        /// </summary>
         public string Matricula { get => matricula; }
+        /// <summary>
+        /// retorna string de nombre
+        /// </summary>
         public string Nombre { get => nombre; }
+        /// <summary>
+        /// retorna int de salones
+        /// </summary>
         public int CantidadDeSalones { get => cantidadDeSalones; }
+        /// <summary>
+        /// retorna int de casinos
+        /// </summary>
         public int CantidadDeCasinos { get => cantidadDeCasinos; }
+        /// <summary>
+        /// retorna float de cpacidad bodega kg
+        /// </summary>
         public float CapacidadDeBodega { get => capacidadDeBodega;  }
+        /// <summary>
+        /// retorna int de capacidad de personaas
+        /// </summary>
         public int CapacidadDePersonas { get => capacidadDePersonas; }
+        /// <summary>
+        /// retorna true si el barco esta en puerto y false si esta en viaje. Permite setear estado
+        /// </summary>
         public bool BarcoEnPuerto { get => barcoEnPuerto; set => barcoEnPuerto = value; }
+        /// <summary>
+        /// retorna la cantidad de camarotes
+        /// </summary>
+
         public int CantidadDeCamarotes { get => cantidadDeCamarotes; }
 
-        //cantidadDeCamarotesPremium
+        /// <summary>
+        /// retorna lista completa de camarotes
+        /// </summary>
         public List<Camarote> ListCamarotes { get => listCamarotes; set => listCamarotes = value; }
+        /// <summary>
+        /// retorna la cantidad de camarotes premium del barco
+        /// </summary>
         public int CantidadDeCamarotesPremium 
         {
             get 
@@ -76,19 +107,20 @@ namespace Bibliotca_parcial1
                 
             }
         }
+        /// <summary>
+        /// retorna la cantidad de camarotes clase turista del barco
+        /// </summary>
         public int CantidadDeCamarotesTurista
         {
             get
             {
-                int totalCamarotes;
-                totalCamarotes = 
-                return;
+                int totalCamarotes = CantidadDeCamarotes;
+                int camarotesPremium = CantidadDeCamarotesPremium;
+                return totalCamarotes - camarotesPremium;
             }
-
-
         }
 
-
+      
         #endregion PROPIEDADES
 
         #region METODOS
@@ -102,33 +134,17 @@ namespace Bibliotca_parcial1
         
             for (int i = 0; i < cantidadDeCamarotes; i++)
             {
-                listCamarotes[i].IdCamarote = i;
+                this.listCamarotes[i].IdCamarote = i;
 
                 if (i < CantidadDeCamarotesPremium)
                 {
-                    listCamarotes[i].TipoDeClaseCamarote = true;//seteo el 35% de los camarotes en clase premium
+                    this.listCamarotes[i].TipoDeClaseCamarote = true;//seteo el 35% de los camarotes en clase premium
                 }
               
             }
            
         }
-        /*
-
-        private bool administradorCamarotes()
-        {
-            bool retorno = false;
-            int cantidadDeCamarotesPremium = CantidadDeCamarotesPremium;
-
-            for (int i = 0;  i < cantidadDeCamarotes; i++ )
-            {
-                arrayCamarotes[i].IdCamarote = i;//seteo id
-                arrayCamarotes[i].EstadoDelCamarote = false;//seteo estado del camarote false(vacio)
-                
-            }
-            return retorno;
-
-        }
-        */
+       
         #endregion METODOS
 
 

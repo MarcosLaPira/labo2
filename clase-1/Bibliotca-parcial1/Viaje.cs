@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bibliotca_parcial1
 {
-    public sealed class Viaje
+    public  class Viaje
     {
         #region ATRIBUTOS
         private Barco barco;
@@ -28,27 +28,134 @@ namespace Bibliotca_parcial1
         }
         public Viaje(Barco barco, EDestinos partida, EDestinos destino, DateTime fechaInicioViaje, List<Pasajero> listaPasajeros)
         {
-            this.barco = barco;
-            this.partida = partida;
-            this.destino = destino;
-            this.fechaInicioViaje = fechaInicioViaje;
-            this.listaPasajeros = listaPasajeros;
+            
+                this.barco = barco;
+                this.partida = partida;
+                this.destino = destino;
+                this.fechaInicioViaje = fechaInicioViaje;
+                this.listaPasajeros = listaPasajeros;
+                     
         }
         #endregion CONSTRUCTORES
 
         #region PROPIEDADES
+        /// <summary>
+        /// retorna barco de tipo Barco
+        /// </summary>
         public Barco Barco { get => barco;  }
+        /// <summary>
+        /// retorna partida de tipo Edestinos 
+        /// </summary>
         public EDestinos Partida { get => partida; }
+       /// <summary>
+       /// retrona destino de tipo Edestinos 
+       /// </summary>
         public EDestinos Destino { get => destino;  }
+        /// <summary>
+        /// retorna fecha de inicio del viaje 
+        /// </summary>
         public DateTime FechaInicioViaje { get => fechaInicioViaje;}
+         
 
-       
+        /// <summary>
+        /// rrtorna duracion del viaje tipo int
+        /// </summary>
+        public int DuracionDelViaje
+        {       
+            get 
+            {
+                Random rand = new Random();
+                if (1 == (int)Partida && 1 == (int)Destino || (2 == (int)Partida && 2 == (int)Destino))
+                {
+                    return rand.Next(72,360);
+                }
+                else
+                {
+                    return rand.Next(480, 720);
+                }              
+            }
+        }
+        /// <summary>
+        /// retrona costo del viaje para turista tipo float
+        /// </summary>
+        public float CostoDelViajeTurista
+        {
+            get
+            {
+                int duracionViaje = DuracionDelViaje;
+                if (1 == (int)Partida && 1 == (int)Destino || (2 == (int)Partida && 2 == (int)Destino))//verifico que tipo de viaje hizo
+                {
+                    return duracionViaje * 57;//viaje regional 
+                }
+                else
+                {
+                    return duracionViaje * 120;//viaje internacional
+                }
+            }
+        }
+      /// <summary>
+      /// retrona costo del viaje premium tipo float
+      /// </summary>
+        public float CostoDelViajePremium
+        {
+            get
+            {
+                int duracionViaje = DuracionDelViaje;
+                if (1 == (int)Partida && 1 == (int)Destino || (2 == (int)Partida && 2 == (int)Destino))//verifico que tipo de viaje hizo
+                {
+                    return duracionViaje * 114;//viaje regional 
+                }
+                else
+                {
+                    return duracionViaje * 240;//viaje internacional
+                }
+            }
+        }
+        /// <summary>
+        /// retrona pasajeros del viaje tipo  List<Pasajero>
+        /// </summary>
         public List<Pasajero> ListaPasajeros
         { 
-            get => listaPasajeros;
-          
+            get => listaPasajeros;          
         }
 
+        /// <summary>
+        /// recaudacion de un viaje
+        /// </summary>
+        public float RecaudacionDeUnViaje
+        {
+            get 
+            {
+                float recaudacion = 0;
+                float buffer = 0; 
+                foreach (Pasajero pasajero in ListaPasajeros)
+                {
+                    if (pasajero.Clase == EClasePasajero.Premium)
+                    {
+                        buffer = CostoDelViajePremium;
+                    }
+                    else
+                    {
+                        buffer = CostoDelViajeTurista;
+                    }
+
+                    recaudacion = buffer + recaudacion;
+                }
+                return recaudacion;
+            }
+        }
+
+        /// <summary>
+        /// retrona cantidad de pasajeros
+        /// </summary>
+        public int CantidadDePasajeros
+        {
+            get
+            {
+                return contadorDePasajeros;
+            }
+        }
+      
         #endregion PROPIEDADES
 
         #region METODOS
@@ -134,6 +241,21 @@ namespace Bibliotca_parcial1
             return retorno;
         }
 
+        public string MostrarInfoDelViaje()
+        {
+            StringBuilder sb = new StringBuilder();           
+
+            sb.Append($"Nombre del barco:");
+            sb.Append($"Origen:{this.partida}");
+            sb.Append($"Destino: {this.Destino}");
+            sb.Append($"Fecha de inicio: {this.FechaInicioViaje}");
+            sb.Append($"Duracion del viaje: {this.DuracionDelViaje}");
+            sb.Append($"Costo clase premium: {this.CostoDelViajePremium}");
+            sb.Append($"Costo clase turista: {this.CostoDelViajeTurista}");
+                   
+            return sb.ToString();
+        }
+
         #endregion METODOS
         //camarotes disponibles clase turisata
 
@@ -143,7 +265,9 @@ namespace Bibliotca_parcial1
 
 
 
+
         //duracion del viaje 
+
 
         //duracion del viaje 
 

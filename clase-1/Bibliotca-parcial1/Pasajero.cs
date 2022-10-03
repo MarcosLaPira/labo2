@@ -10,27 +10,30 @@ namespace Bibliotca_parcial1
     {
         #region ATRIBUTOS
         private Pasaporte pasaporte;
-       private EClasePasajero clase;
+       // private ClaseAViajar claseAViajar;
+        private EClasePasajero clase;
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
         private Pasajero(string nombre, string apellido,int edad) : base(nombre, apellido, edad)
         {
-             this.nombre = "";
-            this.apellido = "";
+           
             pasaporte = new Pasaporte("", "", 0,"", DateTime.Today, DateTime.Today);
+           // claseAViajar = new ClasePremium();
            
         }
-        private Pasajero(string nombre, string apellido,int edad, Pasaporte pasaporte, EClasePasajero clase) : this(nombre, apellido, edad)
+        private Pasajero(string nombre, string apellido,int edad, Pasaporte pasaporte, EClasePasajero clase/*, ClaseAViajar claseAViajar*/) : this(nombre, apellido, edad)
         {
             this.pasaporte = pasaporte;
-            this.clase = clase;
+            this.clase = clase; 
+           // this.claseAViajar = claseAViajar;
         }
         #endregion CONSTRUCTORES
 
-        #region PREPIEDADES
+        #region PROPIEDADES
         public Pasaporte Pasaporte { get => pasaporte;  }
-        public EClasePasajero Clase { get => clase;  }
+        
+        public EClasePasajero Clase { get => clase; }
         #endregion PREPIEDADES
 
         #region METODOS
@@ -38,7 +41,7 @@ namespace Bibliotca_parcial1
         public static bool operator == (Pasajero p1, Pasajero p2)
         {
             bool retorno = false;
-            if (p1 != null && p2 != null)
+            if (p1 is not null && p2 is not null)
             {
                 if (p1.pasaporte.Apellido == p2.pasaporte.Apellido && 
                     p1.pasaporte.FechaDeNacimiento == p2.pasaporte.FechaDeNacimiento)

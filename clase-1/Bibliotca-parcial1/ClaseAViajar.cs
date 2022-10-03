@@ -2,16 +2,25 @@
 {
     public abstract class ClaseAViajar
     {
-        private int cantMaxBolsoMano;
-        private int cantMaxValija;
-        float maxPesoValija;
+        private int cantBolsosDeMano;
+        private int cantVaijas;
+        private float kgValija;
+        private EClasePasajero clase;
 
-        public ClaseAViajar(int cantMaxBolsoMano, int cantMaxValija, float maxPesoValija)
+
+        public ClaseAViajar(EClasePasajero clase,int cantBolsosDeMano, int cantVaijas, float kgValija)
         {
-            this.cantMaxBolsoMano = cantMaxBolsoMano;
-            this.cantMaxValija = cantMaxValija;
-            this.maxPesoValija = maxPesoValija;
+            this.clase = clase;
+            this.cantBolsosDeMano = cantBolsosDeMano;
+            this.cantVaijas = cantVaijas;
+            this.kgValija = kgValija;
+           
         }
+
+        public int CantBolsosDeMano { get => cantBolsosDeMano; set => cantBolsosDeMano = value; }
+        public int CantVaijas { get => cantVaijas; set => cantVaijas = value; }
+        public float KgValija { get => kgValija; set => kgValija = value; }
+        public EClasePasajero Clase { get => clase;  }
         //public EClasePasajero clase;
 
 

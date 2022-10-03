@@ -11,6 +11,15 @@
          IslaGalápagos = 0,
          PuertoMadryn = 0,
          RíodeJaneiro = 0,
-         Cartagena = 0
+         Cartagena = 0,
+
+         LaHabana = 1,
+         Venecia = 1,
+         Acapulco = 1,
+         Miami = 1,
+         NuevaYork = 1,
+         Bangkok = 1,
+         Taipei = 1,
+         Atenas = 1
     }
 }
