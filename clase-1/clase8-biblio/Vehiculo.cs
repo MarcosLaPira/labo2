@@ -57,40 +57,35 @@ namespace clase8_biblio
         }
 
 
-        public override bool Equals(object obj)
-        {
-            //Verifico que sea del mismo tipo
-            if (obj.GetType() != typeof()) return false;
-
-            //Valido que el objeto no sea null
-            if (ReferenceEquals(null, obj)) return false;
-
-            //Verifico si el objeto actual es igual al que recibo por parámetro
-            if (ReferenceEquals(this, obj)) return true;
-        }
-        /*
+       
+        
          //traigo cualquier objeto y solo cuando sea algo de tipo casteo o derivado lo comparo
+         
          public override bool Equals(object obj)
          {
-             bool retorno = false;
-             if (obj is Vehiculo )
-             {
-               if(this == ((Vehiculo)obj))
-               {
-                   retorno = true;
-               }
+           
+            bool retorno = false;
 
-
-             }
+            if (obj is not null)
+            {
+                if (obj is Vehiculo)
+                {
+                    if (this == ((Vehiculo)obj))
+                    {
+                        retorno = true;
+                    }
+                }
+            }
+            
              return retorno;
          }
-        */
+         
         //retorna un valor entero 
         public override int GetHashCode()
         {
             return this.GetHashCode();
         }
-
+         */
         public override string ToString()
         {
             return this.Mostrar();

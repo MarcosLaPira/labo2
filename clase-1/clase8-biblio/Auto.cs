@@ -31,7 +31,30 @@ namespace clase8_biblio
             return sb.ToString();
         }
 
-      
+        public override bool Equals(object obj)//no dar importancia al warning
+        {
+            bool retorno = false;
+            if (obj is not null)
+            {
+                if (obj is Auto)
+                {
+                    if (this == ((Auto)obj))
+                    {
+                        retorno = true;
+                    }
+                }
+               
+            }
+            return retorno;
+        }
+
+        public override int GetHashCode()//
+        {
+            return base.GetHashCode();
+        }
+
+
+
 
 
     }
