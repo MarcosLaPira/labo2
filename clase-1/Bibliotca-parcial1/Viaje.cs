@@ -26,14 +26,19 @@ namespace Bibliotca_parcial1
          //   camarotesDisponiblesTurista = 0;
            // camarotesDisponiblesPremium = 0;
         }
-        public Viaje(Barco barco, EDestinos partida, EDestinos destino, DateTime fechaInicioViaje, List<Pasajero> listaPasajeros)
+        private Viaje()
+        {
+            this.listaPasajeros = new List<Pasajero>();
+            this.barco = new ;
+        }
+        public Viaje(Barco barco, EDestinos partida, EDestinos destino, DateTime fechaInicioViaje):this()
         {
             
                 this.barco = barco;
                 this.partida = partida;
                 this.destino = destino;
                 this.fechaInicioViaje = fechaInicioViaje;
-                this.listaPasajeros = listaPasajeros;
+                
                      
         }
         #endregion CONSTRUCTORES

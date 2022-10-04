@@ -18,19 +18,22 @@ namespace Bibliotca_parcial1
         private Pasajero(string nombre, string apellido,int edad) : base(nombre, apellido, edad)
         {
            
-            pasaporte = new Pasaporte("", "", 0,"", DateTime.Today, DateTime.Today);
+           pasaporte = new Pasaporte("", "", 0,"", DateTime.Today, DateTime.Today);
            // claseAViajar = new ClasePremium();
            
         }
-        private Pasajero(string nombre, string apellido,int edad, Pasaporte pasaporte, EClasePasajero clase/*, ClaseAViajar claseAViajar*/) : this(nombre, apellido, edad)
+        
+        public Pasajero(string nombre, string apellido,int edad, Pasaporte pasaporte, EClasePasajero clase/*, ClaseAViajar claseAViajar*/) : this(nombre, apellido, edad)
         {
             this.pasaporte = pasaporte;
             this.clase = clase; 
            // this.claseAViajar = claseAViajar;
         }
+        
         #endregion CONSTRUCTORES
 
         #region PROPIEDADES
+        
         public Pasaporte Pasaporte { get => pasaporte;  }
         
         public EClasePasajero Clase { get => clase; }
@@ -58,6 +61,9 @@ namespace Bibliotca_parcial1
             return !(p1 == p2);
         }
 
+        
+
         #endregion METODOS
     }
+        
 }

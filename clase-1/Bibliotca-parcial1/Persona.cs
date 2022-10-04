@@ -6,6 +6,7 @@
         protected string nombre;
         protected string apellido;
         protected int edad;
+    
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
