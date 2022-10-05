@@ -10,19 +10,20 @@ using System.Windows.Forms;
 
 namespace visual2_parcial1
 {
-    public partial class FrmMenu : Form
+    public partial class FrmPasaporte : Form
     {
-        public FrmMenu()
+        public FrmPasaporte()
         {
             InitializeComponent();
         }
 
-        private void btnAgregarPasajero_Click(object sender, EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            this.Hide();//escondo login
+            DateTime nacimiento = this.mcNacimiento.;
+            DateTime vencimiento = this.mcVencimientoPasaporte.SelectionEnd;
 
-            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero();
-            cargaPasajero.Show();//llamo a nuevo form
+           
+            this.Close();
         }
     }
 }

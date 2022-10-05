@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblMensaje = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.txtNacionalidad = new System.Windows.Forms.TextBox();
+            this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.gbClaseDePasajero = new System.Windows.Forms.GroupBox();
             this.rbPremium = new System.Windows.Forms.RadioButton();
             this.rbTurista = new System.Windows.Forms.RadioButton();
-            this.gbClaseDePasajero = new System.Windows.Forms.GroupBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblMensaje = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gbClaseDePasajero.SuspendLayout();
@@ -43,6 +46,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNacionalidad);
+            this.groupBox1.Controls.Add(this.dtpVencimiento);
+            this.groupBox1.Controls.Add(this.dtpNacimiento);
             this.groupBox1.Controls.Add(this.gbClaseDePasajero);
             this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.txtApellido);
@@ -54,38 +60,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // lblMensaje
+            // txtNacionalidad
             // 
-            this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(53, 26);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(228, 20);
-            this.lblMensaje.TabIndex = 1;
-            this.lblMensaje.Text = "Completar los siguientes campos";
+            this.txtNacionalidad.Location = new System.Drawing.Point(51, 247);
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(125, 27);
+            this.txtNacionalidad.TabIndex = 8;
+            this.txtNacionalidad.Text = "Nacionalidad";
             // 
-            // txtNombre
+            // dtpVencimiento
             // 
-            this.txtNombre.Location = new System.Drawing.Point(51, 67);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(125, 27);
-            this.txtNombre.TabIndex = 0;
-            this.txtNombre.Text = "Nombre";
+            this.dtpVencimiento.CustomFormat = "yyyy - mm - dd";
+            this.dtpVencimiento.Location = new System.Drawing.Point(276, 278);
+            this.dtpVencimiento.Name = "dtpVencimiento";
+            this.dtpVencimiento.Size = new System.Drawing.Size(270, 27);
+            this.dtpVencimiento.TabIndex = 7;
+            this.dtpVencimiento.Value = new System.DateTime(2022, 10, 5, 0, 0, 0, 0);
             // 
-            // txtApellido
+            // dtpNacimiento
             // 
-            this.txtApellido.Location = new System.Drawing.Point(51, 133);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(125, 27);
-            this.txtApellido.TabIndex = 1;
-            this.txtApellido.Text = "Apellido";
+            this.dtpNacimiento.CustomFormat = "yyyy - mm - dd";
+            this.dtpNacimiento.Location = new System.Drawing.Point(276, 225);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(270, 27);
+            this.dtpNacimiento.TabIndex = 6;
+            this.dtpNacimiento.Value = new System.DateTime(2022, 10, 5, 0, 0, 0, 0);
             // 
-            // txtEdad
+            // gbClaseDePasajero
             // 
-            this.txtEdad.Location = new System.Drawing.Point(51, 197);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(125, 27);
-            this.txtEdad.TabIndex = 2;
-            this.txtEdad.Text = "Edad";
+            this.gbClaseDePasajero.Controls.Add(this.rbPremium);
+            this.gbClaseDePasajero.Controls.Add(this.rbTurista);
+            this.gbClaseDePasajero.Location = new System.Drawing.Point(276, 67);
+            this.gbClaseDePasajero.Name = "gbClaseDePasajero";
+            this.gbClaseDePasajero.Size = new System.Drawing.Size(250, 125);
+            this.gbClaseDePasajero.TabIndex = 5;
+            this.gbClaseDePasajero.TabStop = false;
+            this.gbClaseDePasajero.Text = "ClaseDePasajero";
             // 
             // rbPremium
             // 
@@ -109,16 +119,38 @@
             this.rbTurista.Text = "Turista";
             this.rbTurista.UseVisualStyleBackColor = true;
             // 
-            // gbClaseDePasajero
+            // txtEdad
             // 
-            this.gbClaseDePasajero.Controls.Add(this.rbPremium);
-            this.gbClaseDePasajero.Controls.Add(this.rbTurista);
-            this.gbClaseDePasajero.Location = new System.Drawing.Point(278, 67);
-            this.gbClaseDePasajero.Name = "gbClaseDePasajero";
-            this.gbClaseDePasajero.Size = new System.Drawing.Size(250, 125);
-            this.gbClaseDePasajero.TabIndex = 5;
-            this.gbClaseDePasajero.TabStop = false;
-            this.gbClaseDePasajero.Text = "ClaseDePasajero";
+            this.txtEdad.Location = new System.Drawing.Point(51, 197);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(125, 27);
+            this.txtEdad.TabIndex = 2;
+            this.txtEdad.Text = "Edad";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(51, 133);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(125, 27);
+            this.txtApellido.TabIndex = 1;
+            this.txtApellido.Text = "Apellido";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(51, 67);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(125, 27);
+            this.txtNombre.TabIndex = 0;
+            this.txtNombre.Text = "Nombre";
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.Location = new System.Drawing.Point(53, 26);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(228, 20);
+            this.lblMensaje.TabIndex = 1;
+            this.lblMensaje.Text = "Completar los siguientes campos";
             // 
             // btnSiguiente
             // 
@@ -128,8 +160,9 @@
             this.btnSiguiente.TabIndex = 6;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // CargarPasajero
+            // FrmCargarPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,7 +170,7 @@
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.groupBox1);
-            this.Name = "CargarPasajero";
+            this.Name = "FrmCargarPasajero";
             this.Text = "CargarPasajero";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -159,5 +192,8 @@
         private RadioButton rbPremium;
         private RadioButton rbTurista;
         private Button btnSiguiente;
+        private TextBox txtNacionalidad;
+        private DateTimePicker dtpVencimiento;
+        private DateTimePicker dtpNacimiento;
     }
 }
