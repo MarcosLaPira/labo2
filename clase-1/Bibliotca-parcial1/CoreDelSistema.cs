@@ -1,38 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Bibliotca_parcial1
 {
     public static class CoreDelSistema
     {
-       
-       
-        static List<Viaje> viajes;
-      
+        #region ATRIBUTOS     
+        static List<Viaje> viajes;     
         static List<Empleado> empleados;
-       
+        #endregion ATRIBUTOS
 
-
+        #region CONSTRUCTORES
         static CoreDelSistema()
         {          
             viajes = new List<Viaje>();          
             empleados = new List<Empleado>();
 
-            CargarEmpleados();
             CargarViajes();           
+            CargarEmpleados();
         }
-       
-      
+        #endregion CONSTRUCTORES
+        
+        #region CARGA FORZADA
         private static void CargarEmpleados()
         {
-            empleados.Add(new("diego", "armando", 34, "dieguitobostero", "123", viajes));
-            empleados.Add(new("roman", "riquelme", 40, "romiboca", "10", viajes));
+            empleados.Add(new("dieguito ", "boca ", 34, "ab", "ab", viajes));
+            empleados.Add(new("andy", "deusi", 40, "ba", "ba", viajes));
 
         }
+        
 
         /// <summary>
         /// creo 2 viajes enteros, cada viaje tiene 3 pasajeros, el primer viaje esta navegando el sagundo en puerto
@@ -43,7 +45,7 @@ namespace Bibliotca_parcial1
 
             viajes.Add(new(
 
-                            new Barco("alfa123", "el destructor", 70, 1, 1, 2000, 250, false),
+                            new Barco("alfa123", "el destructor", 5, 1, 1, 2000, 250, false),
 
                              EDestinos.Miami,
 
@@ -98,7 +100,7 @@ namespace Bibliotca_parcial1
 
             viajes.Add(new(
 
-                           new Barco("beta", "sin descenso", 150, 3, 0, 6000, 500, true),
+                           new Barco("beta", "sin descenso", 2, 3, 0, 6000, 500, true),
 
                             EDestinos.Lima,
 
@@ -151,6 +153,111 @@ namespace Bibliotca_parcial1
 
 
         }
-       
+        #endregion CARGA FORZADA
+
+        #region METODOS
+
+        /// <summary>
+        /// valida que los campos no sean ni null o empty
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="contrasena"></param>
+        /// <returns>true no es ni null ni empty else false</returns>
+        private static bool ValidarCamposIngresados(string usuario, string contrasena)
+        {
+            bool retorno = false;
+            if (!String.IsNullOrEmpty(usuario) && !String.IsNullOrEmpty(contrasena))
+            {            
+                retorno = true;
+            }
+            return retorno;
+        }
+
+        /// <summary>
+        /// metodo para invocar desde form. busca a travez de usuario y contrasena al empleado
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="contrasena"></param>
+        /// <returns> Empleado en caso de que lo encontro,  null si no hay nada</returns>
+        public static Empleado? LogearUsuario(string usuario, string contrasena)
+        {
+            Empleado aux = null;
+
+                if (ValidarCamposIngresados(usuario, contrasena))//valido usuario y contrasena
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        string usuarioaVerd = CoreDelSistema.empleados[i].Usuario;
+                        string contrasenaVerd = CoreDelSistema.empleados[i].Contrasena;
+
+                        if (usuarioaVerd == usuario && contrasenaVerd == usuario)
+                        {
+                          return empleados[i];
+                        }
+
+                    }
+
+                /*
+foreach (var item in empleados)
+{
+if (Equals(contrasena, item.Contrasena))
+{
+    aux = item;
+    break;
+}
+}
+
+if (item.Usuario.Trim().ToLower() == usuario.Trim().ToLower() &&
+    item.Contrasena.Trim().ToLower() == contrasena.Trim().ToLower()
+   )
+{
+
+}
+
+*/
+                }
+
+            return aux;
+        }
+
+        //logica para agregar un nuevo pasajero 
+
+        //valido que datos no sean nullos: nombre, apellido, edad, clase
+        //valido que el pasaporte no sea nullo 
+        //invoco agregar 
+
+        public static bool AgregarPasajeroCamaroteTurista(Viaje viaje, Pasajero pasajero)
+        {
+            bool retorno = false;
+
+            if (viaje is not null && pasajero is not null)
+            {
+                if (viaje.AgregarPasajeroCamaroteVacioTurista(pasajero))
+                {
+                    retorno = true;
+                }
+                
+            }
+        
+            return retorno;
+        }
+
+        public static bool AgregarPasajeroCamarotePremium(Viaje viaje, Pasajero pasajero)
+        {
+            bool retorno = false;
+
+            if (viaje is not null && pasajero is not null)
+            {
+                if (viaje.AgregarPasajeroCamaroteVacioPremium(pasajero))
+                {
+                    retorno = true;
+                }
+
+            }
+
+            return retorno;
+        }
+        #endregion METODOS
+
     }
 }

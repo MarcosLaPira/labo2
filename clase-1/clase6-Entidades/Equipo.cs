@@ -43,5 +43,13 @@ namespace clase6_Entidades
             return retorno;
         }
 
+        public int ConteoEstatico
+        {
+            get
+            {
+                return conteoJugadores;
+            }
+        }
+
     }
 }

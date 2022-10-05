@@ -36,12 +36,20 @@ namespace Bibliotca_parcial1
         /// <param name="capacidadDePersonas"></param>
         /// <param name="estadoDelBarco"></param>
 
-       
-       
-        public Barco(string matricula, string nombre, int cantidadDeCamarotes, int cantidadDeSalones, 
-            int cantidadDeCasinos, float capacidadDeBodega, int capacidadDePersonas, bool estadoDelBarco)
+
+        private Barco()
         {
-            this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//defino cuantos camarotes tengo
+            this.listCamarotes = new List<Camarote>();
+            this.matricula = "";
+            this.nombre = "";
+        }
+
+
+        public Barco(string matricula, string nombre, int cantidadDeCamarotes, int cantidadDeSalones, 
+            int cantidadDeCasinos, float capacidadDeBodega, int capacidadDePersonas, bool estadoDelBarco):this()
+        {
+
+            //this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//defino cuantos camarotes tengo
             this.matricula = matricula;
             this.nombre = nombre;
             this.cantidadDeCamarotes = cantidadDeCamarotes;
@@ -101,9 +109,9 @@ namespace Bibliotca_parcial1
         public int CantidadDeCamarotesPremium 
         {
             get 
-            { 
-              
-                return (35/CantidadDeCamarotes)*100;
+            {
+                int resultado = (this.cantidadDeCamarotes * 35  ) / 100;
+                return resultado;
                 
             }
         }
@@ -120,7 +128,7 @@ namespace Bibliotca_parcial1
             }
         }
 
-      
+
         #endregion PROPIEDADES
 
         #region METODOS
@@ -128,17 +136,28 @@ namespace Bibliotca_parcial1
         /// <summary>
         /// setea los id de los camaraotes y setea la cantidad de camarotes que seran premium
         /// </summary>
-        private void administradorCamarotesList()
-        {           
-            int cantidadDeCamarotesPremium = CantidadDeCamarotesPremium;
-        
-            for (int i = 0; i < cantidadDeCamarotes; i++)
-            {
-                this.listCamarotes[i].IdCamarote = i;
 
+        private void CreadorCamarotes()
+        {
+            for (int i = 0; i < this.cantidadDeCamarotes; i++)
+            {
+                this.listCamarotes.Add(new Camarote(false, i));
+            }
+        }
+        private void administradorCamarotesList()
+        {
+           CreadorCamarotes();//creo los camarotes por default
+
+            for (int i = 0; i < this.cantidadDeCamarotes; i++)
+            {              
+              
                 if (i < CantidadDeCamarotesPremium)
                 {
                     this.listCamarotes[i].TipoDeClaseCamarote = true;//seteo el 35% de los camarotes en clase premium
+                }
+                else
+                {
+                    this.listCamarotes[i].TipoDeClaseCamarote = false;//seteo el resto de los camarotes en clase turista
                 }
               
             }

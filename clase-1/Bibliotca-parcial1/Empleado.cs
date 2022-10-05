@@ -13,9 +13,16 @@ namespace Bibliotca_parcial1
         private string usuario;
         private string contrasena;
         List<Viaje> viajes;
-        
 
         #endregion ATRIBUTOS
+
+        #region PROPIEDADES
+        public string Usuario { get => usuario; }
+        public string Contrasena { get => contrasena; }
+
+        #endregion PROPIEDADES
+
+
 
         #region CONSTRUCTOR
         /// <summary>
@@ -27,9 +34,9 @@ namespace Bibliotca_parcial1
         {
             this.usuario = "";
             this.contrasena = "";
-            
+              viajes = new List<Viaje>(); 
           
-            viajes = new List<Viaje>(); 
+          
         }
         /// <summary>
         /// constructor publico, inicialliza un emleado
@@ -44,7 +51,7 @@ namespace Bibliotca_parcial1
             this.viajes = viajes;
             this.usuario = usuario;
             this.contrasena = contrasena;
-            this.viajes = viajes;
+            
         }
         #endregion CONSTRUCTOR
 

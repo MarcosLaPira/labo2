@@ -8,7 +8,7 @@
         private bool tipoDeClaseCamarote; //true == premium
         private bool camaroteLleno; // true == lleno
         static int capacidadMaximaCamarote;
-        static int contadorDelCamarote;
+        private int contadorDelCamarote;
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
@@ -18,7 +18,7 @@
         static Camarote()
         {
             capacidadMaximaCamarote = 4;
-            contadorDelCamarote = 0;
+            
         }
 
         private Camarote()

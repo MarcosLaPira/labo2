@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,20 +17,22 @@ namespace Bibliotca_parcial1
         private DateTime fechaInicioViaje;
         List<Pasajero> listaPasajeros;
 
-        static int contadorDePasajeros;
+        private int contadorDePasajeros;
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
+        /*
         static Viaje()
         {
             contadorDePasajeros = 0;
          //   camarotesDisponiblesTurista = 0;
            // camarotesDisponiblesPremium = 0;
         }
+        */
         private Viaje()
         {
             this.listaPasajeros = new List<Pasajero>();
-            this.barco = new ;
+            this.barco = new Barco("","",0,0,0,0,0,false);
         }
         public Viaje(Barco barco, EDestinos partida, EDestinos destino, DateTime fechaInicioViaje):this()
         {
@@ -157,7 +160,7 @@ namespace Bibliotca_parcial1
         {
             get
             {
-                return contadorDePasajeros;
+                return this.contadorDePasajeros;
             }
         }
       
@@ -172,7 +175,7 @@ namespace Bibliotca_parcial1
         public bool AgregarPasajeroCamaroteVacioPremium(Pasajero pasajero)
         {
             bool retorno = false;
-            if (pasajero is not null && contadorDePasajeros < barco.CapacidadDePersonas && barco.BarcoEnPuerto == true)
+            if (pasajero is not null && this.contadorDePasajeros < barco.CapacidadDePersonas && barco.BarcoEnPuerto == true)
             {
                 if (pasajero.Clase == EClasePasajero.Premium)//busco solo en camarotes premium
                 {
@@ -182,7 +185,7 @@ namespace Bibliotca_parcial1
                         {
                             listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
                             barco.ListCamarotes[i].AgregarPasajeroAlCamarote(pasajero);//agrego pasajero
-                            contadorDePasajeros++;
+                            this.contadorDePasajeros++;
                             retorno = true;
                             break;
                         }
@@ -202,7 +205,7 @@ namespace Bibliotca_parcial1
         public bool AgregarPasajeroCamaroteVacioTurista(Pasajero pasajero)
         {
             bool retorno = false;
-            if (pasajero is not null && contadorDePasajeros < barco.CapacidadDePersonas && barco.BarcoEnPuerto == true)
+            if (pasajero is not null && this.contadorDePasajeros < barco.CapacidadDePersonas && barco.BarcoEnPuerto == true)
             {
                 if (pasajero.Clase == EClasePasajero.Turista)//busco solo en camarotes turista
                 {
@@ -212,7 +215,7 @@ namespace Bibliotca_parcial1
                         {
                             listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
                             barco.ListCamarotes[i].AgregarPasajeroAlCamarote(pasajero);//agrego pasajero
-                            contadorDePasajeros++;
+                            this.contadorDePasajeros++;
                             retorno = true;
                             break;
                         }
@@ -233,7 +236,7 @@ namespace Bibliotca_parcial1
         public bool AgregarPasajeroACamaroteEspecifico(int idDeCamarote, Pasajero pasajero)
         {
             bool retorno = false;
-            if (pasajero is not null && idDeCamarote >= 0 && idDeCamarote < barco.CantidadDeCamarotes && contadorDePasajeros < barco.CapacidadDePersonas )
+            if (pasajero is not null && idDeCamarote >= 0 && idDeCamarote < barco.CantidadDeCamarotes && this.contadorDePasajeros < barco.CapacidadDePersonas )
             {
                 if (!barco.ListCamarotes[idDeCamarote].CamaroteLleno) //veridfico que el camarote no este lleno
                 {
