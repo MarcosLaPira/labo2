@@ -20,26 +20,20 @@ namespace visual2_parcial1
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-           
-            
-            DateTime nacimiento = this.dtpNacimiento.Value;
+                   
             bool flag = false;
-            DateTime vencimiento = this.dtpVencimiento.Value;
+          
             EClasePasajero clasePasajero = EClasePasajero.Turista;
 
-            if (!string.IsNullOrEmpty(txtNombre.Text) && 
+            if (!string.IsNullOrEmpty(txtNombre.Text) && //validamos los campos
                 !string.IsNullOrEmpty(txtApellido.Text) && 
-                !string.IsNullOrEmpty(txtEdad.Text) && 
-                !string.IsNullOrEmpty(txtNacionalidad.Text) &&
-                !string.IsNullOrEmpty(nacimiento.ToString()) &&
-                 !string.IsNullOrEmpty(vencimiento.ToString())
+                !string.IsNullOrEmpty(txtEdad.Text)       
                 )
             {
-                if (this.rbPremium.Checked == true)
+                if (this.rbPremium.Checked == true)//valido el tipo de pasajero 
                 {
                     flag = true;
-                    clasePasajero = EClasePasajero.Premium;
-                    
+                    clasePasajero = EClasePasajero.Premium;                   
                 }
                 else
                 {
@@ -49,36 +43,30 @@ namespace visual2_parcial1
                         clasePasajero = EClasePasajero.Turista;
 
                     }
-
-                }
-                
-                if (flag)
+                }                
+                if (flag)//entro solo si paso las validaciones anteriores
                 {
                     string nombre = txtNombre.Text;
                     string apellido = txtApellido.Text;
                     int edad = Convert.ToInt32(this.txtEdad.Text);
-                    string nacionalidad = txtNacionalidad.Text;
-                   
 
-                    Pasaporte pasaporte1 = new Pasaporte(nombre, apellido, edad, nacionalidad, nacimiento, vencimiento);
+                    //  Pasaporte pasaporte1 = new Pasaporte(nombre, apellido, edad, nacionalidad, nacimiento, vencimiento);
+                    FrmPasaporte frmPasaporte = new FrmPasaporte(nombre,apellido,edad);//creo la instancia del formulario pasaporte y e paso ciertos parametros para que ya aparezcan cargados
 
-                    if (pasaporte1 is not null)
+                    if (frmPasaporte.ShowDialog() == DialogResult.OK)//si el form de pasaporte salio bien creo el pasajero
                     {
-                        Pasajero pasajero = new Pasajero(nombre, apellido, edad, pasaporte1, clasePasajero);
+                        Pasaporte pasaporte = frmPasaporte.GetPasaporte;//obtengo los campos completados en frmPasaporte
+                        if (pasaporte is not null)
+                        {
+                            Pasajero pasajero = new Pasajero(nombre, apellido, edad,pasaporte , clasePasajero);//creo el pasajero
+                        }                       
+
                     }
-
-
-
-
-                    this.Hide();
-                    FrmPasaporte pasaporte = new FrmPasaporte();
-                    pasaporte.ShowDialog();
-
-                    
+                  
                 }
                 else
                 {
-                    MessageBox.Show("Hay un errror, se debe completar apellido ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hay un errror, se debe completar todos los campos ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

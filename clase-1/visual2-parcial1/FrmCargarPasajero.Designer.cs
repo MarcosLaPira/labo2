@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNacionalidad = new System.Windows.Forms.TextBox();
-            this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
-            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.gbClaseDePasajero = new System.Windows.Forms.GroupBox();
             this.rbPremium = new System.Windows.Forms.RadioButton();
             this.rbTurista = new System.Windows.Forms.RadioButton();
@@ -46,9 +43,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtNacionalidad);
-            this.groupBox1.Controls.Add(this.dtpVencimiento);
-            this.groupBox1.Controls.Add(this.dtpNacimiento);
             this.groupBox1.Controls.Add(this.gbClaseDePasajero);
             this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.txtApellido);
@@ -60,39 +54,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // txtNacionalidad
-            // 
-            this.txtNacionalidad.Location = new System.Drawing.Point(51, 247);
-            this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(125, 27);
-            this.txtNacionalidad.TabIndex = 8;
-            this.txtNacionalidad.Text = "Nacionalidad";
-            // 
-            // dtpVencimiento
-            // 
-            this.dtpVencimiento.CustomFormat = "yyyy - mm - dd";
-            this.dtpVencimiento.Location = new System.Drawing.Point(276, 278);
-            this.dtpVencimiento.Name = "dtpVencimiento";
-            this.dtpVencimiento.Size = new System.Drawing.Size(270, 27);
-            this.dtpVencimiento.TabIndex = 7;
-            this.dtpVencimiento.Value = new System.DateTime(2022, 10, 5, 0, 0, 0, 0);
-            // 
-            // dtpNacimiento
-            // 
-            this.dtpNacimiento.CustomFormat = "yyyy - mm - dd";
-            this.dtpNacimiento.Location = new System.Drawing.Point(276, 225);
-            this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(270, 27);
-            this.dtpNacimiento.TabIndex = 6;
-            this.dtpNacimiento.Value = new System.DateTime(2022, 10, 5, 0, 0, 0, 0);
-            // 
             // gbClaseDePasajero
             // 
             this.gbClaseDePasajero.Controls.Add(this.rbPremium);
             this.gbClaseDePasajero.Controls.Add(this.rbTurista);
             this.gbClaseDePasajero.Location = new System.Drawing.Point(276, 67);
             this.gbClaseDePasajero.Name = "gbClaseDePasajero";
-            this.gbClaseDePasajero.Size = new System.Drawing.Size(250, 125);
+            this.gbClaseDePasajero.Size = new System.Drawing.Size(193, 214);
             this.gbClaseDePasajero.TabIndex = 5;
             this.gbClaseDePasajero.TabStop = false;
             this.gbClaseDePasajero.Text = "ClaseDePasajero";
@@ -100,7 +68,7 @@
             // rbPremium
             // 
             this.rbPremium.AutoSize = true;
-            this.rbPremium.Location = new System.Drawing.Point(48, 38);
+            this.rbPremium.Location = new System.Drawing.Point(48, 66);
             this.rbPremium.Name = "rbPremium";
             this.rbPremium.Size = new System.Drawing.Size(89, 24);
             this.rbPremium.TabIndex = 3;
@@ -111,7 +79,7 @@
             // rbTurista
             // 
             this.rbTurista.AutoSize = true;
-            this.rbTurista.Location = new System.Drawing.Point(48, 85);
+            this.rbTurista.Location = new System.Drawing.Point(48, 116);
             this.rbTurista.Name = "rbTurista";
             this.rbTurista.Size = new System.Drawing.Size(74, 24);
             this.rbTurista.TabIndex = 4;
@@ -121,7 +89,7 @@
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(51, 197);
+            this.txtEdad.Location = new System.Drawing.Point(51, 254);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(125, 27);
             this.txtEdad.TabIndex = 2;
@@ -129,7 +97,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(51, 133);
+            this.txtApellido.Location = new System.Drawing.Point(51, 164);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(125, 27);
             this.txtApellido.TabIndex = 1;
@@ -137,7 +105,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(51, 67);
+            this.txtNombre.Location = new System.Drawing.Point(51, 87);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 27);
             this.txtNombre.TabIndex = 0;
@@ -146,11 +114,11 @@
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(53, 26);
+            this.lblMensaje.Location = new System.Drawing.Point(31, 30);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(228, 20);
+            this.lblMensaje.Size = new System.Drawing.Size(231, 20);
             this.lblMensaje.TabIndex = 1;
-            this.lblMensaje.Text = "Completar los siguientes campos";
+            this.lblMensaje.Text = "Completar los siguientes campos:";
             // 
             // btnSiguiente
             // 
@@ -192,8 +160,5 @@
         private RadioButton rbPremium;
         private RadioButton rbTurista;
         private Button btnSiguiente;
-        private TextBox txtNacionalidad;
-        private DateTimePicker dtpVencimiento;
-        private DateTimePicker dtpNacimiento;
     }
 }

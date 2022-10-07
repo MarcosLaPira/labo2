@@ -19,7 +19,8 @@ namespace visual2_parcial1
 
         private void btnAgregarPasajero_Click(object sender, EventArgs e)
         {
-            this.Hide();//escondo login
+          
+            this.Hide();//escondo menu
 
             FrmCargarPasajero cargaPasajero = new FrmCargarPasajero();
             cargaPasajero.Show();//llamo a nuevo form
