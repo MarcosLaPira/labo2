@@ -155,6 +155,11 @@ namespace Bibliotca_parcial1
         }
         #endregion CARGA FORZADA
 
+        public static List<Viaje> Viajes
+        {           
+            get { return viajes; }
+        }
+
         #region METODOS
 
         /// <summary>

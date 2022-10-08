@@ -28,7 +28,7 @@ namespace visual2_parcial1
                 }
                 else
                 {
-                    MessageBox.Show("vamos mal");
+                    MessageBox.Show("Usuario o contraseña incorrectos");
                 }
 
 

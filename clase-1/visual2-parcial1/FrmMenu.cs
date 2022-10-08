@@ -25,5 +25,12 @@ namespace visual2_parcial1
             FrmCargarPasajero cargaPasajero = new FrmCargarPasajero();
             cargaPasajero.Show();//llamo a nuevo form
         }
+
+        private void btnSeleccionarViaje_Click(object sender, EventArgs e)
+        {
+            frmViajes formularioViajes = new frmViajes();
+            this.Hide();
+            formularioViajes.Show();
+        }
     }
 }

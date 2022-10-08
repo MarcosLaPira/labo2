@@ -253,7 +253,7 @@ namespace Bibliotca_parcial1
         {
             StringBuilder sb = new StringBuilder();           
 
-            sb.Append($"Nombre del barco:");
+            sb.Append($"Nombre del barco:{this.barco}");
             sb.Append($"Origen:{this.partida}");
             sb.Append($"Destino: {this.Destino}");
             sb.Append($"Fecha de inicio: {this.FechaInicioViaje}");
