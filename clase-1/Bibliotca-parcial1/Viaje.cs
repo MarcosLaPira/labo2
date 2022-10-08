@@ -55,6 +55,7 @@ namespace Bibliotca_parcial1
         /// <summary>
         /// retorna partida de tipo Edestinos 
         /// </summary>
+        
         public EDestinos Partida { get => partida; }
        /// <summary>
        /// retrona destino de tipo Edestinos 

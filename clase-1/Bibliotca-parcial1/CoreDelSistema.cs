@@ -102,7 +102,7 @@ namespace Bibliotca_parcial1
 
                            new Barco("beta", "sin descenso", 2, 3, 0, 6000, 500, true),
 
-                            EDestinos.Lima,
+                            EDestinos.Venecia,
 
                            EDestinos.NuevaYork,
 
@@ -190,7 +190,7 @@ namespace Bibliotca_parcial1
 
                 if (ValidarCamposIngresados(usuario, contrasena))//valido usuario y contrasena
                 {
-                    for (int i = 0; i < 2; i++)
+                    for (int i = 0; i < CoreDelSistema.empleados.LongCount(); i++)
                     {
                         string usuarioaVerd = CoreDelSistema.empleados[i].Usuario;
                         string contrasenaVerd = CoreDelSistema.empleados[i].Contrasena;

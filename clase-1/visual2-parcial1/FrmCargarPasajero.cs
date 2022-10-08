@@ -80,6 +80,7 @@ namespace visual2_parcial1
                                     {
                                        CoreDelSistema.AgregarPasajeroCamaroteTurista(viaje, pasajero);
                                         this.DialogResult = DialogResult.OK;
+                                        
                                     }
                                 }
                             }

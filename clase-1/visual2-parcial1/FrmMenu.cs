@@ -21,7 +21,7 @@ namespace visual2_parcial1
         {
           
 
-            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero();
+            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero();//nuevo form de pasajero 
 
             if (cargaPasajero.ShowDialog() == DialogResult.OK)
             {

@@ -31,7 +31,8 @@
             this.dtgViajes = new System.Windows.Forms.DataGridView();
             this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEstadoBarco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaFechaSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblViajesdispo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgViajes)).BeginInit();
             this.SuspendLayout();
@@ -42,8 +43,9 @@
             this.dtgViajes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaOrigen,
             this.ColumnaDestino,
-            this.ColumnaEstadoBarco});
-            this.dtgViajes.Location = new System.Drawing.Point(39, 88);
+            this.ColumnaFechaSalida,
+            this.Duracion});
+            this.dtgViajes.Location = new System.Drawing.Point(85, 85);
             this.dtgViajes.Name = "dtgViajes";
             this.dtgViajes.RowHeadersWidth = 51;
             this.dtgViajes.RowTemplate.Height = 29;
@@ -56,6 +58,7 @@
             this.ColumnaOrigen.HeaderText = "Origen";
             this.ColumnaOrigen.MinimumWidth = 6;
             this.ColumnaOrigen.Name = "ColumnaOrigen";
+            this.ColumnaOrigen.ReadOnly = true;
             this.ColumnaOrigen.Width = 125;
             // 
             // ColumnaDestino
@@ -63,23 +66,33 @@
             this.ColumnaDestino.HeaderText = "Destino";
             this.ColumnaDestino.MinimumWidth = 6;
             this.ColumnaDestino.Name = "ColumnaDestino";
+            this.ColumnaDestino.ReadOnly = true;
             this.ColumnaDestino.Width = 125;
             // 
-            // ColumnaEstadoBarco
+            // ColumnaFechaSalida
             // 
-            this.ColumnaEstadoBarco.HeaderText = "Barco en puerto";
-            this.ColumnaEstadoBarco.MinimumWidth = 6;
-            this.ColumnaEstadoBarco.Name = "ColumnaEstadoBarco";
-            this.ColumnaEstadoBarco.Width = 125;
+            this.ColumnaFechaSalida.HeaderText = "Fecha salida";
+            this.ColumnaFechaSalida.MinimumWidth = 6;
+            this.ColumnaFechaSalida.Name = "ColumnaFechaSalida";
+            this.ColumnaFechaSalida.ReadOnly = true;
+            this.ColumnaFechaSalida.Width = 125;
+            // 
+            // Duracion
+            // 
+            this.Duracion.HeaderText = "ColumnaDuracion";
+            this.Duracion.MinimumWidth = 6;
+            this.Duracion.Name = "Duracion";
+            this.Duracion.ReadOnly = true;
+            this.Duracion.Width = 125;
             // 
             // lblViajesdispo
             // 
             this.lblViajesdispo.AutoSize = true;
             this.lblViajesdispo.Location = new System.Drawing.Point(39, 28);
             this.lblViajesdispo.Name = "lblViajesdispo";
-            this.lblViajesdispo.Size = new System.Drawing.Size(128, 20);
+            this.lblViajesdispo.Size = new System.Drawing.Size(120, 20);
             this.lblViajesdispo.TabIndex = 1;
-            this.lblViajesdispo.Text = "Viajes disponibles";
+            this.lblViajesdispo.Text = "Seleccionar viaje";
             // 
             // frmViajes
             // 
@@ -103,6 +116,7 @@
         private Label lblViajesdispo;
         private DataGridViewTextBoxColumn ColumnaOrigen;
         private DataGridViewTextBoxColumn ColumnaDestino;
-        private DataGridViewTextBoxColumn ColumnaEstadoBarco;
+        private DataGridViewTextBoxColumn ColumnaFechaSalida;
+        private DataGridViewTextBoxColumn Duracion;
     }
 }

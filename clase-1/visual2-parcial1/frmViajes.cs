@@ -30,7 +30,20 @@ namespace visual2_parcial1
             viajes = CoreDelSistema.Viajes;//obtengo lista de viajes 
             foreach (var item in viajes)
             {
-                dtgViajes.Rows.Add(item.Partida.ToString(),item.Destino.ToString(),item.Barco.BarcoEnPuerto.ToString());//, item.Barco.BarcoEnPuerto
+                /*
+                int indice = this.dtgViajes.Rows.Add();
+                this.dtgViajes.Rows[indice].Cells[0].Value = item.Partida;
+                this.dtgViajes.Rows[indice].Cells[1].Value = item.Destino;
+                this.dtgViajes.Rows[indice].Cells[2].Value = item.FechaInicioViaje;
+                this.dtgViajes.Rows[indice].Cells[3].Value = item.DuracionDelViaje;
+                */
+                
+                
+                  if (item.Barco.BarcoEnPuerto && item.CantidadDePasajeros < item.Barco.CapacidadDePersonas)
+                  { 
+                      dtgViajes.Rows.Add(item.Partida.ToString(),item.Destino.ToString(),item.FechaInicioViaje.ToString(),item.DuracionDelViaje.ToString());//, item.Barco.BarcoEnPuerto
+                  }
+                
             }
            
         }
@@ -39,11 +52,16 @@ namespace visual2_parcial1
         {
             posicion = dtgViajes.CurrentRow.Index;//obtengo indice selccionado del data grid
             Viaje auxViaje = viajes.ElementAt(posicion);//obtengo el viaje en el indice seleccionado
-            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero();
+            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero(auxViaje);
 
             if (cargaPasajero.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("completado ", "completado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            FrmCamarotes formCamarote = new FrmCamarotes(posicion);
+            if (formCamarote.ShowDialog() == DialogResult.OK)
+            {
+                
             }
 
         }

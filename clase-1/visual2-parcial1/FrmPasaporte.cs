@@ -66,9 +66,13 @@ namespace visual2_parcial1
                 DateTime vencimiento = this.mcVencimientoPasaporte.SelectionStart;
 
                 Pasaporte auxPasaporte = new Pasaporte(this.txtNombre.Text, this.txtApellido.Text, auxEdad, this.txtNacionalidad.Text, nacimiento, vencimiento);
-                pasaporte = auxPasaporte;
+                if (auxPasaporte is not null)
+                { 
+                    pasaporte = auxPasaporte;
+                     this.DialogResult = DialogResult.OK;
+                }
+                
 
-                this.DialogResult = DialogResult.OK;
 
             }
             else
