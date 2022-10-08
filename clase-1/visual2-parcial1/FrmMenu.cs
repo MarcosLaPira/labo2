@@ -20,10 +20,19 @@ namespace visual2_parcial1
         private void btnAgregarPasajero_Click(object sender, EventArgs e)
         {
           
-            this.Hide();//escondo menu
 
             FrmCargarPasajero cargaPasajero = new FrmCargarPasajero();
+
+            if (cargaPasajero.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("completado ", "completado",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+          
+            /*
+            this.Hide();//escondo menu
+            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero();
             cargaPasajero.Show();//llamo a nuevo form
+            */
         }
 
         private void btnSeleccionarViaje_Click(object sender, EventArgs e)

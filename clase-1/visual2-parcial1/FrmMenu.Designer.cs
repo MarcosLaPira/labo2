@@ -34,9 +34,9 @@
             // 
             // btnAgregarPasajero
             // 
-            this.btnAgregarPasajero.Location = new System.Drawing.Point(104, 84);
+            this.btnAgregarPasajero.Location = new System.Drawing.Point(447, 64);
             this.btnAgregarPasajero.Name = "btnAgregarPasajero";
-            this.btnAgregarPasajero.Size = new System.Drawing.Size(123, 29);
+            this.btnAgregarPasajero.Size = new System.Drawing.Size(149, 71);
             this.btnAgregarPasajero.TabIndex = 0;
             this.btnAgregarPasajero.Text = "AgregarPasajero";
             this.btnAgregarPasajero.UseVisualStyleBackColor = true;
@@ -44,9 +44,9 @@
             // 
             // btnSeleccionarViaje
             // 
-            this.btnSeleccionarViaje.Location = new System.Drawing.Point(113, 171);
+            this.btnSeleccionarViaje.Location = new System.Drawing.Point(447, 167);
             this.btnSeleccionarViaje.Name = "btnSeleccionarViaje";
-            this.btnSeleccionarViaje.Size = new System.Drawing.Size(94, 29);
+            this.btnSeleccionarViaje.Size = new System.Drawing.Size(149, 77);
             this.btnSeleccionarViaje.TabIndex = 1;
             this.btnSeleccionarViaje.Text = "Ver viajes";
             this.btnSeleccionarViaje.UseVisualStyleBackColor = true;
