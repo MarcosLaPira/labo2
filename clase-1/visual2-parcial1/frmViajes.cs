@@ -13,8 +13,9 @@ namespace visual2_parcial1
 {
     public partial class frmViajes : Form
     {
+
         List<Viaje> viajes;
-        int posicion;
+       
         public frmViajes()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace visual2_parcial1
 
            string partida;
            string destino;
+
             foreach (var item in viajes)
             {
                 //obtengo los nombres de los destinos
@@ -44,7 +46,7 @@ namespace visual2_parcial1
                 this.dtgViajes.Rows[indice].Cells[3].Value = item.DuracionDelViaje;
                 */
                 
-                
+                //mostrar solo viajes dispo
                  // if (item.Barco.BarcoEnPuerto && item.CantidadDePasajeros < item.Barco.CapacidadDePersonas)
                 //  { 
                       dtgViajes.Rows.Add(partida,destino,item.FechaInicioViaje.ToString(),item.DuracionDelViaje.ToString());//, item.Barco.BarcoEnPuerto
@@ -56,6 +58,8 @@ namespace visual2_parcial1
 
         private void dtgViajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int posicion;
+
             posicion = dtgViajes.CurrentRow.Index;//obtengo indice selccionado del data grid
            Viaje auxViaje = viajes.ElementAt(posicion);//obtengo el viaje en el indice seleccionado
            // Viaje auxViaje = viajes[posicion];//obtengo el viaje en el indice seleccionado
