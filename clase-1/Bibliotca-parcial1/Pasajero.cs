@@ -15,13 +15,7 @@ namespace Bibliotca_parcial1
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
-        private Pasajero(string nombre, string apellido,int edad) : base(nombre, apellido, edad)
-        {
-           
-           pasaporte = new Pasaporte("", "", 0,"", DateTime.Today, DateTime.Today);
-           // claseAViajar = new ClasePremium();
-           
-        }
+      
         
         public Pasajero(string nombre, string apellido,int edad, Pasaporte pasaporte, EClasePasajero clase/*, ClaseAViajar claseAViajar*/) : this(nombre, apellido, edad)
         {

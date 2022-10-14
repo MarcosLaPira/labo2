@@ -2,24 +2,31 @@
 {
     public enum EDestinos
     {
-         Montevideo = 0,
-         Ushuaia = 0,
-         Recife = 0,
-         Santiago = 0,
-         Lima = 0,
-         IslaDePascua = 0,
-         IslaGalápagos = 0,
-         PuertoMadryn = 0,
-         RíodeJaneiro = 0,
-         Cartagena = 0,
+        //region sudamerica
+         Montevideo  ,       
+         Ushuaia  ,
+         Recife ,
+         Santiago ,
+         Lima ,
+         IslaDePascua ,
+         IslaGalápagos ,
+         PuertoMadryn ,
+         RíodeJaneiro ,
+         Cartagena,
 
-         LaHabana = 1,
-         Venecia = 1,
-         Acapulco = 1,
-         Miami = 1,
-         NuevaYork = 1,
-         Bangkok = 1,
-         Taipei = 1,
-         Atenas = 1
+        // norte america
+         LaHabana ,
+         Venecia ,
+         Acapulco ,
+         Miami ,
+         NuevaYork ,
+         Bangkok ,
+         Taipei ,
+         Atenas 
+         
     }
+    /*
+    public List ciudades;
+    ciudades.insert(new Ciudad(EDestinos.Montevideo, "Rio DE J", ERegiones.Sudamerica))
+    */
 }

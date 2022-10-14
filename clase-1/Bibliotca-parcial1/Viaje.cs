@@ -12,38 +12,27 @@ namespace Bibliotca_parcial1
     public  class Viaje
     {
         #region ATRIBUTOS
-        private Barco barco;
-        private EDestinos partida;
-        private EDestinos destino;
+        private Barco barco;//dejaria de tener una lista de camarotes
+        private Ciudad partida;
+        private Ciudad destino;
         private DateTime fechaInicioViaje;
         List<Pasajero> listaPasajeros;
-
+        //list camarotes
         private int contadorDePasajeros;
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
-        /*
-        static Viaje()
-        {
-            contadorDePasajeros = 0;
-         //   camarotesDisponiblesTurista = 0;
-           // camarotesDisponiblesPremium = 0;
-        }
-        */
-        private Viaje()
-        {
+      
+      
+        public Viaje(Barco barco, Ciudad partida, Ciudad destino, DateTime fechaInicioViaje)
+        {            
+            this.barco = barco;
+            this.partida = partida;
+            this.destino = destino;
+            this.fechaInicioViaje = fechaInicioViaje;
+
             this.listaPasajeros = new List<Pasajero>();
-            this.barco = new Barco("","",0,0,0,0,0,false);
-        }
-        public Viaje(Barco barco, EDestinos partida, EDestinos destino, DateTime fechaInicioViaje):this()
-        {
-            
-                this.barco = barco;
-                this.partida = partida;
-                this.destino = destino;
-                this.fechaInicioViaje = fechaInicioViaje;
-                
-                     
+
         }
         #endregion CONSTRUCTORES
 
@@ -56,11 +45,11 @@ namespace Bibliotca_parcial1
         /// retorna partida de tipo Edestinos 
         /// </summary>
         
-        public EDestinos Partida { get => partida; }
+        public Ciudad Partida { get => partida; }
        /// <summary>
        /// retrona destino de tipo Edestinos 
        /// </summary>
-        public EDestinos Destino { get => destino;  }
+        public Ciudad Destino { get => destino;  }
         /// <summary>
         /// retorna fecha de inicio del viaje 
         /// </summary>
@@ -75,10 +64,10 @@ namespace Bibliotca_parcial1
             get 
             {
                 Random rand = new Random();
-                if (1 == (int)Partida && 1 == (int)Destino || (2 == (int)Partida && 2 == (int)Destino))
+                if (this.partida.Region == this.destino.Region)
                 {
-                    return rand.Next(72,360);
-                }
+                    return rand.Next(72, 360);
+                }             
                 else
                 {
                     return rand.Next(480, 720);
@@ -93,7 +82,7 @@ namespace Bibliotca_parcial1
             get
             {
                 int duracionViaje = DuracionDelViaje;
-                if (1 == (int)Partida && 1 == (int)Destino || (2 == (int)Partida && 2 == (int)Destino))//verifico que tipo de viaje hizo
+                if (this.partida.Region == this.destino.Region)//verifico que tipo de viaje hizo
                 {
                     return duracionViaje * 57;//viaje regional 
                 }
@@ -111,7 +100,7 @@ namespace Bibliotca_parcial1
             get
             {
                 int duracionViaje = DuracionDelViaje;
-                if (1 == (int)Partida && 1 == (int)Destino || (2 == (int)Partida && 2 == (int)Destino))//verifico que tipo de viaje hizo
+                if (this.partida.Region == this.destino.Region)//verifico que tipo de viaje hizo
                 {
                     return duracionViaje * 114;//viaje regional 
                 }
@@ -255,7 +244,7 @@ namespace Bibliotca_parcial1
         {
             StringBuilder sb = new StringBuilder();           
 
-            sb.Append($"Nombre del barco:{this.barco}");
+            sb.Append($"Nombre del barco:{this.barco.Nombre}");
             sb.Append($"Origen:{this.partida}");
             sb.Append($"Destino: {this.Destino}");
             sb.Append($"Fecha de inicio: {this.FechaInicioViaje}");
@@ -266,10 +255,12 @@ namespace Bibliotca_parcial1
             return sb.ToString();
         }
 
+        
         public override string ToString()
         {
             return MostrarInfoDelViaje();
         }
+        
         #endregion METODOS
         //camarotes disponibles clase turisata
 

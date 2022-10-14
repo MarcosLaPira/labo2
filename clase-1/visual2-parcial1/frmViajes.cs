@@ -28,8 +28,14 @@ namespace visual2_parcial1
         public void ActualizarLista()
         {
             viajes = CoreDelSistema.Viajes;//obtengo lista de viajes 
+
+           string partida;
+           string destino;
             foreach (var item in viajes)
             {
+                //obtengo los nombres de los destinos
+                partida = item.Partida.Nombre;
+                destino = item.Destino.Nombre;
                 /*
                 int indice = this.dtgViajes.Rows.Add();
                 this.dtgViajes.Rows[indice].Cells[0].Value = item.Partida;
@@ -39,10 +45,10 @@ namespace visual2_parcial1
                 */
                 
                 
-                  if (item.Barco.BarcoEnPuerto && item.CantidadDePasajeros < item.Barco.CapacidadDePersonas)
-                  { 
-                      dtgViajes.Rows.Add(item.Partida.ToString(),item.Destino.ToString(),item.FechaInicioViaje.ToString(),item.DuracionDelViaje.ToString());//, item.Barco.BarcoEnPuerto
-                  }
+                 // if (item.Barco.BarcoEnPuerto && item.CantidadDePasajeros < item.Barco.CapacidadDePersonas)
+                //  { 
+                      dtgViajes.Rows.Add(partida,destino,item.FechaInicioViaje.ToString(),item.DuracionDelViaje.ToString());//, item.Barco.BarcoEnPuerto
+                //  }
                 
             }
            
@@ -51,18 +57,24 @@ namespace visual2_parcial1
         private void dtgViajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             posicion = dtgViajes.CurrentRow.Index;//obtengo indice selccionado del data grid
-            Viaje auxViaje = viajes.ElementAt(posicion);//obtengo el viaje en el indice seleccionado
-            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero(auxViaje);
+           Viaje auxViaje = viajes.ElementAt(posicion);//obtengo el viaje en el indice seleccionado
+           // Viaje auxViaje = viajes[posicion];//obtengo el viaje en el indice seleccionado
 
+
+            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero(auxViaje);//instancio formulario de pasajero
             if (cargaPasajero.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("completado ", "completado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               // MessageBox.Show("completado ", "completado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);//
+               
+               
+                FrmCamarotes formCamarote = new FrmCamarotes(auxViaje);//instancio formulario de camarotes
+                if (formCamarote.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;//carga de pasaejro relaizada
+                }
             }
-            FrmCamarotes formCamarote = new FrmCamarotes(posicion);
-            if (formCamarote.ShowDialog() == DialogResult.OK)
-            {
-                
-            }
+
+            
 
         }
         

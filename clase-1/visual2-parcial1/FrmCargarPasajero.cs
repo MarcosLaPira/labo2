@@ -14,7 +14,7 @@ namespace visual2_parcial1
     public partial class FrmCargarPasajero : Form
     {
         Viaje viaje;
-        public FrmCargarPasajero()
+        public FrmCargarPasajero()//////////
         {
             InitializeComponent();
             
@@ -60,7 +60,7 @@ namespace visual2_parcial1
 
                     //  Pasaporte pasaporte1 = new Pasaporte(nombre, apellido, edad, nacionalidad, nacimiento, vencimiento);
                     FrmPasaporte frmPasaporte = new FrmPasaporte(nombre,apellido,edad);//creo la instancia del formulario pasaporte y e paso ciertos parametros para que ya aparezcan cargados
-
+                   
                     if (frmPasaporte.ShowDialog() == DialogResult.OK)//si el form de pasaporte salio bien creo el pasajero
                     {
                         Pasaporte pasaporte = frmPasaporte.GetPasaporte;//obtengo los campos completados en frmPasaporte
@@ -69,20 +69,20 @@ namespace visual2_parcial1
                             Pasajero pasajero = new Pasajero(nombre, apellido, edad,pasaporte , clasePasajero);//creo el pasajero
                             if (pasajero is not null)
                             {
-                                if (pasajero.Clase == EClasePasajero.Premium)
-                                {
-                                    CoreDelSistema.AgregarPasajeroCamarotePremium(viaje, pasajero);
+                              //  if (pasajero.Clase == EClasePasajero.Premium)
+                               // {
+                                 //   CoreDelSistema.AgregarPasajeroCamarotePremium(viaje, pasajero);
                                     this.DialogResult = DialogResult.OK;
-                                }
-                                else
-                                {
-                                    if (pasajero.Clase == EClasePasajero.Turista)
-                                    {
-                                       CoreDelSistema.AgregarPasajeroCamaroteTurista(viaje, pasajero);
-                                        this.DialogResult = DialogResult.OK;
+                               // }
+                               // else
+                               // {
+                                  //  if (pasajero.Clase == EClasePasajero.Turista)
+                                  //  {
+                                   //    CoreDelSistema.AgregarPasajeroCamaroteTurista(viaje, pasajero);
+                                  //      this.DialogResult = DialogResult.OK;
                                         
-                                    }
-                                }
+                                    //}
+                                //}
                             }
                           
                             

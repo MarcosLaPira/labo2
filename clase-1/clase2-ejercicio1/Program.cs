@@ -51,7 +51,7 @@
             Console.WriteLine("maximo{0} " ,numeroMaximo);
             Console.WriteLine("minimo{0} ", numeroMinimo);
             Console.WriteLine("maximo{0} ", promedio);
-            */
+           
 
 
 

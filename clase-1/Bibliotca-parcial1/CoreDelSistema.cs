@@ -14,6 +14,7 @@ namespace Bibliotca_parcial1
         #region ATRIBUTOS     
         static List<Viaje> viajes;     
         static List<Empleado> empleados;
+        static List<Ciudad> ciudades;
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
@@ -21,13 +22,41 @@ namespace Bibliotca_parcial1
         {          
             viajes = new List<Viaje>();          
             empleados = new List<Empleado>();
+            ciudades = new List<Ciudad>();
+           
 
+
+            CargarClaseCiudades();
             CargarViajes();           
             CargarEmpleados();
         }
         #endregion CONSTRUCTORES
-        
+
         #region CARGA FORZADA
+       private static void CargarClaseCiudades()
+       {
+            //sudamerica
+            ciudades.Add(new(EDestinos.Montevideo, "Montevideo", 0));
+            ciudades.Add(new(EDestinos.Ushuaia, "Ushuaia", 0));
+            ciudades.Add(new(EDestinos.Recife, "Recife", 0));
+            ciudades.Add(new(EDestinos.Santiago, "Santiago", 0));
+            ciudades.Add(new(EDestinos.Lima, "Lima", 0));
+            ciudades.Add(new(EDestinos.IslaDePascua, "Isla De Pascua", 0));
+            ciudades.Add(new(EDestinos.IslaGalápagos, "IslaGalápagos", 0));
+            ciudades.Add(new(EDestinos.PuertoMadryn, "Puerto Madryn", 0));
+            ciudades.Add(new(EDestinos.RíodeJaneiro, "Ríode Janeiro", 0));
+            ciudades.Add(new(EDestinos.Cartagena, "Cartagena", 0));
+
+            //norteamerica
+            ciudades.Add(new(EDestinos.LaHabana, "La Habana", 1));
+            ciudades.Add(new(EDestinos.Venecia, "Venecia", 1));
+            ciudades.Add(new(EDestinos.Acapulco, "Acapulco", 1));
+            ciudades.Add(new(EDestinos.Miami, "Miami", 1));
+            ciudades.Add(new(EDestinos.NuevaYork, "Nueva York", 1));
+            ciudades.Add(new(EDestinos.Bangkok, "Bangkok", 1));
+            ciudades.Add(new(EDestinos.Taipei, "Taipei", 1));
+            ciudades.Add(new(EDestinos.Atenas, "Atenas", 1));
+        }
         private static void CargarEmpleados()
         {
             empleados.Add(new("dieguito ", "boca ", 34, "ab", "ab", viajes));
@@ -42,14 +71,14 @@ namespace Bibliotca_parcial1
         private static void CargarViajes()
         {
 
-
+            //creo primer viaje
             viajes.Add(new(
 
                             new Barco("alfa123", "el destructor", 5, 1, 1, 2000, 250, false),
 
-                             EDestinos.Miami,
+                            ciudades[1],
 
-                            EDestinos.Montevideo,
+                            ciudades[12],
 
                             new DateTime(2022, 9, 10)
 
@@ -102,9 +131,9 @@ namespace Bibliotca_parcial1
 
                            new Barco("beta", "sin descenso", 2, 3, 0, 6000, 500, true),
 
-                            EDestinos.Venecia,
+                            ciudades[4],
 
-                           EDestinos.NuevaYork,
+                           ciudades[6],
 
                            new DateTime(2023, 10, 10)
 

@@ -85,7 +85,7 @@ namespace clase8_biblio
         {
             return this.GetHashCode();
         }
-         */
+       
         public override string ToString()
         {
             return this.Mostrar();

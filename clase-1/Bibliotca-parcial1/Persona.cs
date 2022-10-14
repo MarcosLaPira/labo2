@@ -1,4 +1,6 @@
-﻿namespace Bibliotca_parcial1
+﻿using System.Text;
+
+namespace Bibliotca_parcial1
 {
     public abstract class Persona
     {
@@ -23,7 +25,20 @@
 
         #endregion PROPIEDADES
 
+        
+        public virtual string MostrarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine($"Nombre es: {this.nombre}");
+            sb.AppendLine($"Apellido es: {this.apellido}");
+            sb.AppendLine($"Edad es: {this.edad}");
+            return sb.ToString();
+        }
+        public override string ToString()
+        {
+            return MostrarDatos();
+        }
 
 
     }
