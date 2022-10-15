@@ -17,7 +17,7 @@ namespace Bibliotca_parcial1
         #region CONSTRUCTORES
       
         
-        public Pasajero(string nombre, string apellido,int edad, Pasaporte pasaporte, EClasePasajero clase/*, ClaseAViajar claseAViajar*/) : this(nombre, apellido, edad)
+        public Pasajero(string nombre, string apellido,int edad, Pasaporte pasaporte, EClasePasajero clase/*, ClaseAViajar claseAViajar*/) : base(nombre, apellido, edad)
         {
             this.pasaporte = pasaporte;
             this.clase = clase; 

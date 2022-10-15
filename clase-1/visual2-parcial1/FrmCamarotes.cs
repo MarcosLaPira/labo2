@@ -17,23 +17,12 @@ namespace visual2_parcial1
        //// List<Camarote> auxCamarotes;
         //  int indiceViaje;
         Viaje viaje;
-        private FrmCamarotes()
+       
+         public FrmCamarotes(Viaje viaje)
         {
-            //viaje = new Viaje();
-           // auxCamarotes = new List<Camarote>();
             InitializeComponent();
-            
-            
-        }
-        /*
-        public FrmCamarotes(int viaje):this()
-        {
-            this.indiceViaje = viaje;
-        }
-        */
-         public FrmCamarotes(Viaje viaje):this()
-        {
             this.viaje =  viaje;
+
             ActualizarListaCamarotes();
         }
         /*
@@ -56,13 +45,22 @@ namespace visual2_parcial1
         {
 
             ///////////////////
-            List<Camarote> aux = new List<Camarote>();
-             aux =  this.viaje.Barco.ListCamarotes;//obtengo lisat de camarotes
+            List<Camarote> aux = new List<Camarote>();//instancio lista de camarotes
+             aux =  this.viaje.Barco.ListCamarotes;//obtengo lisat de camarotes de la base de datos
+            string claseCamarote;
                  
                        
             foreach (Camarote camarote in aux)
-            {                      
-                dtgCamarotes.Rows.Add(camarote.IdCamarote.ToString(), camarote.TipoDeClaseCamarote.ToString(), camarote.ContadorDelCamarote.ToString());                   
+            {
+                if (camarote.TipoDeClaseCamarote == true)//evaluo si el camarote es premium
+                {
+                    claseCamarote = "Premium";
+                }
+                else
+                {
+                    claseCamarote = "Turista";
+                }
+                dtgCamarotes.Rows.Add(camarote.IdCamarote.ToString(), claseCamarote.ToString(), camarote.ContadorDelCamarote.ToString());                   
             }
 
                 

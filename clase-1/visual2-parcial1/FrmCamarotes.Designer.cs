@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.dtgCamarotes = new System.Windows.Forms.DataGridView();
-            this.lblMensaje = new System.Windows.Forms.Label();
             this.idCamarote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaTipoClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidadDePersonas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMensaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCamarotes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,23 +43,14 @@
             this.idCamarote,
             this.ColumnaTipoClase,
             this.ColumnaCantidadDePersonas});
-            this.dtgCamarotes.Location = new System.Drawing.Point(12, 93);
+            this.dtgCamarotes.Location = new System.Drawing.Point(65, 84);
             this.dtgCamarotes.Name = "dtgCamarotes";
             this.dtgCamarotes.ReadOnly = true;
             this.dtgCamarotes.RowHeadersWidth = 51;
             this.dtgCamarotes.RowTemplate.Height = 29;
-            this.dtgCamarotes.Size = new System.Drawing.Size(531, 233);
+            this.dtgCamarotes.Size = new System.Drawing.Size(675, 298);
             this.dtgCamarotes.TabIndex = 0;
             this.dtgCamarotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // lblMensaje
-            // 
-            this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(12, 9);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(167, 20);
-            this.lblMensaje.TabIndex = 1;
-            this.lblMensaje.Text = "Seleccione un camarote";
             // 
             // idCamarote
             // 
@@ -84,6 +75,15 @@
             this.ColumnaCantidadDePersonas.Name = "ColumnaCantidadDePersonas";
             this.ColumnaCantidadDePersonas.ReadOnly = true;
             this.ColumnaCantidadDePersonas.Width = 125;
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.Location = new System.Drawing.Point(12, 9);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(167, 20);
+            this.lblMensaje.TabIndex = 1;
+            this.lblMensaje.Text = "Seleccione un camarote";
             // 
             // FrmCamarotes
             // 

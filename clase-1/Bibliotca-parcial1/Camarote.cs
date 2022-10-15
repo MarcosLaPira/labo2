@@ -7,34 +7,22 @@
         private int idCamarote;
         private bool tipoDeClaseCamarote; //true == premium
         private bool camaroteLleno; // true == lleno
-        static int capacidadMaximaCamarote;
+        private int capacidadMaximaCamarote;
         private int contadorDelCamarote;
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
-        /// <summary>
-        /// inicializo la capacidad maxima del camarote y el conteador
-        /// </summary>
-        static Camarote()
-        {
-            capacidadMaximaCamarote = 4;
-            
-        }
-
-        private Camarote()
+       
+       
+        public Camarote(bool camaroteLleno, int idCamarote)
         {
             this.pasajerosDelCamarote = new List<Pasajero>();
-            /*
-            this.camaroteLleno = false;
-            this.tipoDeClaseCamarote = false;
-            */
-        }
-        public Camarote(bool estadoDelCamarote, int idCamarote):this()
-        {
-         
-            this.camaroteLleno = estadoDelCamarote;
+
             this.idCamarote = idCamarote;
-         
+            this.camaroteLleno = camaroteLleno;
+            this.capacidadMaximaCamarote = 4;
+            this.contadorDelCamarote = 0;
+
         }
         /*
         public Camarote( bool estadoDelCamarote, int idCamarote) : this (estadoDelCamarote,idCamarote)
@@ -54,7 +42,6 @@
         #endregion PROPIEDADES
 
         #region METODOS
-
         /// <summary>
         /// Agrego un pasajero al camarote 
         /// </summary>
@@ -65,7 +52,7 @@
             bool retorno = false;
             if (pasajero is not null )
             {
-                if (contadorDelCamarote < capacidadMaximaCamarote)
+                if (this.contadorDelCamarote < this.capacidadMaximaCamarote && !this.camaroteLleno)
                 {
                     this.pasajerosDelCamarote.Add(pasajero);//agrego pasajero al camarote
                     contadorDelCamarote++;
@@ -73,7 +60,7 @@
                 }
                 else
                 {
-                    this.camaroteLleno = true;//seteo camarote lleno
+                    this.camaroteLleno = true;//seteo camarote en lleno
                 }
             }
 

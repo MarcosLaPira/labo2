@@ -71,10 +71,10 @@ namespace Bibliotca_parcial1
         private static void CargarViajes()
         {
 
-            //creo primer viaje
+            //creo primer viaje. no esta en puerto
             viajes.Add(new(
 
-                            new Barco("alfa123", "el destructor", 5, 1, 1, 2000, 250, false),
+                            new Barco("alfa123", "el destructor", 50, 1, 1, 2000, 250, true),
 
                             ciudades[1],
 

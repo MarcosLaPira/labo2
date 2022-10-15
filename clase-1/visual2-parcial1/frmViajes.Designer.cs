@@ -49,7 +49,7 @@
             this.dtgViajes.Name = "dtgViajes";
             this.dtgViajes.RowHeadersWidth = 51;
             this.dtgViajes.RowTemplate.Height = 29;
-            this.dtgViajes.Size = new System.Drawing.Size(512, 257);
+            this.dtgViajes.Size = new System.Drawing.Size(602, 306);
             this.dtgViajes.TabIndex = 0;
             this.dtgViajes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgViajes_CellContentClick);
             // 

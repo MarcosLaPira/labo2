@@ -166,7 +166,7 @@ namespace Bibliotca_parcial1
         public bool AgregarPasajeroCamaroteVacioPremium(Pasajero pasajero)
         {
             bool retorno = false;
-            if (pasajero is not null && this.contadorDePasajeros < barco.CapacidadDePersonas && barco.BarcoEnPuerto == true)
+            if (pasajero is not null && this.contadorDePasajeros < barco.CapacidadDePersonas )////////acaaaaaaaaaaa
             {
                 if (pasajero.Clase == EClasePasajero.Premium)//busco solo en camarotes premium
                 {

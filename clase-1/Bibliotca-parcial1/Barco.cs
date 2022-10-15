@@ -37,19 +37,11 @@ namespace Bibliotca_parcial1
         /// <param name="estadoDelBarco"></param>
 
 
-        private Barco()
-        {
-            this.listCamarotes = new List<Camarote>();
-            this.matricula = "";
-            this.nombre = "";
-        }
-
-
         public Barco(string matricula, string nombre, int cantidadDeCamarotes, int cantidadDeSalones, 
-            int cantidadDeCasinos, float capacidadDeBodega, int capacidadDePersonas, bool estadoDelBarco):this()
+            int cantidadDeCasinos, float capacidadDeBodega, int capacidadDePersonas, bool estadoDelBarco)
         {
+            
 
-            //this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//defino cuantos camarotes tengo
             this.matricula = matricula;
             this.nombre = nombre;
             this.cantidadDeCamarotes = cantidadDeCamarotes;
@@ -58,6 +50,8 @@ namespace Bibliotca_parcial1
             this.capacidadDeBodega = capacidadDeBodega;
             this.capacidadDePersonas = capacidadDePersonas;
             this.barcoEnPuerto = estadoDelBarco;
+
+            this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//defino cuantos camarotes tengo
 
             administradorCamarotesList();
         }
@@ -133,24 +127,14 @@ namespace Bibliotca_parcial1
 
         #region METODOS
 
-        /// <summary>
-        /// setea los id de los camaraotes y setea la cantidad de camarotes que seran premium
-        /// </summary>
-
-        private void CreadorCamarotes()
-        {
-            for (int i = 0; i < this.cantidadDeCamarotes; i++)
-            {
-                this.listCamarotes.Add(new Camarote(false, i));
-            }
-        }
+    
         private void administradorCamarotesList()
         {
-           CreadorCamarotes();//creo los camarotes por default
 
             for (int i = 0; i < this.cantidadDeCamarotes; i++)
-            {              
-              
+            {
+                this.listCamarotes.Add(new Camarote(false, i));//setea todos en vacios
+
                 if (i < CantidadDeCamarotesPremium)
                 {
                     this.listCamarotes[i].TipoDeClaseCamarote = true;//seteo el 35% de los camarotes en clase premium
