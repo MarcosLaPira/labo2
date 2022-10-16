@@ -9,11 +9,12 @@
         private bool camaroteLleno; // true == lleno
         private int capacidadMaximaCamarote;
         private int contadorDelCamarote;
+      
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
-       
-       
+
+
         public Camarote(bool camaroteLleno, int idCamarote)
         {
             this.pasajerosDelCamarote = new List<Pasajero>();
@@ -34,11 +35,26 @@
         #endregion CONSTRUCTORES
 
         #region PROPIEDADES
-        public List<Pasajero> PasajerosDElCamarote { get => pasajerosDelCamarote;  }
-        public bool CamaroteLleno { get => camaroteLleno; set => camaroteLleno = value; }
+        /// <summary>
+        /// retorna lisat de pasajeros del camarote
+        /// </summary>
+        public List<Pasajero> PasajerosDElCamarote { get => pasajerosDelCamarote;}
+        /// <summary>
+        /// retorna true si el camarote esta lleno
+        /// </summary>
+        public bool CamaroteLleno { get => camaroteLleno; set => camaroteLleno = value;}
+        /// <summary>
+        /// retorna id camarote
+        /// </summary>
         public int IdCamarote { get => idCamarote; set => idCamarote = value; }
+        /// <summary>
+        /// retorna tipo de clase de camarote true= premium
+        /// </summary>
         public bool TipoDeClaseCamarote { get => tipoDeClaseCamarote; set => tipoDeClaseCamarote = value; }
+        //retorna cantidad de personas del camarote
         public  int ContadorDelCamarote { get => contadorDelCamarote; }
+
+      
         #endregion PROPIEDADES
 
         #region METODOS

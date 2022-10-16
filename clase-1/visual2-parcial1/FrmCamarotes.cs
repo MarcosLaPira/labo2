@@ -41,7 +41,7 @@ namespace visual2_parcial1
             }
         }
         */
-        public void ActualizarListaCamarotes()
+        private void ActualizarListaCamarotes()
         {
 
             ///////////////////

@@ -30,6 +30,7 @@
         {
             this.btnAgregarPasajero = new System.Windows.Forms.Button();
             this.btnSeleccionarViaje = new System.Windows.Forms.Button();
+            this.btnVisualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAgregarPasajero
@@ -52,11 +53,22 @@
             this.btnSeleccionarViaje.UseVisualStyleBackColor = true;
             this.btnSeleccionarViaje.Click += new System.EventHandler(this.btnSeleccionarViaje_Click);
             // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Location = new System.Drawing.Point(109, 64);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(134, 71);
+            this.btnVisualizar.TabIndex = 2;
+            this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.UseVisualStyleBackColor = true;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnSeleccionarViaje);
             this.Controls.Add(this.btnAgregarPasajero);
             this.Name = "FrmMenu";
@@ -69,5 +81,6 @@
 
         private Button btnAgregarPasajero;
         private Button btnSeleccionarViaje;
+        private Button btnVisualizar;
     }
 }

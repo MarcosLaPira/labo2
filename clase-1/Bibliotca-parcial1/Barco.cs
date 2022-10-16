@@ -17,7 +17,10 @@ namespace Bibliotca_parcial1
         private int capacidadDePersonas;
         private bool barcoEnPuerto;
 
-       
+        private int camarotesPremiumDisponibles;
+        private int camarotesTuristaDisponibles;
+
+
         List<Camarote> listCamarotes ;
 
 
@@ -121,13 +124,63 @@ namespace Bibliotca_parcial1
                 return totalCamarotes - camarotesPremium;
             }
         }
+        /// <summary>
+        /// retorna la cantidad de camarotes turista vacios 
+        /// </summary>
+        public int CantidadCamarotesTuristaVacios
+        {
+            get
+            {
 
+                int totalDeCamarotesTurista;
+                int contadorCamarotesTuristaVacios;
+
+                totalDeCamarotesTurista = CantidadDeCamarotesTurista;
+                contadorCamarotesTuristaVacios = 0;
+
+                foreach (var item in this.listCamarotes)//recorro lista de camrotes
+                {
+                    if (item.TipoDeClaseCamarote == false && item.ContadorDelCamarote == 0 )//verifico que sea clase turista y que no hay nadie
+                    { 
+                        contadorCamarotesTuristaVacios++;
+                    }
+                }
+
+                return  contadorCamarotesTuristaVacios;
+            }
+        }
+
+        /// <summary>
+        /// retorna la cantidad de camarotes premium vacios
+        /// </summary>
+        public int CantidadCamarotesPremiumVacios
+        {
+            get
+            {
+
+                int totalDeCamarotesPremium;
+                int contadorCamarotesPremiumVacios;
+
+                totalDeCamarotesPremium = CantidadDeCamarotesPremium;
+                contadorCamarotesPremiumVacios = 0;
+
+                foreach (var item in this.listCamarotes)//recorro lista de camrotes
+                {
+                    if (item.TipoDeClaseCamarote == true && item.ContadorDelCamarote == 0)//verifico que sea clase turista y que no hay nadie
+                    {
+                        contadorCamarotesPremiumVacios++;
+                    }
+                }
+
+                return  contadorCamarotesPremiumVacios;
+            }
+        }
 
         #endregion PROPIEDADES
 
         #region METODOS
 
-    
+
         private void administradorCamarotesList()
         {
 
