@@ -59,7 +59,7 @@ namespace visual2_parcial1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dtgSubmenuViajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dtgSubmenuViajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicion;
 
@@ -75,13 +75,13 @@ namespace visual2_parcial1
             }
 
 
-           
-              
-
-
-             
-            
+        }
+        
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            //
 
         }
+        
     }
 }

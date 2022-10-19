@@ -41,6 +41,10 @@ namespace clase8_biblio
             return sb.ToString();
         }
 
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
         public static bool operator == ( Vehiculo v1, Vehiculo v2)
         {
             bool retorno = false;
@@ -86,10 +90,7 @@ namespace clase8_biblio
             return this.GetHashCode();
         }
        
-        public override string ToString()
-        {
-            return this.Mostrar();
-        }
+      
 
         public static int OrdenarVehiculosPorPatente(Vehiculo v1, Vehiculo v2)
         {

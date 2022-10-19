@@ -129,7 +129,7 @@ namespace Bibliotca_parcial1
 
             viajes.Add(new(
 
-                           new Barco("beta", "sin descenso", 2, 3, 0, 6000, 500, true),
+                           new Barco("beta", "sin descenso", 200, 3, 0, 6000, 500, true),
 
                             ciudades[4],
 

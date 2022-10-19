@@ -5,10 +5,12 @@ namespace Bibliotca_parcial1
     public abstract class Persona
     {
         #region ATRIBUTOS 
-        protected string nombre;
-        protected string apellido;
+        private string nombre;
+        private string apellido;
         protected int edad;
-    
+
+      
+
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
@@ -22,11 +24,12 @@ namespace Bibliotca_parcial1
 
         #region PROPIEDADES
 
-
+          public string Nombre { get => nombre; set => nombre = value; }
+         public string Apellido { get => apellido; set => apellido = value; }
         #endregion PROPIEDADES
 
         
-        public virtual string MostrarDatos()
+        private  string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
 

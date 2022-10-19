@@ -26,8 +26,8 @@
         public string Nacionalidad { get => nacionalidad; }
         public DateTime FechaDeNacimiento { get => fechaDeNacimiento; }
         public DateTime FechaDeVencimiento { get => fechaDeVencimiento; }
-        public string Nombre { get => nombre; }
-        public string Apellido { get => apellido; }
+        //public string Nombre { get => nombre; }
+       // public string Apellido { get => apellido; }
 
         #endregion PROPIEDADES
 

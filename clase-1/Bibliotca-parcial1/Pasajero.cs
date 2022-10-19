@@ -35,6 +35,11 @@ namespace Bibliotca_parcial1
 
         #region METODOS
 
+        
+        public override string ToString()
+        {
+            return base.ToString();
+        }
         public static bool operator == (Pasajero p1, Pasajero p2)
         {
             bool retorno = false;

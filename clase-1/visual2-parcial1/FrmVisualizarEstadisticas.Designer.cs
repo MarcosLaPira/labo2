@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.dtgCamarotes = new System.Windows.Forms.DataGridView();
-            this.lblCantidadPasajeros = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblCamarotes = new System.Windows.Forms.Label();
-            this.lblFechaSalida = new System.Windows.Forms.Label();
-            this.lblEstadoCrucero = new System.Windows.Forms.Label();
-            this.lblCamarotesPremiumDispo = new System.Windows.Forms.Label();
-            this.txtCantidadPasajeros = new System.Windows.Forms.TextBox();
-            this.txtFechaSalida = new System.Windows.Forms.TextBox();
-            this.txtEstadoCrucero = new System.Windows.Forms.TextBox();
-            this.txtCamarotesPremiumDisponibles = new System.Windows.Forms.TextBox();
-            this.lblCamarotesTuristaDispo = new System.Windows.Forms.Label();
-            this.txtCamarotesTuristaDispo = new System.Windows.Forms.TextBox();
-            this.btnListaPasajeros = new System.Windows.Forms.Button();
             this.columnaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidadPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCantidadPasajeros = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCamarotesTuristaDispo = new System.Windows.Forms.TextBox();
+            this.lblCamarotesTuristaDispo = new System.Windows.Forms.Label();
+            this.txtCamarotesPremiumDisponibles = new System.Windows.Forms.TextBox();
+            this.txtEstadoCrucero = new System.Windows.Forms.TextBox();
+            this.txtFechaSalida = new System.Windows.Forms.TextBox();
+            this.txtCantidadPasajeros = new System.Windows.Forms.TextBox();
+            this.lblCamarotesPremiumDispo = new System.Windows.Forms.Label();
+            this.lblEstadoCrucero = new System.Windows.Forms.Label();
+            this.lblFechaSalida = new System.Windows.Forms.Label();
+            this.lblCamarotes = new System.Windows.Forms.Label();
+            this.btnListaPasajeros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCamarotes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,31 @@
             this.dtgCamarotes.RowTemplate.Height = 29;
             this.dtgCamarotes.Size = new System.Drawing.Size(426, 229);
             this.dtgCamarotes.TabIndex = 0;
+            this.dtgCamarotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCamarotes_CellContentClick);
+            // 
+            // columnaId
+            // 
+            this.columnaId.HeaderText = "Id";
+            this.columnaId.MinimumWidth = 6;
+            this.columnaId.Name = "columnaId";
+            this.columnaId.ReadOnly = true;
+            this.columnaId.Width = 125;
+            // 
+            // ColumnaClase
+            // 
+            this.ColumnaClase.HeaderText = "Clase";
+            this.ColumnaClase.MinimumWidth = 6;
+            this.ColumnaClase.Name = "ColumnaClase";
+            this.ColumnaClase.ReadOnly = true;
+            this.ColumnaClase.Width = 125;
+            // 
+            // ColumnaCantidadPasajero
+            // 
+            this.ColumnaCantidadPasajero.HeaderText = "Cantidad Pasajeros";
+            this.ColumnaCantidadPasajero.MinimumWidth = 6;
+            this.ColumnaCantidadPasajero.Name = "ColumnaCantidadPasajero";
+            this.ColumnaCantidadPasajero.ReadOnly = true;
+            this.ColumnaCantidadPasajero.Width = 125;
             // 
             // lblCantidadPasajeros
             // 
@@ -91,73 +116,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // lblCamarotes
+            // txtCamarotesTuristaDispo
             // 
-            this.lblCamarotes.AutoSize = true;
-            this.lblCamarotes.Location = new System.Drawing.Point(500, 12);
-            this.lblCamarotes.Name = "lblCamarotes";
-            this.lblCamarotes.Size = new System.Drawing.Size(80, 20);
-            this.lblCamarotes.TabIndex = 3;
-            this.lblCamarotes.Text = "Camarotes";
-            // 
-            // lblFechaSalida
-            // 
-            this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Location = new System.Drawing.Point(15, 97);
-            this.lblFechaSalida.Name = "lblFechaSalida";
-            this.lblFechaSalida.Size = new System.Drawing.Size(92, 20);
-            this.lblFechaSalida.TabIndex = 2;
-            this.lblFechaSalida.Text = "Fecha Salida";
-            // 
-            // lblEstadoCrucero
-            // 
-            this.lblEstadoCrucero.AutoSize = true;
-            this.lblEstadoCrucero.Location = new System.Drawing.Point(15, 179);
-            this.lblEstadoCrucero.Name = "lblEstadoCrucero";
-            this.lblEstadoCrucero.Size = new System.Drawing.Size(109, 20);
-            this.lblEstadoCrucero.TabIndex = 3;
-            this.lblEstadoCrucero.Text = "Estado Crucero";
-            // 
-            // lblCamarotesPremiumDispo
-            // 
-            this.lblCamarotesPremiumDispo.AutoSize = true;
-            this.lblCamarotesPremiumDispo.Location = new System.Drawing.Point(15, 260);
-            this.lblCamarotesPremiumDispo.Name = "lblCamarotesPremiumDispo";
-            this.lblCamarotesPremiumDispo.Size = new System.Drawing.Size(225, 20);
-            this.lblCamarotesPremiumDispo.TabIndex = 4;
-            this.lblCamarotesPremiumDispo.Text = "Camarotes Premium Disponibles";
-            // 
-            // txtCantidadPasajeros
-            // 
-            this.txtCantidadPasajeros.Location = new System.Drawing.Point(15, 54);
-            this.txtCantidadPasajeros.Name = "txtCantidadPasajeros";
-            this.txtCantidadPasajeros.ReadOnly = true;
-            this.txtCantidadPasajeros.Size = new System.Drawing.Size(125, 27);
-            this.txtCantidadPasajeros.TabIndex = 5;
-            // 
-            // txtFechaSalida
-            // 
-            this.txtFechaSalida.Location = new System.Drawing.Point(15, 131);
-            this.txtFechaSalida.Name = "txtFechaSalida";
-            this.txtFechaSalida.ReadOnly = true;
-            this.txtFechaSalida.Size = new System.Drawing.Size(125, 27);
-            this.txtFechaSalida.TabIndex = 6;
-            // 
-            // txtEstadoCrucero
-            // 
-            this.txtEstadoCrucero.Location = new System.Drawing.Point(15, 214);
-            this.txtEstadoCrucero.Name = "txtEstadoCrucero";
-            this.txtEstadoCrucero.ReadOnly = true;
-            this.txtEstadoCrucero.Size = new System.Drawing.Size(125, 27);
-            this.txtEstadoCrucero.TabIndex = 7;
-            // 
-            // txtCamarotesPremiumDisponibles
-            // 
-            this.txtCamarotesPremiumDisponibles.Location = new System.Drawing.Point(15, 295);
-            this.txtCamarotesPremiumDisponibles.Name = "txtCamarotesPremiumDisponibles";
-            this.txtCamarotesPremiumDisponibles.ReadOnly = true;
-            this.txtCamarotesPremiumDisponibles.Size = new System.Drawing.Size(125, 27);
-            this.txtCamarotesPremiumDisponibles.TabIndex = 8;
+            this.txtCamarotesTuristaDispo.Location = new System.Drawing.Point(15, 382);
+            this.txtCamarotesTuristaDispo.Name = "txtCamarotesTuristaDispo";
+            this.txtCamarotesTuristaDispo.ReadOnly = true;
+            this.txtCamarotesTuristaDispo.Size = new System.Drawing.Size(125, 27);
+            this.txtCamarotesTuristaDispo.TabIndex = 9;
             // 
             // lblCamarotesTuristaDispo
             // 
@@ -168,13 +133,73 @@
             this.lblCamarotesTuristaDispo.TabIndex = 5;
             this.lblCamarotesTuristaDispo.Text = "Camarotes Turista Disponibles";
             // 
-            // txtCamarotesTuristaDispo
+            // txtCamarotesPremiumDisponibles
             // 
-            this.txtCamarotesTuristaDispo.Location = new System.Drawing.Point(15, 382);
-            this.txtCamarotesTuristaDispo.Name = "txtCamarotesTuristaDispo";
-            this.txtCamarotesTuristaDispo.ReadOnly = true;
-            this.txtCamarotesTuristaDispo.Size = new System.Drawing.Size(125, 27);
-            this.txtCamarotesTuristaDispo.TabIndex = 9;
+            this.txtCamarotesPremiumDisponibles.Location = new System.Drawing.Point(15, 295);
+            this.txtCamarotesPremiumDisponibles.Name = "txtCamarotesPremiumDisponibles";
+            this.txtCamarotesPremiumDisponibles.ReadOnly = true;
+            this.txtCamarotesPremiumDisponibles.Size = new System.Drawing.Size(125, 27);
+            this.txtCamarotesPremiumDisponibles.TabIndex = 8;
+            // 
+            // txtEstadoCrucero
+            // 
+            this.txtEstadoCrucero.Location = new System.Drawing.Point(15, 214);
+            this.txtEstadoCrucero.Name = "txtEstadoCrucero";
+            this.txtEstadoCrucero.ReadOnly = true;
+            this.txtEstadoCrucero.Size = new System.Drawing.Size(125, 27);
+            this.txtEstadoCrucero.TabIndex = 7;
+            // 
+            // txtFechaSalida
+            // 
+            this.txtFechaSalida.Location = new System.Drawing.Point(15, 131);
+            this.txtFechaSalida.Name = "txtFechaSalida";
+            this.txtFechaSalida.ReadOnly = true;
+            this.txtFechaSalida.Size = new System.Drawing.Size(125, 27);
+            this.txtFechaSalida.TabIndex = 6;
+            // 
+            // txtCantidadPasajeros
+            // 
+            this.txtCantidadPasajeros.Location = new System.Drawing.Point(15, 54);
+            this.txtCantidadPasajeros.Name = "txtCantidadPasajeros";
+            this.txtCantidadPasajeros.ReadOnly = true;
+            this.txtCantidadPasajeros.Size = new System.Drawing.Size(125, 27);
+            this.txtCantidadPasajeros.TabIndex = 5;
+            // 
+            // lblCamarotesPremiumDispo
+            // 
+            this.lblCamarotesPremiumDispo.AutoSize = true;
+            this.lblCamarotesPremiumDispo.Location = new System.Drawing.Point(15, 260);
+            this.lblCamarotesPremiumDispo.Name = "lblCamarotesPremiumDispo";
+            this.lblCamarotesPremiumDispo.Size = new System.Drawing.Size(225, 20);
+            this.lblCamarotesPremiumDispo.TabIndex = 4;
+            this.lblCamarotesPremiumDispo.Text = "Camarotes Premium Disponibles";
+            // 
+            // lblEstadoCrucero
+            // 
+            this.lblEstadoCrucero.AutoSize = true;
+            this.lblEstadoCrucero.Location = new System.Drawing.Point(15, 179);
+            this.lblEstadoCrucero.Name = "lblEstadoCrucero";
+            this.lblEstadoCrucero.Size = new System.Drawing.Size(109, 20);
+            this.lblEstadoCrucero.TabIndex = 3;
+            this.lblEstadoCrucero.Text = "Estado Crucero";
+            // 
+            // lblFechaSalida
+            // 
+            this.lblFechaSalida.AutoSize = true;
+            this.lblFechaSalida.Location = new System.Drawing.Point(15, 97);
+            this.lblFechaSalida.Name = "lblFechaSalida";
+            this.lblFechaSalida.Size = new System.Drawing.Size(92, 20);
+            this.lblFechaSalida.TabIndex = 2;
+            this.lblFechaSalida.Text = "Fecha Salida";
+            // 
+            // lblCamarotes
+            // 
+            this.lblCamarotes.AutoSize = true;
+            this.lblCamarotes.Location = new System.Drawing.Point(500, 12);
+            this.lblCamarotes.Name = "lblCamarotes";
+            this.lblCamarotes.Size = new System.Drawing.Size(80, 20);
+            this.lblCamarotes.TabIndex = 3;
+            this.lblCamarotes.Text = "Camarotes";
             // 
             // btnListaPasajeros
             // 
@@ -184,30 +209,7 @@
             this.btnListaPasajeros.TabIndex = 4;
             this.btnListaPasajeros.Text = "Ver lista detellada Pasajeros";
             this.btnListaPasajeros.UseVisualStyleBackColor = true;
-            // 
-            // columnaId
-            // 
-            this.columnaId.HeaderText = "Id";
-            this.columnaId.MinimumWidth = 6;
-            this.columnaId.Name = "columnaId";
-            this.columnaId.ReadOnly = true;
-            this.columnaId.Width = 125;
-            // 
-            // ColumnaClase
-            // 
-            this.ColumnaClase.HeaderText = "Clase";
-            this.ColumnaClase.MinimumWidth = 6;
-            this.ColumnaClase.Name = "ColumnaClase";
-            this.ColumnaClase.ReadOnly = true;
-            this.ColumnaClase.Width = 125;
-            // 
-            // ColumnaCantidadPasajero
-            // 
-            this.ColumnaCantidadPasajero.HeaderText = "Cantidad Pasajeros";
-            this.ColumnaCantidadPasajero.MinimumWidth = 6;
-            this.ColumnaCantidadPasajero.Name = "ColumnaCantidadPasajero";
-            this.ColumnaCantidadPasajero.ReadOnly = true;
-            this.ColumnaCantidadPasajero.Width = 125;
+            this.btnListaPasajeros.Click += new System.EventHandler(this.btnListaPasajeros_Click);
             // 
             // FrmVisualizarEstadisticas
             // 

@@ -33,6 +33,8 @@
             this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaFechaSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaEstadoCrucero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSubmenuViajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,17 +86,39 @@
             this.ColumnaEstadoCrucero.ReadOnly = true;
             this.ColumnaEstadoCrucero.Width = 125;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(694, 409);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(94, 29);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            // 
             // FrmSubMenuVizualizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dtgSubmenuViajes);
             this.Name = "FrmSubMenuVizualizacion";
             this.Text = "FrmSubMenuVizualizacion";
             this.Load += new System.EventHandler(this.FrmSubMenuVizualizacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgSubmenuViajes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -105,5 +129,7 @@
         private DataGridViewTextBoxColumn ColumnaDestino;
         private DataGridViewTextBoxColumn ColumnaFechaSalida;
         private DataGridViewTextBoxColumn ColumnaEstadoCrucero;
+        private Button btnVolver;
+        private Label label1;
     }
 }
