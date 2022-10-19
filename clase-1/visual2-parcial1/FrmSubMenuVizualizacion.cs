@@ -14,10 +14,12 @@ namespace visual2_parcial1
     public partial class FrmSubMenuVizualizacion : Form
     {
          List<Viaje> viajes;
-        public FrmSubMenuVizualizacion()
+       // FrmMenu menuPrincipal;////
+        public FrmSubMenuVizualizacion(/*FrmMenu menuPrincipal*/)
         {
             InitializeComponent();
             viajes = new List<Viaje>();
+           // this.menuPrincipal = menuPrincipal;///
         }
 
         private void FrmSubMenuVizualizacion_Load(object sender, EventArgs e)
@@ -68,10 +70,16 @@ namespace visual2_parcial1
 
             if (auxViaje is not null)
             {
-                FrmVisualizarEstadisticas formVizualizacion = new FrmVisualizarEstadisticas(auxViaje);              
+                FrmVisualizarEstadisticas formVizualizacion = new FrmVisualizarEstadisticas(auxViaje);
                 this.Hide();
-                formVizualizacion.Show();
-               
+                if (formVizualizacion.ShowDialog() == DialogResult.Cancel)
+                {
+                    this.Show();
+                }
+                //FrmVisualizarEstadisticas formVizualizacion = new FrmVisualizarEstadisticas(auxViaje);
+                // this.Hide();
+                // formVizualizacion.Show();
+
             }
 
 
@@ -79,9 +87,12 @@ namespace visual2_parcial1
         
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            //
+            // menuPrincipal.Show();//
+            this.DialogResult = DialogResult.Cancel;
+
+
 
         }
-        
+
     }
 }

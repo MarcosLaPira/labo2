@@ -86,22 +86,40 @@ namespace visual2_parcial1
             if (auxCamarote is not null)
             {
                 FrmVisualizarCamarote visualizarCamarote = new FrmVisualizarCamarote(auxCamarote);
-
-       
+                this.Hide();
+                if (visualizarCamarote.ShowDialog() == DialogResult.Cancel)
+                {
+                    this.Show();
+                }
+                /*
+                FrmVisualizarCamarote visualizarCamarote = new FrmVisualizarCamarote(auxCamarote);      
                 this.Hide();
                 visualizarCamarote.Show();
+                */
 
             }
         }
 
         private void btnListaPasajeros_Click(object sender, EventArgs e)
         {
+            /*
             FrmVisualizarPasajeros listaPasajeros = new FrmVisualizarPasajeros(this.viaje);
             this.Hide();
             listaPasajeros.Show();
+            */
+            FrmVisualizarPasajeros listaPasajeros = new FrmVisualizarPasajeros(this.viaje);
+            this.Hide();
+            if (listaPasajeros.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Show();
+            }
 
-           
-           
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

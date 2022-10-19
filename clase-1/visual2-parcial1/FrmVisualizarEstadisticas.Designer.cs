@@ -45,6 +45,7 @@
             this.lblFechaSalida = new System.Windows.Forms.Label();
             this.lblCamarotes = new System.Windows.Forms.Label();
             this.btnListaPasajeros = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCamarotes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -211,11 +212,22 @@
             this.btnListaPasajeros.UseVisualStyleBackColor = true;
             this.btnListaPasajeros.Click += new System.EventHandler(this.btnListaPasajeros_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(684, 409);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(94, 29);
+            this.btnVolver.TabIndex = 5;
+            this.btnVolver.Text = "volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FrmVisualizarEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnListaPasajeros);
             this.Controls.Add(this.lblCamarotes);
             this.Controls.Add(this.groupBox1);
@@ -250,5 +262,6 @@
         private DataGridViewTextBoxColumn columnaId;
         private DataGridViewTextBoxColumn ColumnaClase;
         private DataGridViewTextBoxColumn ColumnaCantidadPasajero;
+        private Button btnVolver;
     }
 }

@@ -32,6 +32,7 @@
             this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPasajeros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,11 +75,22 @@
             this.ColumnaClase.ReadOnly = true;
             this.ColumnaClase.Width = 125;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(694, 409);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(94, 29);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FrmVisualizarPasajeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dtgPasajeros);
             this.Name = "FrmVisualizarPasajeros";
             this.Text = "FrmVisualizarPasajeros";
@@ -94,5 +106,6 @@
         private DataGridViewTextBoxColumn ColumnaApellido;
         private DataGridViewTextBoxColumn ColumnaNombre;
         private DataGridViewTextBoxColumn ColumnaClase;
+        private Button btnVolver;
     }
 }

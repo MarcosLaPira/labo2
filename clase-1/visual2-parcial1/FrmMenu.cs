@@ -47,10 +47,14 @@ namespace visual2_parcial1
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            FrmSubMenuVizualizacion FrmVisualizarViajes = new FrmSubMenuVizualizacion();
+            FrmSubMenuVizualizacion frmVisualizarViajes = new FrmSubMenuVizualizacion();
 
             this.Hide();
-            FrmVisualizarViajes.Show();
+            if (frmVisualizarViajes.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Show();
+            }
+            
         }
     }
 }

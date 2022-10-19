@@ -36,6 +36,7 @@
             this.lblCantidadPasajeros = new System.Windows.Forms.Label();
             this.lblClaseCamarote = new System.Windows.Forms.Label();
             this.lblPrueba = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPasajeros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,11 +115,22 @@
             this.lblPrueba.TabIndex = 5;
             this.lblPrueba.Text = "label1";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(655, 375);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(94, 29);
+            this.btnVolver.TabIndex = 6;
+            this.btnVolver.Text = "volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FrmVisualizarCamarote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 416);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblPrueba);
             this.Controls.Add(this.lblClaseCamarote);
             this.Controls.Add(this.lblCantidadPasajeros);
@@ -144,5 +156,6 @@
         private Label lblCantidadPasajeros;
         private Label lblClaseCamarote;
         private Label lblPrueba;
+        private Button btnVolver;
     }
 }
