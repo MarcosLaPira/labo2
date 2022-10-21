@@ -217,7 +217,7 @@ namespace Bibliotca_parcial1
             }
             return retorno;
         }
-
+        /*
         /// <summary>
         /// Agrega un pasajero a un camaorte en especifico
         /// </summary>
@@ -236,6 +236,23 @@ namespace Bibliotca_parcial1
                     contadorDePasajeros++;
                     retorno = true;
                 }
+            }
+            return retorno;
+        }
+        */
+        public bool AgregarPasajeroACamaroteEspecifico(Camarote camarote, Pasajero pasajero)
+        {
+            bool retorno = false;
+            if (pasajero is not null && camarote is not null && this.contadorDePasajeros < barco.CapacidadDePersonas)
+            {
+                if (!camarote.CamaroteLleno)
+                {
+                    camarote.AgregarPasajeroAlCamarote(pasajero);
+                    listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
+                    contadorDePasajeros++;
+                    retorno = true;
+                }
+               
             }
             return retorno;
         }

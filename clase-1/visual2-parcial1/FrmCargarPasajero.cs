@@ -13,7 +13,12 @@ namespace visual2_parcial1
 {
     public partial class FrmCargarPasajero : Form
     {
+        #region ATRIBUTOS
         Viaje viaje;
+        Pasajero? auxPasajero;///
+        #endregion ATRIBUTOS
+
+        #region CONSTRUCTORES
         public FrmCargarPasajero()//////////
         {
             InitializeComponent();
@@ -21,9 +26,13 @@ namespace visual2_parcial1
         }
         public FrmCargarPasajero(Viaje viaje):this()
         {
-            this.viaje = viaje; 
+            this.viaje = viaje;
+            auxPasajero = null;
         }
 
+        #endregion COSNTRUCTORES
+
+        #region METODOS
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
                    
@@ -66,6 +75,10 @@ namespace visual2_parcial1
                             Pasajero pasajero = new Pasajero(nombre, apellido, edad,pasaporte , clasePasajero);//creo el pasajero
                             if (pasajero is not null)
                             {
+                                auxPasajero = pasajero;
+                                this.DialogResult = DialogResult.OK;
+
+                                /*
                                 if (pasajero.Clase == EClasePasajero.Premium)
                                 {
                                     CoreDelSistema.AgregarPasajeroCamarotePremium(viaje, pasajero);
@@ -80,6 +93,7 @@ namespace visual2_parcial1
                                         
                                    }
                                 }
+                                */
                             }
                                                      
                         }                       
@@ -97,5 +111,10 @@ namespace visual2_parcial1
                 MessageBox.Show(" Campos incorrectos o invalidos ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public Pasajero GetPasajero
+        {
+            get { return auxPasajero; }
+        }
+        #endregion METODOS
     }
 }

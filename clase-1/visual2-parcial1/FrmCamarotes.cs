@@ -17,6 +17,7 @@ namespace visual2_parcial1
        //// List<Camarote> auxCamarotes;
         //  int indiceViaje;
         Viaje viaje;
+        int indiceDelCamaroteSeleccionado;
        
          public FrmCamarotes(Viaje viaje)
         {
@@ -81,11 +82,25 @@ namespace visual2_parcial1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
+            int posicion;
+
+            posicion = dtgCamarotes.CurrentRow.Index;//obtengo indice selccionado del data grid
+            Camarote auxCamarote = viaje.Barco.ListCamarotes.ElementAt(posicion);//obtengo el camarote del  indice seleccionado
+                                                                                 // Viaje auxViaje = viajes[posicion];//obtengo el viaje en el indice seleccionado           
+            if (auxCamarote is not null)
+            {
+                indiceDelCamaroteSeleccionado = posicion;
+                this.DialogResult = DialogResult.OK;//para el subMenuVizualizaciones
+            }
 
 
         }
-       
+
+        public Camarote GetCamarote
+        {
+            get { return viaje.Barco.ListCamarotes[indiceDelCamaroteSeleccionado]; }
+        }
 
     }
 }

@@ -82,6 +82,27 @@
 
             return retorno;
         }
+        /*
+        public bool AgregarPasajeroAlCamarote2(Pasajero pasajero,Camarote camarote)
+        {
+            bool retorno = false;
+            if (pasajero is not null && camarote is not null)
+            {
+                if (this.contadorDelCamarote < this.capacidadMaximaCamarote && !this.camaroteLleno)
+                {
+                    this.pasajerosDelCamarote.Add(pasajero);//agrego pasajero al camarote
+                    contadorDelCamarote++;
+                    retorno = true;
+                }
+                else
+                {
+                    this.camaroteLleno = true;//seteo camarote en lleno
+                }
+            }
+
+            return retorno;
+        }
+        */
         #endregion METODOS
 
     }
