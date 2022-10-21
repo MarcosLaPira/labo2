@@ -27,15 +27,13 @@ namespace visual2_parcial1
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
                    
-            bool flag = false;
-          
+            bool flag = false;         
             EClasePasajero clasePasajero = EClasePasajero.Turista;
             int edad;
 
             if (!string.IsNullOrEmpty(txtNombre.Text) && //validamos los campos
                 !string.IsNullOrEmpty(txtApellido.Text) && 
-                int.TryParse(txtEdad.Text,out edad)//verifico que sea un numero
-                  
+                int.TryParse(txtEdad.Text,out edad)//verifico que sea un numero                  
                 )
             {
                 if (this.rbPremium.Checked == true)//valido el tipo de pasajero 
@@ -49,15 +47,14 @@ namespace visual2_parcial1
                     { 
                         flag = true;
                         clasePasajero = EClasePasajero.Turista;
-
                     }
-                }                
+                } 
+                
                 if (flag)//entro solo si paso las validaciones anteriores
                 {
                     string nombre = txtNombre.Text;
                     string apellido = txtApellido.Text;
-                   
-
+                  
                     //  Pasaporte pasaporte1 = new Pasaporte(nombre, apellido, edad, nacionalidad, nacimiento, vencimiento);
                     FrmPasaporte frmPasaporte = new FrmPasaporte(nombre,apellido,edad);//creo la instancia del formulario pasaporte y e paso ciertos parametros para que ya aparezcan cargados
                    
@@ -69,23 +66,22 @@ namespace visual2_parcial1
                             Pasajero pasajero = new Pasajero(nombre, apellido, edad,pasaporte , clasePasajero);//creo el pasajero
                             if (pasajero is not null)
                             {
-                              //  if (pasajero.Clase == EClasePasajero.Premium)
-                               // {
-                                 //   CoreDelSistema.AgregarPasajeroCamarotePremium(viaje, pasajero);
+                                if (pasajero.Clase == EClasePasajero.Premium)
+                                {
+                                    CoreDelSistema.AgregarPasajeroCamarotePremium(viaje, pasajero);
                                     this.DialogResult = DialogResult.OK;
-                               // }
-                               // else
-                               // {
-                                  //  if (pasajero.Clase == EClasePasajero.Turista)
-                                  //  {
-                                   //    CoreDelSistema.AgregarPasajeroCamaroteTurista(viaje, pasajero);
-                                  //      this.DialogResult = DialogResult.OK;
+                                }
+                                else
+                                {
+                                   if (pasajero.Clase == EClasePasajero.Turista)
+                                   {
+                                          CoreDelSistema.AgregarPasajeroCamaroteTurista(viaje, pasajero);
+                                          this.DialogResult = DialogResult.OK;
                                         
-                                    //}
-                                //}
+                                   }
+                                }
                             }
-                          
-                            
+                                                     
                         }                       
 
                     }
@@ -93,8 +89,12 @@ namespace visual2_parcial1
                 }
                 else
                 {
-                    MessageBox.Show("Hay un errror, se debe completar todos los campos ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(" Campos incorrectos o invalidos ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show(" Campos incorrectos o invalidos ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

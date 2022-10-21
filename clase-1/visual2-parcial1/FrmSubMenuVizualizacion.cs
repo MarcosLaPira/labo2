@@ -32,6 +32,7 @@ namespace visual2_parcial1
 
             string partida;
             string destino;
+            string estadoBarco;
 
             foreach (var item in viajes)
             {
@@ -49,6 +50,15 @@ namespace visual2_parcial1
                 //mostrar solo viajes dispo
                 // if (item.Barco.BarcoEnPuerto && item.CantidadDePasajeros < item.Barco.CapacidadDePersonas)
                 //  { 
+                if (item.Barco.BarcoEnPuerto)
+                {
+                    estadoBarco = "En puerto";
+                }
+                else
+                {
+                    estadoBarco = "En viaje";
+                }
+
                 dtgSubmenuViajes.Rows.Add(partida, destino, item.FechaInicioViaje.ToString(), item.DuracionDelViaje.ToString());//, item.Barco.BarcoEnPuerto
                                                                                                                          //  }
 

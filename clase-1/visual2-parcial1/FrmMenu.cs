@@ -37,10 +37,11 @@ namespace visual2_parcial1
 
         private void btnSeleccionarViaje_Click(object sender, EventArgs e)
         {
-            frmViajes formularioViajes = new frmViajes();
-            if (formularioViajes.ShowDialog() == DialogResult.OK)
+            FrmViajes formularioViajes = new FrmViajes();
+            this.Hide();
+            if (formularioViajes.ShowDialog() == DialogResult.Cancel)
             {
-                
+                this.Show();
             }
           
         }

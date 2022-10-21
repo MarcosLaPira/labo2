@@ -1,6 +1,6 @@
 ﻿namespace visual2_parcial1
 {
-    partial class frmViajes
+    partial class FrmViajes
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,9 @@
             this.ColumnaOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaFechaSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblViajesdispo = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgViajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,12 +45,12 @@
             this.ColumnaOrigen,
             this.ColumnaDestino,
             this.ColumnaFechaSalida,
-            this.Duracion});
+            this.Estado});
             this.dtgViajes.Location = new System.Drawing.Point(85, 85);
             this.dtgViajes.Name = "dtgViajes";
             this.dtgViajes.RowHeadersWidth = 51;
             this.dtgViajes.RowTemplate.Height = 29;
-            this.dtgViajes.Size = new System.Drawing.Size(602, 306);
+            this.dtgViajes.Size = new System.Drawing.Size(553, 306);
             this.dtgViajes.TabIndex = 0;
             this.dtgViajes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgViajes_CellContentClick);
             // 
@@ -77,13 +78,13 @@
             this.ColumnaFechaSalida.ReadOnly = true;
             this.ColumnaFechaSalida.Width = 125;
             // 
-            // Duracion
+            // Estado
             // 
-            this.Duracion.HeaderText = "ColumnaDuracion";
-            this.Duracion.MinimumWidth = 6;
-            this.Duracion.Name = "Duracion";
-            this.Duracion.ReadOnly = true;
-            this.Duracion.Width = 125;
+            this.Estado.HeaderText = "ColumnaEstado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 125;
             // 
             // lblViajesdispo
             // 
@@ -94,15 +95,26 @@
             this.lblViajesdispo.TabIndex = 1;
             this.lblViajesdispo.Text = "Seleccionar viaje";
             // 
-            // frmViajes
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(694, 409);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(94, 29);
+            this.btnVolver.TabIndex = 2;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // FrmViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblViajesdispo);
             this.Controls.Add(this.dtgViajes);
-            this.Name = "frmViajes";
-            this.Text = "frmViajes";
+            this.Name = "FrmViajes";
+            this.Text = "FrmViajes";
             this.Load += new System.EventHandler(this.frmViajes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgViajes)).EndInit();
             this.ResumeLayout(false);
@@ -117,6 +129,7 @@
         private DataGridViewTextBoxColumn ColumnaOrigen;
         private DataGridViewTextBoxColumn ColumnaDestino;
         private DataGridViewTextBoxColumn ColumnaFechaSalida;
-        private DataGridViewTextBoxColumn Duracion;
+        private DataGridViewTextBoxColumn Estado;
+        private Button btnVolver;
     }
 }

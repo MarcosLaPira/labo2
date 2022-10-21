@@ -33,6 +33,8 @@
             this.ColumnaTipoClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidadDePersonas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMensaje = new System.Windows.Forms.Label();
+            this.lblCamaroteLibre = new System.Windows.Forms.Label();
+            this.btnCamaroteAzar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCamarotes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,12 +45,12 @@
             this.idCamarote,
             this.ColumnaTipoClase,
             this.ColumnaCantidadDePersonas});
-            this.dtgCamarotes.Location = new System.Drawing.Point(65, 84);
+            this.dtgCamarotes.Location = new System.Drawing.Point(248, 22);
             this.dtgCamarotes.Name = "dtgCamarotes";
             this.dtgCamarotes.ReadOnly = true;
             this.dtgCamarotes.RowHeadersWidth = 51;
             this.dtgCamarotes.RowTemplate.Height = 29;
-            this.dtgCamarotes.Size = new System.Drawing.Size(675, 298);
+            this.dtgCamarotes.Size = new System.Drawing.Size(433, 298);
             this.dtgCamarotes.TabIndex = 0;
             this.dtgCamarotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -79,17 +81,37 @@
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(12, 9);
+            this.lblMensaje.Location = new System.Drawing.Point(12, 22);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(167, 20);
             this.lblMensaje.TabIndex = 1;
             this.lblMensaje.Text = "Seleccione un camarote";
+            // 
+            // lblCamaroteLibre
+            // 
+            this.lblCamaroteLibre.AutoSize = true;
+            this.lblCamaroteLibre.Location = new System.Drawing.Point(12, 106);
+            this.lblCamaroteLibre.Name = "lblCamaroteLibre";
+            this.lblCamaroteLibre.Size = new System.Drawing.Size(156, 20);
+            this.lblCamaroteLibre.TabIndex = 2;
+            this.lblCamaroteLibre.Text = "Camarote libre al azar";
+            // 
+            // btnCamaroteAzar
+            // 
+            this.btnCamaroteAzar.Location = new System.Drawing.Point(32, 151);
+            this.btnCamaroteAzar.Name = "btnCamaroteAzar";
+            this.btnCamaroteAzar.Size = new System.Drawing.Size(94, 29);
+            this.btnCamaroteAzar.TabIndex = 3;
+            this.btnCamaroteAzar.Text = "Al azar";
+            this.btnCamaroteAzar.UseVisualStyleBackColor = true;
             // 
             // FrmCamarotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCamaroteAzar);
+            this.Controls.Add(this.lblCamaroteLibre);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.dtgCamarotes);
             this.Name = "FrmCamarotes";
@@ -107,5 +129,7 @@
         private DataGridViewTextBoxColumn ColumnaTipoClase;
         private DataGridViewTextBoxColumn ColumnaCantidadDePersonas;
         private Label lblMensaje;
+        private Label lblCamaroteLibre;
+        private Button btnCamaroteAzar;
     }
 }

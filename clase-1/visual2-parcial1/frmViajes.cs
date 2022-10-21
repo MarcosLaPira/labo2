@@ -11,12 +11,11 @@ using System.Windows.Forms;
 
 namespace visual2_parcial1
 {
-    public partial class frmViajes : Form
+    public partial class FrmViajes : Form
     {
 
-        List<Viaje> viajes;
-       
-        public frmViajes()
+        List<Viaje> viajes;      
+        public FrmViajes()
         {
             InitializeComponent();
             viajes = new List<Viaje>();
@@ -30,30 +29,28 @@ namespace visual2_parcial1
         {
             viajes = CoreDelSistema.Viajes;//obtengo lista de viajes 
 
-           string partida;
-           string destino;
+            string partida;
+            string destino;
+            string estadoBarco;
 
             foreach (var item in viajes)
             {
                 //obtengo los nombres de los destinos
                 partida = item.Partida.Nombre;
                 destino = item.Destino.Nombre;
-                /*
-                int indice = this.dtgViajes.Rows.Add();
-                this.dtgViajes.Rows[indice].Cells[0].Value = item.Partida;
-                this.dtgViajes.Rows[indice].Cells[1].Value = item.Destino;
-                this.dtgViajes.Rows[indice].Cells[2].Value = item.FechaInicioViaje;
-                this.dtgViajes.Rows[indice].Cells[3].Value = item.DuracionDelViaje;
-                */
-                
-                //mostrar solo viajes dispo
-                 // if (item.Barco.BarcoEnPuerto && item.CantidadDePasajeros < item.Barco.CapacidadDePersonas)
-                //  { 
-                      dtgViajes.Rows.Add(partida,destino,item.FechaInicioViaje.ToString(),item.DuracionDelViaje.ToString());//, item.Barco.BarcoEnPuerto
-                //  }
-                
+              
+                if (item.Barco.BarcoEnPuerto)
+                {
+                    estadoBarco = "Disponible";
+                }
+                else
+                {
+                    estadoBarco = "No disponible";
+                }
+                dtgViajes.Rows.Add(partida, destino, item.FechaInicioViaje.ToString(), estadoBarco);//, item.Barco.BarcoEnPuerto
+                                                                                                                                //  }
             }
-           
+
         }
 
         private void dtgViajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -62,25 +59,42 @@ namespace visual2_parcial1
 
             posicion = dtgViajes.CurrentRow.Index;//obtengo indice selccionado del data grid
            Viaje auxViaje = viajes.ElementAt(posicion);//obtengo el viaje en el indice seleccionado
-           // Viaje auxViaje = viajes[posicion];//obtengo el viaje en el indice seleccionado
+                                                       // Viaje auxViaje = viajes[posicion];//obtengo el viaje en el indice seleccionado
 
-
-            FrmCargarPasajero cargaPasajero = new FrmCargarPasajero(auxViaje);//instancio formulario de pasajero
-            if (cargaPasajero.ShowDialog() == DialogResult.OK)
+            if (auxViaje is not null)
             {
-               // MessageBox.Show("completado ", "completado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);//
-               
-               
-                FrmCamarotes formCamarote = new FrmCamarotes(auxViaje);//instancio formulario de camarotes
-                if (formCamarote.ShowDialog() == DialogResult.OK)
+                if (auxViaje.Barco.BarcoEnPuerto)
                 {
-                    this.DialogResult = DialogResult.OK;//carga de pasaejro relaizada
+                    FrmCargarPasajero cargaPasajero = new FrmCargarPasajero(auxViaje);//instancio formulario de pasajero
+                    this.Hide();
+                    if (cargaPasajero.ShowDialog() == DialogResult.OK)
+                    {
+                        cargaPasajero.Hide();
+                    
+                        FrmCamarotes formCamarote = new FrmCamarotes(auxViaje);//instancio formulario de camarotes
+                        if (formCamarote.ShowDialog() == DialogResult.OK)
+                        {
+                            this.DialogResult = DialogResult.OK;//carga de pasaejro relaizada
+                            
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("El crucero esta en viaje","Error,viaje no disponible",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
 
             
 
+            
+
         }
-        
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
     }
 }
