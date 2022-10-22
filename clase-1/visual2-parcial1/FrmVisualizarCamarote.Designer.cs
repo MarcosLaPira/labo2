@@ -37,6 +37,9 @@
             this.lblClaseCamarote = new System.Windows.Forms.Label();
             this.lblPrueba = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.txtNumeroCamarote = new System.Windows.Forms.TextBox();
+            this.txtClaseCamarote = new System.Windows.Forms.TextBox();
+            this.txtCantidadDePasaejeros = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPasajeros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,8 +54,9 @@
             this.dtgPasajeros.ReadOnly = true;
             this.dtgPasajeros.RowHeadersWidth = 51;
             this.dtgPasajeros.RowTemplate.Height = 29;
-            this.dtgPasajeros.Size = new System.Drawing.Size(302, 291);
+            this.dtgPasajeros.Size = new System.Drawing.Size(302, 279);
             this.dtgPasajeros.TabIndex = 0;
+            this.dtgPasajeros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPasajeros_CellContentClick);
             // 
             // ColumnaApellido
             // 
@@ -75,14 +79,14 @@
             this.lblPasajeros.AutoSize = true;
             this.lblPasajeros.Location = new System.Drawing.Point(328, 27);
             this.lblPasajeros.Name = "lblPasajeros";
-            this.lblPasajeros.Size = new System.Drawing.Size(70, 20);
+            this.lblPasajeros.Size = new System.Drawing.Size(162, 20);
             this.lblPasajeros.TabIndex = 1;
-            this.lblPasajeros.Text = "Pasajeros";
+            this.lblPasajeros.Text = "Pasajeros del camarote";
             // 
             // lblIdDeCamarote
             // 
             this.lblIdDeCamarote.AutoSize = true;
-            this.lblIdDeCamarote.Location = new System.Drawing.Point(35, 116);
+            this.lblIdDeCamarote.Location = new System.Drawing.Point(35, 64);
             this.lblIdDeCamarote.Name = "lblIdDeCamarote";
             this.lblIdDeCamarote.Size = new System.Drawing.Size(136, 20);
             this.lblIdDeCamarote.TabIndex = 2;
@@ -91,7 +95,7 @@
             // lblCantidadPasajeros
             // 
             this.lblCantidadPasajeros.AutoSize = true;
-            this.lblCantidadPasajeros.Location = new System.Drawing.Point(35, 176);
+            this.lblCantidadPasajeros.Location = new System.Drawing.Point(32, 260);
             this.lblCantidadPasajeros.Name = "lblCantidadPasajeros";
             this.lblCantidadPasajeros.Size = new System.Drawing.Size(158, 20);
             this.lblCantidadPasajeros.TabIndex = 3;
@@ -100,7 +104,7 @@
             // lblClaseCamarote
             // 
             this.lblClaseCamarote.AutoSize = true;
-            this.lblClaseCamarote.Location = new System.Drawing.Point(35, 64);
+            this.lblClaseCamarote.Location = new System.Drawing.Point(32, 154);
             this.lblClaseCamarote.Name = "lblClaseCamarote";
             this.lblClaseCamarote.Size = new System.Drawing.Size(139, 20);
             this.lblClaseCamarote.TabIndex = 4;
@@ -109,7 +113,7 @@
             // lblPrueba
             // 
             this.lblPrueba.AutoSize = true;
-            this.lblPrueba.Location = new System.Drawing.Point(82, 267);
+            this.lblPrueba.Location = new System.Drawing.Point(110, 348);
             this.lblPrueba.Name = "lblPrueba";
             this.lblPrueba.Size = new System.Drawing.Size(50, 20);
             this.lblPrueba.TabIndex = 5;
@@ -125,11 +129,38 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // txtNumeroCamarote
+            // 
+            this.txtNumeroCamarote.Location = new System.Drawing.Point(32, 87);
+            this.txtNumeroCamarote.Name = "txtNumeroCamarote";
+            this.txtNumeroCamarote.ReadOnly = true;
+            this.txtNumeroCamarote.Size = new System.Drawing.Size(125, 27);
+            this.txtNumeroCamarote.TabIndex = 7;
+            // 
+            // txtClaseCamarote
+            // 
+            this.txtClaseCamarote.Location = new System.Drawing.Point(32, 177);
+            this.txtClaseCamarote.Name = "txtClaseCamarote";
+            this.txtClaseCamarote.ReadOnly = true;
+            this.txtClaseCamarote.Size = new System.Drawing.Size(125, 27);
+            this.txtClaseCamarote.TabIndex = 8;
+            // 
+            // txtCantidadDePasaejeros
+            // 
+            this.txtCantidadDePasaejeros.Location = new System.Drawing.Point(35, 283);
+            this.txtCantidadDePasaejeros.Name = "txtCantidadDePasaejeros";
+            this.txtCantidadDePasaejeros.ReadOnly = true;
+            this.txtCantidadDePasaejeros.Size = new System.Drawing.Size(125, 27);
+            this.txtCantidadDePasaejeros.TabIndex = 9;
+            // 
             // FrmVisualizarCamarote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 416);
+            this.Controls.Add(this.txtCantidadDePasaejeros);
+            this.Controls.Add(this.txtClaseCamarote);
+            this.Controls.Add(this.txtNumeroCamarote);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblPrueba);
             this.Controls.Add(this.lblClaseCamarote);
@@ -157,5 +188,8 @@
         private Label lblClaseCamarote;
         private Label lblPrueba;
         private Button btnVolver;
+        private TextBox txtNumeroCamarote;
+        private TextBox txtClaseCamarote;
+        private TextBox txtCantidadDePasaejeros;
     }
 }

@@ -25,18 +25,22 @@ namespace visual2_parcial1
             int contadorCamarote = camarote.ContadorDelCamarote;
             int idDelCamarote = camarote.IdCamarote;
             bool claseCamarote = camarote.TipoDeClaseCamarote;//true premium
+
             List<Pasajero> pasajeros = new List<Pasajero>();
+
             pasajeros = camarote.PasajerosDElCamarote;
 
-            this.lblCantidadPasajeros.Text = $"Cantidad de Pasajeros: {contadorCamarote.ToString()}";
-            this.lblIdDeCamarote.Text = $"Id del Camarote: {idDelCamarote.ToString()}" ;
+            this.txtCantidadDePasaejeros.Text = contadorCamarote.ToString();
+            this.txtNumeroCamarote.Text = idDelCamarote.ToString();
+           
+          
             if (claseCamarote)
             {
-                this.lblClaseCamarote.Text = "Clase: Premium";
+                this.txtClaseCamarote.Text = "Premium";
             }
             else
             {
-                this.lblClaseCamarote.Text = "Clase: Turista";
+                this.txtClaseCamarote.Text = "Turista";
             }
 
             foreach (var item in pasajeros)
@@ -52,6 +56,29 @@ namespace visual2_parcial1
         private void btnVolver_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void dtgPasajeros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int posicion;
+
+            posicion = dtgPasajeros.CurrentRow.Index;//obtengo indice selccionado del data grid
+            Pasajero auxPasajero = camarote.PasajerosDElCamarote.ElementAt(posicion);
+
+           
+
+            if (auxPasajero is not null)
+            {
+                FrmVisualizarPasaporte formPasaporte = new FrmVisualizarPasaporte(auxPasajero);
+
+                this.Hide();
+                if (formPasaporte.ShowDialog() == DialogResult.Cancel)
+                {
+                    this.Show();
+                }
+               
+
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace visual2_parcial1
 {
-    public partial class FrmMenu : Form
+    public partial class FrmMenu : FormPadre
     {
         public FrmMenu()
         {
@@ -76,8 +76,6 @@ namespace visual2_parcial1
                                 }
                                
                             }
-
-                          
 
 
                         }

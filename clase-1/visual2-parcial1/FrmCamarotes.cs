@@ -26,22 +26,7 @@ namespace visual2_parcial1
 
             ActualizarListaCamarotes();
         }
-        /*
-        public void ActualizarListaCamarotes()
-        {
-            Viaje viaje = CoreDelSistema.Viajes[this.indiceViaje];//obtengo viaje 
-            
-            auxCamarotes = viaje.Barco.ListCamarotes;//obtengo listado de camarotes del viaje 
-            foreach (var item in auxCamarotes)
-            {
-               // if (!item.CamaroteLleno)//muestro solo los camarotes que estan disponibles
-               // {
-                    dtgCamarotes.Rows.Add(item.IdCamarote.ToString(), item.TipoDeClaseCamarote.ToString(), item.ContadorDelCamarote.ToString());
-
-               // }
-            }
-        }
-        */
+       
         private void ActualizarListaCamarotes()
         {
 
@@ -88,15 +73,19 @@ namespace visual2_parcial1
             posicion = dtgCamarotes.CurrentRow.Index;//obtengo indice selccionado del data grid
             Camarote auxCamarote = viaje.Barco.ListCamarotes.ElementAt(posicion);//obtengo el camarote del  indice seleccionado
                                                                                  // Viaje auxViaje = viajes[posicion];//obtengo el viaje en el indice seleccionado           
-            if (auxCamarote is not null)
+            if (auxCamarote is not null )
             {
-                indiceDelCamaroteSeleccionado = posicion;
-                this.DialogResult = DialogResult.OK;//para el subMenuVizualizaciones
+                if (!auxCamarote.CamaroteLleno)
+                {
+                    indiceDelCamaroteSeleccionado = posicion;
+                    this.DialogResult = DialogResult.OK;//para el subMenuVizualizaciones
+                }
+                else
+                {
+                    MessageBox.Show(" Camarote completo ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }              
             }
-
-
         }
-
         public Camarote GetCamarote
         {
             get { return viaje.Barco.ListCamarotes[indiceDelCamaroteSeleccionado]; }
