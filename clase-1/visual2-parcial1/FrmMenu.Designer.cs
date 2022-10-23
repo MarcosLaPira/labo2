@@ -30,6 +30,7 @@
         {
             this.btnSeleccionarViaje = new System.Windows.Forms.Button();
             this.btnVisualizar = new System.Windows.Forms.Button();
+            this.btnCrearViaje = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSeleccionarViaje
@@ -52,11 +53,21 @@
             this.btnVisualizar.UseVisualStyleBackColor = true;
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
+            // btnCrearViaje
+            // 
+            this.btnCrearViaje.Location = new System.Drawing.Point(218, 131);
+            this.btnCrearViaje.Name = "btnCrearViaje";
+            this.btnCrearViaje.Size = new System.Drawing.Size(150, 41);
+            this.btnCrearViaje.TabIndex = 3;
+            this.btnCrearViaje.Text = "Crear nuevo viaje";
+            this.btnCrearViaje.UseVisualStyleBackColor = true;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCrearViaje);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnSeleccionarViaje);
             this.Name = "FrmMenu";
@@ -68,5 +79,6 @@
         #endregion
         private Button btnSeleccionarViaje;
         private Button btnVisualizar;
+        private Button btnCrearViaje;
     }
 }

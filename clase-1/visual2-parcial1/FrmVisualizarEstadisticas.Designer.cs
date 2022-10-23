@@ -33,7 +33,7 @@
             this.ColumnaClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidadPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCantidadPasajeros = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbInfo = new System.Windows.Forms.GroupBox();
             this.txtCamarotesTuristaDispo = new System.Windows.Forms.TextBox();
             this.lblCamarotesTuristaDispo = new System.Windows.Forms.Label();
             this.txtCamarotesPremiumDisponibles = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             this.btnListaPasajeros = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCamarotes)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgCamarotes
@@ -98,24 +98,23 @@
             this.lblCantidadPasajeros.TabIndex = 1;
             this.lblCantidadPasajeros.Text = "Cantidad Pasajeros";
             // 
-            // groupBox1
+            // gbInfo
             // 
-            this.groupBox1.Controls.Add(this.txtCamarotesTuristaDispo);
-            this.groupBox1.Controls.Add(this.lblCamarotesTuristaDispo);
-            this.groupBox1.Controls.Add(this.txtCamarotesPremiumDisponibles);
-            this.groupBox1.Controls.Add(this.txtEstadoCrucero);
-            this.groupBox1.Controls.Add(this.txtFechaSalida);
-            this.groupBox1.Controls.Add(this.txtCantidadPasajeros);
-            this.groupBox1.Controls.Add(this.lblCamarotesPremiumDispo);
-            this.groupBox1.Controls.Add(this.lblEstadoCrucero);
-            this.groupBox1.Controls.Add(this.lblFechaSalida);
-            this.groupBox1.Controls.Add(this.lblCantidadPasajeros);
-            this.groupBox1.Location = new System.Drawing.Point(33, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 415);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.gbInfo.Controls.Add(this.txtCamarotesTuristaDispo);
+            this.gbInfo.Controls.Add(this.lblCamarotesTuristaDispo);
+            this.gbInfo.Controls.Add(this.txtCamarotesPremiumDisponibles);
+            this.gbInfo.Controls.Add(this.txtEstadoCrucero);
+            this.gbInfo.Controls.Add(this.txtFechaSalida);
+            this.gbInfo.Controls.Add(this.txtCantidadPasajeros);
+            this.gbInfo.Controls.Add(this.lblCamarotesPremiumDispo);
+            this.gbInfo.Controls.Add(this.lblEstadoCrucero);
+            this.gbInfo.Controls.Add(this.lblFechaSalida);
+            this.gbInfo.Controls.Add(this.lblCantidadPasajeros);
+            this.gbInfo.Location = new System.Drawing.Point(33, 12);
+            this.gbInfo.Name = "gbInfo";
+            this.gbInfo.Size = new System.Drawing.Size(250, 415);
+            this.gbInfo.TabIndex = 2;
+            this.gbInfo.TabStop = false;
             // 
             // txtCamarotesTuristaDispo
             // 
@@ -230,14 +229,14 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnListaPasajeros);
             this.Controls.Add(this.lblCamarotes);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.dtgCamarotes);
             this.Name = "FrmVisualizarEstadisticas";
             this.Text = "FrmVisualizarEstadisticas";
             this.Load += new System.EventHandler(this.FrmVisualizarEstadisticas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCamarotes)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbInfo.ResumeLayout(false);
+            this.gbInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,7 +246,7 @@
 
         private DataGridView dtgCamarotes;
         private Label lblCantidadPasajeros;
-        private GroupBox groupBox1;
+        private GroupBox gbInfo;
         private TextBox txtCamarotesPremiumDisponibles;
         private TextBox txtEstadoCrucero;
         private TextBox txtFechaSalida;

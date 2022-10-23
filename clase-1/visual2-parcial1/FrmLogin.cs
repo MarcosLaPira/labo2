@@ -4,9 +4,12 @@ namespace visual2_parcial1
 {
     public partial class FrmLogin : Form
     {
+       
         public FrmLogin()
         {
             InitializeComponent();
+
+           
         }
 
         private void btnLoguearse_Click(object sender, EventArgs e)
@@ -18,11 +21,10 @@ namespace visual2_parcial1
 
                 Empleado auxEmpleado = CoreDelSistema.LogearUsuario(usuario, contrasena);
                 if (auxEmpleado != null)
-                {
-                   
+                {                  
                     this.Hide();//escondo login
 
-                    FrmMenu menu = new FrmMenu();
+                    FrmMenu menu = new FrmMenu(auxEmpleado);
                     menu.Show();//llamo a nuevo form
 
                 }

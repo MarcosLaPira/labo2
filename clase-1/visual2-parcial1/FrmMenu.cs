@@ -13,9 +13,11 @@ namespace visual2_parcial1
 {
     public partial class FrmMenu : FormPadre
     {
-        public FrmMenu()
+        Empleado empleado;
+        public FrmMenu(Empleado empleado)
         {
             InitializeComponent();
+            this.empleado = empleado;
         }
 
         private void btnAgregarPasajero_Click(object sender, EventArgs e)
@@ -71,8 +73,9 @@ namespace visual2_parcial1
                                 if (retorno)
                                 {
                                     MessageBox.Show(" agregado correctamente ", "ok", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    FrmMenu menuNuevo = new FrmMenu();
-                                    menuNuevo.Show();
+                                    this.Show();
+                                  //  FrmMenu menuNuevo = new FrmMenu(empleado);
+                                   // menuNuevo.Show();
                                 }
                                
                             }
@@ -97,6 +100,10 @@ namespace visual2_parcial1
                 this.Show();
             }
             
+        }
+        public Empleado Empleado
+        {
+            get { return this.empleado; }
         }
     }
 }

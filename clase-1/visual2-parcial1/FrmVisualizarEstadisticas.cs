@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace visual2_parcial1
 {
-    public partial class FrmVisualizarEstadisticas : Form
+    public partial class FrmVisualizarEstadisticas : FormPadre
     {
         Viaje viaje;
         public FrmVisualizarEstadisticas(Viaje viaje)

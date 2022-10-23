@@ -19,7 +19,9 @@ namespace visual2_parcial1
 
         private void FormPadre_Load(object sender, EventArgs e)
         {
-                    
+           // this.Name = $"Hola,{}";  
         }
+
+
     }
 }

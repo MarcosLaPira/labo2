@@ -8,6 +8,7 @@ namespace Bibliotca_parcial1
         private string nombre;
         private string apellido;
         protected int edad;
+      
 
       
 
