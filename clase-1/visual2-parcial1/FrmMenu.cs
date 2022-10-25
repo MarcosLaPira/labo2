@@ -133,5 +133,10 @@ namespace visual2_parcial1
                 }
             }
         }
+
+        private void btnEstadisticasHistoricas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

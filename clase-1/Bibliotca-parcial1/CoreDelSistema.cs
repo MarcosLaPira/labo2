@@ -99,19 +99,7 @@ namespace Bibliotca_parcial1
 
 
                       ));
-            /*
-            CoreDelSistema.viajes.Add(new(
-                            CoreDelSistema.barcos[0], //new Barco("alfa123", "el destructor", 50, 1, 1, 2000, 250, true),
-
-                            CoreDelSistema.ciudades[1],
-
-                            CoreDelSistema.ciudades[12],
-
-                            new DateTime(2022, 9, 10)
-                           
-       
-                       )  );
-            */
+          
            CoreDelSistema.viajes[0].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
 
                                                                         "marcos",
@@ -209,20 +197,30 @@ namespace Bibliotca_parcial1
         }
         #endregion CARGA FORZADA
 
+        #region PROPIEDADES
+        /// <summary>
+        /// Retorna lista de viajes de core del sistema
+        /// </summary>
         public static List<Viaje> Viajes
         {           
             get { return CoreDelSistema.viajes; }
         }
-
+        /// <summary>
+        /// retorna lista de barcos de core del sistema
+        /// </summary>
         public static List<Barco> Barcos
         {
             get { return CoreDelSistema.barcos; }
         }
 
+        /// <summary>
+        /// retorna listad de ciudades de core del sistema
+        /// </summary>
         public static List<Ciudad> Ciudades
         {
             get { return CoreDelSistema.ciudades; }
         }
+        #endregion PROPIEDADES
 
         #region METODOS
 
@@ -280,45 +278,7 @@ namespace Bibliotca_parcial1
 
             return aux;
         }
-
-        //logica para agregar un nuevo pasajero 
-
-        //valido que datos no sean nullos: nombre, apellido, edad, clase
-        //valido que el pasaporte no sea nullo 
-        //invoco agregar 
-
-        public static bool AgregarPasajeroCamaroteTurista(Viaje viaje, Pasajero pasajero)
-        {
-            bool retorno = false;
-
-            if (viaje is not null && pasajero is not null)
-            {
-                if (viaje.AgregarPasajeroCamaroteVacioTurista(pasajero))
-                {
-                    retorno = true;
-                }
-                
-            }
-        
-            return retorno;
-        }
-
-        public static bool AgregarPasajeroCamarotePremium(Viaje viaje, Pasajero pasajero)
-        {
-            bool retorno = false;
-
-            if (viaje is not null && pasajero is not null)
-            {
-                if (viaje.AgregarPasajeroCamaroteVacioPremium(pasajero))
-                {
-                    retorno = true;
-                }
-
-            }
-
-            return retorno;
-        }
-        
+      
         /// <summary>
         /// agrega viaje a la lista estatica viajes
         /// </summary>

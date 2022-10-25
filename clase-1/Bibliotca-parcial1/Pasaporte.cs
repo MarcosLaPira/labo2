@@ -23,11 +23,19 @@
         #endregion CONSTRUCTORES
 
         #region PROPIEDADES
+        /// <summary>
+        /// retorna string con la nacionalidad
+        /// </summary>
         public string Nacionalidad { get => nacionalidad; }
+        /// <summary>
+        /// retorna tipo dateTime la fecha de naciemiento
+        /// </summary>
         public DateTime FechaDeNacimiento { get => fechaDeNacimiento; }
+        /// <summary>
+        /// retrona de tipo dateTime la fecha de vencimiento del pasaortw
+        /// </summary>
         public DateTime FechaDeVencimiento { get => fechaDeVencimiento; }
-        //public string Nombre { get => nombre; }
-       // public string Apellido { get => apellido; }
+       
 
         #endregion PROPIEDADES
 

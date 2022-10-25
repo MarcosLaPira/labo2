@@ -9,12 +9,15 @@
         private bool camaroteLleno; // true == lleno
         private int capacidadMaximaCamarote;
         private int contadorDelCamarote;
-      
+
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
-
-
+        /// <summary>
+        /// cosntructor de Camarote recib prametro camarote lleno y id 
+        /// </summary>
+        /// <param name="camaroteLleno"></param>
+        /// <param name="idCamarote"></param>
         public Camarote(bool camaroteLleno, int idCamarote)
         {
             this.pasajerosDelCamarote = new List<Pasajero>();
@@ -25,13 +28,7 @@
             this.contadorDelCamarote = 0;
 
         }
-        /*
-        public Camarote( bool estadoDelCamarote, int idCamarote) : this (estadoDelCamarote,idCamarote)
-        {
-            this.pasajerosDelCamarote = pasajero;
-          
-        }
-        */
+       
         #endregion CONSTRUCTORES
 
         #region PROPIEDADES
@@ -51,10 +48,11 @@
         /// retorna tipo de clase de camarote true= premium
         /// </summary>
         public bool TipoDeClaseCamarote { get => tipoDeClaseCamarote; set => tipoDeClaseCamarote = value; }
-        //retorna cantidad de personas del camarote
+        /// <summary>
+        /// retorna cantidad de personas del camarote
+        /// </summary>
         public  int ContadorDelCamarote { get => contadorDelCamarote; }
-
-      
+    
         #endregion PROPIEDADES
 
         #region METODOS
@@ -79,30 +77,9 @@
                     this.camaroteLleno = true;//seteo camarote en lleno
                 }
             }
-
             return retorno;
-        }
-        /*
-        public bool AgregarPasajeroAlCamarote2(Pasajero pasajero,Camarote camarote)
-        {
-            bool retorno = false;
-            if (pasajero is not null && camarote is not null)
-            {
-                if (this.contadorDelCamarote < this.capacidadMaximaCamarote && !this.camaroteLleno)
-                {
-                    this.pasajerosDelCamarote.Add(pasajero);//agrego pasajero al camarote
-                    contadorDelCamarote++;
-                    retorno = true;
-                }
-                else
-                {
-                    this.camaroteLleno = true;//seteo camarote en lleno
-                }
-            }
-
-            return retorno;
-        }
-        */
+        }    
+        
         #endregion METODOS
 
     }

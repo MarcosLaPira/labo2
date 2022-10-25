@@ -89,9 +89,9 @@
             this.lblBarcos.AutoSize = true;
             this.lblBarcos.Location = new System.Drawing.Point(430, 36);
             this.lblBarcos.Name = "lblBarcos";
-            this.lblBarcos.Size = new System.Drawing.Size(133, 20);
+            this.lblBarcos.Size = new System.Drawing.Size(195, 20);
             this.lblBarcos.TabIndex = 1;
-            this.lblBarcos.Text = "Barcos disponibles";
+            this.lblBarcos.Text = "Nuestros barcos disponibles";
             // 
             // groupBox1
             // 
@@ -106,7 +106,6 @@
             this.groupBox1.Size = new System.Drawing.Size(344, 449);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // mcFechaInicio
             // 

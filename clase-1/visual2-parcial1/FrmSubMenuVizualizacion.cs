@@ -48,9 +48,10 @@ namespace visual2_parcial1
                 {
                     estadoViaje = "En viaje";
                 }
+                
 
-                dtgSubmenuViajes.Rows.Add(partida, destino, item.FechaInicioViaje.ToString(), estadoViaje);//, item.Barco.BarcoEnPuerto
-                                                                                                                         //  }
+                dtgSubmenuViajes.Rows.Add(partida, destino, item.FechaInicioViaje.ToShortDateString(), estadoViaje);
+                                                                                                                         
 
             }
 

@@ -31,6 +31,7 @@
             this.btnSeleccionarViaje = new System.Windows.Forms.Button();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.btnCrearViaje = new System.Windows.Forms.Button();
+            this.btnEstadisticasHistoricas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSeleccionarViaje
@@ -63,11 +64,22 @@
             this.btnCrearViaje.UseVisualStyleBackColor = true;
             this.btnCrearViaje.Click += new System.EventHandler(this.btnCrearViaje_Click);
             // 
+            // btnEstadisticasHistoricas
+            // 
+            this.btnEstadisticasHistoricas.Location = new System.Drawing.Point(201, 266);
+            this.btnEstadisticasHistoricas.Name = "btnEstadisticasHistoricas";
+            this.btnEstadisticasHistoricas.Size = new System.Drawing.Size(218, 38);
+            this.btnEstadisticasHistoricas.TabIndex = 4;
+            this.btnEstadisticasHistoricas.Text = "Estadisticas historicas";
+            this.btnEstadisticasHistoricas.UseVisualStyleBackColor = true;
+            this.btnEstadisticasHistoricas.Click += new System.EventHandler(this.btnEstadisticasHistoricas_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEstadisticasHistoricas);
             this.Controls.Add(this.btnCrearViaje);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnSeleccionarViaje);
@@ -81,5 +93,6 @@
         private Button btnSeleccionarViaje;
         private Button btnVisualizar;
         private Button btnCrearViaje;
+        private Button btnEstadisticasHistoricas;
     }
 }

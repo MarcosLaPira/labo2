@@ -15,8 +15,7 @@ namespace Bibliotca_parcial1
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
-      
-        
+             
         public Pasajero(string nombre, string apellido,int edad, Pasaporte pasaporte, EClasePasajero clase/*, ClaseAViajar claseAViajar*/) : base(nombre, apellido, edad)
         {
             this.pasaporte = pasaporte;
@@ -26,20 +25,24 @@ namespace Bibliotca_parcial1
         
         #endregion CONSTRUCTORES
 
-        #region PROPIEDADES
-        
-        public Pasaporte Pasaporte { get => pasaporte;  }
-        
+        #region PROPIEDADES       
+        /// <summary>
+        /// retorrna tipo pasaporte un pasaporte
+        /// </summary>
+        public Pasaporte Pasaporte { get => pasaporte;  }    
+        /// <summary>
+        ///  retorna enum de clase de pasajero
+        /// </summary>
         public EClasePasajero Clase { get => clase; }
-        #endregion PREPIEDADES
+        #endregion PROPIEDADES
 
         #region METODOS
-
-        
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        /// <summary>
+        /// Boleano verifica si pasajero 1 es igual al pasajero 2
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <returns> True si son iguales y false si son diferentes</returns>
         public static bool operator == (Pasajero p1, Pasajero p2)
         {
             bool retorno = false;
@@ -54,13 +57,39 @@ namespace Bibliotca_parcial1
             }
             return retorno;
         }
-
+        /// <summary>
+        ///  Boleano verifica si pasajero 1 es igual al pasajero 2
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <returns>True si son iguales y false si son diferentes</returns>
         public static bool operator !=(Pasajero p1, Pasajero p2)
         {
             return !(p1 == p2);
         }
 
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is Pasajero)
+            {
+                return this == ((Pasajero)obj);
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
         #endregion METODOS
     }

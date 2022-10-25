@@ -35,7 +35,6 @@
             this.lblIdDeCamarote = new System.Windows.Forms.Label();
             this.lblCantidadPasajeros = new System.Windows.Forms.Label();
             this.lblClaseCamarote = new System.Windows.Forms.Label();
-            this.lblPrueba = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.txtNumeroCamarote = new System.Windows.Forms.TextBox();
             this.txtClaseCamarote = new System.Windows.Forms.TextBox();
@@ -110,15 +109,6 @@
             this.lblClaseCamarote.TabIndex = 4;
             this.lblClaseCamarote.Text = "Clase del camarote:";
             // 
-            // lblPrueba
-            // 
-            this.lblPrueba.AutoSize = true;
-            this.lblPrueba.Location = new System.Drawing.Point(110, 348);
-            this.lblPrueba.Name = "lblPrueba";
-            this.lblPrueba.Size = new System.Drawing.Size(50, 20);
-            this.lblPrueba.TabIndex = 5;
-            this.lblPrueba.Text = "label1";
-            // 
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(655, 375);
@@ -162,14 +152,13 @@
             this.Controls.Add(this.txtClaseCamarote);
             this.Controls.Add(this.txtNumeroCamarote);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.lblPrueba);
             this.Controls.Add(this.lblClaseCamarote);
             this.Controls.Add(this.lblCantidadPasajeros);
             this.Controls.Add(this.lblIdDeCamarote);
             this.Controls.Add(this.lblPasajeros);
             this.Controls.Add(this.dtgPasajeros);
             this.Name = "FrmVisualizarCamarote";
-            this.Text = "FrmVisualizarCamarote";
+            this.Text = "Camarote";
             this.Load += new System.EventHandler(this.FrmVisualizarCamarote_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPasajeros)).EndInit();
             this.ResumeLayout(false);
@@ -186,7 +175,6 @@
         private Label lblIdDeCamarote;
         private Label lblCantidadPasajeros;
         private Label lblClaseCamarote;
-        private Label lblPrueba;
         private Button btnVolver;
         private TextBox txtNumeroCamarote;
         private TextBox txtClaseCamarote;

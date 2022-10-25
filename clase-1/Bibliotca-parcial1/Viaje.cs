@@ -27,7 +27,13 @@ namespace Bibliotca_parcial1
 
         #region CONSTRUCTORES
 
-
+        /// <summary>
+        /// constructor de viaje, setea viaje en disponible, viaje generico
+        /// </summary>
+        /// <param name="barco"></param>
+        /// <param name="partida"></param>
+        /// <param name="destino"></param>
+        /// <param name="fechaInicioViaje"></param>
         public Viaje(Barco barco, Ciudad partida, Ciudad destino, DateTime fechaInicioViaje)
         {            
             this.barco = barco;
@@ -43,7 +49,7 @@ namespace Bibliotca_parcial1
 
         }
         /// <summary>
-        /// constructor para podera crear un viaje en no disponible
+        /// constructor para podera crear un viaje en no disponible para el core del sistema
         /// </summary>
         /// <param name="barco"></param>
         /// <param name="partida"></param>
@@ -305,29 +311,7 @@ namespace Bibliotca_parcial1
             }
             return retorno;
         }
-        /*
-        /// <summary>
-        /// Agrega un pasajero a un camaorte en especifico
-        /// </summary>
-        /// <param name="idDeCamarote">id del camarote</param>
-        /// <param name="pasajero"></param>
-        /// <returns> true lo agrego y false no lo agrego </returns>
-        public bool AgregarPasajeroACamaroteEspecifico(int idDeCamarote, Pasajero pasajero)
-        {
-            bool retorno = false;
-            if (pasajero is not null && idDeCamarote >= 0 && idDeCamarote < barco.CantidadDeCamarotes && this.contadorDePasajeros < barco.CapacidadDePersonas )
-            {
-                if (!barco.ListCamarotes[idDeCamarote].CamaroteLleno) //veridfico que el camarote no este lleno
-                {
-                    barco.ListCamarotes[idDeCamarote].AgregarPasajeroAlCamarote(pasajero);//agrego pasajero
-                    listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
-                    contadorDePasajeros++;
-                    retorno = true;
-                }
-            }
-            return retorno;
-        }
-        */
+       
         public bool AgregarPasajeroACamaroteEspecifico(Camarote camarote, Pasajero pasajero)
         {
             bool retorno = false;
@@ -412,19 +396,7 @@ namespace Bibliotca_parcial1
 
 
         #endregion METODOS
-        //camarotes disponibles clase turisata
-
-        //camarotes disponibles clase premium
-
-        //precio
-
-
-
-
-        //duracion del viaje 
-
-
-        //duracion del viaje 
+       
 
 
     }

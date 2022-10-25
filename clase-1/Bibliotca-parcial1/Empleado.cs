@@ -9,7 +9,6 @@ namespace Bibliotca_parcial1
     public class Empleado:Persona
     {
         #region ATRIBUTOS
-
         private string usuario;
         private string contrasena;
         List<Viaje> viajes;
@@ -17,7 +16,13 @@ namespace Bibliotca_parcial1
         #endregion ATRIBUTOS
 
         #region PROPIEDADES
+        /// <summary>
+        /// Retorna el usuario
+        /// </summary>
         public string Usuario { get => usuario; }
+        /// <summary>
+        /// retorna la contrasena
+        /// </summary>
         public string Contrasena { get => contrasena; }
 
         #endregion PROPIEDADES
@@ -55,6 +60,6 @@ namespace Bibliotca_parcial1
         }
         #endregion CONSTRUCTOR
 
-        //vendedor puede acceder a la indormacion detalla de los pasajero a travez de viajes
+       
     }
 }

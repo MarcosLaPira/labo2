@@ -25,8 +25,5 @@
          Atenas 
          
     }
-    /*
-    public List ciudades;
-    ciudades.insert(new Ciudad(EDestinos.Montevideo, "Rio DE J", ERegiones.Sudamerica))
-    */
+    
 }

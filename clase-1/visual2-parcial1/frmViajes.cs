@@ -37,6 +37,15 @@ namespace visual2_parcial1
         #endregion PROPIEDADES
 
         #region METODOS
+        /// <summary>
+        /// evento de carga, actualiza la lista de viajes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmViajes_Load(object sender, EventArgs e)
+        {
+            ActualizarLista();
+        }
 
         /// <summary>
         /// setea data grid con los viajes de coredel sistema
@@ -63,21 +72,13 @@ namespace visual2_parcial1
                 {
                     estadoViaje = "No disponible";
                 }
-                this.dtgViajes.Rows.Add(partida, destino, item.FechaInicioViaje.ToString(), estadoViaje);//, item.Barco.BarcoEnPuerto                                                                                                                                //  }
+                this.dtgViajes.Rows.Add(partida, destino, item.FechaInicioViaje.ToShortDateString(), estadoViaje);//, item.Barco.BarcoEnPuerto                                                                                                                                //  }
             }
 
         }
 
         #region EVENTOS
-        /// <summary>
-        /// evento de carga, actualiza la lista de viajes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void frmViajes_Load(object sender, EventArgs e)
-        {
-            ActualizarLista();
-        }
+       
         /// <summary>
         /// Obtiene indice selecionado del data grid y en caso del que viaje este disponible setea dialogo result en ok
         /// </summary>

@@ -2,25 +2,44 @@
 {
     public abstract class ClaseAViajar
     {
+        #region ATRIBUTOS
         private int cantBolsosDeMano;
-        private int cantVaijas;
+        private int cantValijas;
         private float kgValija;
         private EClasePasajero clase;
+        #endregion ATRIBUTOS
 
-
+        #region CONSTRUCTOR
         public ClaseAViajar(EClasePasajero clase,int cantBolsosDeMano, int cantVaijas, float kgValija)
         {
             this.clase = clase;
             this.cantBolsosDeMano = cantBolsosDeMano;
-            this.cantVaijas = cantVaijas;
+            this.cantValijas = cantVaijas;
             this.kgValija = kgValija;
            
         }
+        #endregion CONSTRUCTOR
 
+        #region PROPIEDADES
+        /// <summary>
+        /// Rertorna int cantidadd de bolsos de mano
+        /// </summary>
         public int CantBolsosDeMano { get => cantBolsosDeMano; set => cantBolsosDeMano = value; }
-        public int CantVaijas { get => cantVaijas; set => cantVaijas = value; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int CantValijas { get => cantValijas; set => cantValijas = value; }
+        /// <summary>
+        /// Retorna float kg de Valija
+        /// </summary>
         public float KgValija { get => kgValija; set => kgValija = value; }
+        /// <summary>
+        /// Retorna enum de clase de pasajero
+        /// </summary>
         public EClasePasajero Clase { get => clase;  }
+
+        #endregion PROPIEDADES
+
         //public EClasePasajero clase;
 
 
