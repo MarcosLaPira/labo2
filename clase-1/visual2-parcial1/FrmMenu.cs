@@ -13,11 +13,23 @@ namespace visual2_parcial1
 {
     public partial class FrmMenu : FormPadre
     {
-        Empleado empleado;
-        public FrmMenu(Empleado empleado)
+       private Empleado empleado;
+       private Empresa empresa;
+
+        private FrmMenu()
         {
             InitializeComponent();
+            
+        }
+        public FrmMenu(Empleado empleado):this()
+        {
             this.empleado = empleado;
+
+            this.btnCrearViaje.Visible = false;
+        }
+        public FrmMenu(Empresa empresa):this()
+        {
+            this.empresa = empresa;           
         }
 
         private void btnAgregarPasajero_Click(object sender, EventArgs e)
@@ -104,6 +116,27 @@ namespace visual2_parcial1
         public Empleado Empleado
         {
             get { return this.empleado; }
+        }
+
+        private void btnCrearViaje_Click(object sender, EventArgs e)
+        {
+            FrmCrearViaje formViaje = new FrmCrearViaje(this.empresa);
+            this.Hide();
+            if (formViaje.ShowDialog() == DialogResult.OK)
+            {
+                
+                this.Show();
+            }
+            else
+            {
+                if (formViaje.DialogResult == DialogResult.Cancel)
+                {
+                    this.Show();
+                }
+            }
+            
+            
+
         }
     }
 }

@@ -243,6 +243,7 @@ namespace Bibliotca_parcial1
         public bool AgregarPasajeroACamaroteEspecifico(Camarote camarote, Pasajero pasajero)
         {
             bool retorno = false;
+
             if (pasajero is not null && camarote is not null && this.contadorDePasajeros < barco.CapacidadDePersonas)
             {
                 if (!camarote.CamaroteLleno)
@@ -257,6 +258,23 @@ namespace Bibliotca_parcial1
             return retorno;
         }
 
+        /// <summary>
+        /// argrega viaje a la lista de viajes 
+        /// </summary>
+        /// <param name="viaje"></param>
+        /// <returns>Retorna true si lo agrego y false no lo agrego </returns>
+        public bool CrearViaje(Viaje viaje)
+        {
+            bool retorno = false;
+
+            if (viaje is not null)
+            {
+                CoreDelSistema.Viajes.Add(viaje);//agrego el viaje
+                
+                retorno = true;
+            }
+            return retorno;
+        }
         public string MostrarInfoDelViaje()
         {
             StringBuilder sb = new StringBuilder();           

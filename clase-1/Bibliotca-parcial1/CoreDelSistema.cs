@@ -14,7 +14,9 @@ namespace Bibliotca_parcial1
         #region ATRIBUTOS     
         static List<Viaje> viajes;     
         static List<Empleado> empleados;
-        static List<Ciudad> ciudades;
+         public static List<Ciudad> ciudades;
+        static List<Barco> barcos;
+        static Empresa empresa;
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
@@ -23,12 +25,16 @@ namespace Bibliotca_parcial1
             viajes = new List<Viaje>();          
             empleados = new List<Empleado>();
             ciudades = new List<Ciudad>();
+            barcos = new List<Barco>();
+            empresa = new Empresa();//por defoult
            
 
 
             CargarClaseCiudades();
+            CargarBarcos();
             CargarViajes();           
             CargarEmpleados();
+            CargarEmpresa();
         }
         #endregion CONSTRUCTORES
 
@@ -63,8 +69,17 @@ namespace Bibliotca_parcial1
             empleados.Add(new("andy", "deusi", 40, "ba", "ba", viajes));
 
         }
-        
+        private static void CargarBarcos()
+        {
+           barcos.Add( new Barco("alfa", "el destructor", 50, 1, 1, 2000, 250, true));
+           barcos.Add(new Barco("beta", "sin descenso", 200, 3, 0, 6000, 500, false));
+            barcos.Add(new Barco("centauro", "libertadores", 500, 7, 3, 60000, 2000, true));
+        }
 
+        private static void CargarEmpresa()
+        {
+            empresa = new Empresa(CoreDelSistema.barcos,CoreDelSistema.viajes, CoreDelSistema.empleados,"Carlos","Carlos");
+        }
         /// <summary>
         /// creo 2 viajes enteros, cada viaje tiene 3 pasajeros, el primer viaje esta navegando el sagundo en puerto
         /// </summary>
@@ -73,8 +88,7 @@ namespace Bibliotca_parcial1
 
             //creo primer viaje. no esta en puerto
             viajes.Add(new(
-
-                            new Barco("alfa123", "el destructor", 50, 1, 1, 2000, 250, true),
+                            CoreDelSistema.barcos[0], //new Barco("alfa123", "el destructor", 50, 1, 1, 2000, 250, true),
 
                             ciudades[1],
 
@@ -129,7 +143,7 @@ namespace Bibliotca_parcial1
 
             viajes.Add(new(
 
-                           new Barco("beta", "sin descenso", 200, 3, 0, 6000, 500, false),
+                          CoreDelSistema.barcos[1],// new Barco("beta", "sin descenso", 200, 3, 0, 6000, 500, false),
 
                             ciudades[4],
 
@@ -189,6 +203,16 @@ namespace Bibliotca_parcial1
             get { return viajes; }
         }
 
+        public static List<Barco> Barcos
+        {
+            get { return barcos; }
+        }
+
+        public static List<Ciudad> Ciudades
+        {
+            get { return ciudades; }
+        }
+
         #region METODOS
 
         /// <summary>
@@ -213,43 +237,35 @@ namespace Bibliotca_parcial1
         /// <param name="usuario"></param>
         /// <param name="contrasena"></param>
         /// <returns> Empleado en caso de que lo encontro,  null si no hay nada</returns>
-        public static Empleado? LogearUsuario(string usuario, string contrasena)
+        public static object? LogearUsuario(string usuario, string contrasena)//////////////////
         {
             Empleado aux = null;
 
-                if (ValidarCamposIngresados(usuario, contrasena))//valido usuario y contrasena
+            string usuarioaVerd;
+            string contrasenaVerd;
+
+            if (ValidarCamposIngresados(usuario, contrasena))//valido usuario y contrasena
+            {
+                  
+                for (int i = 0; i < CoreDelSistema.empleados.LongCount(); i++)
                 {
-                    for (int i = 0; i < CoreDelSistema.empleados.LongCount(); i++)
-                    {
-                        string usuarioaVerd = CoreDelSistema.empleados[i].Usuario;
-                        string contrasenaVerd = CoreDelSistema.empleados[i].Contrasena;
+                       usuarioaVerd = CoreDelSistema.empleados[i].Usuario;
+                       contrasenaVerd = CoreDelSistema.empleados[i].Contrasena;
 
                         if (usuarioaVerd == usuario && contrasenaVerd == usuario)
                         {
                           return empleados[i];
                         }
 
-                    }
-
-                /*
-foreach (var item in empleados)
-{
-if (Equals(contrasena, item.Contrasena))
-{
-    aux = item;
-    break;
-}
-}
-
-if (item.Usuario.Trim().ToLower() == usuario.Trim().ToLower() &&
-    item.Contrasena.Trim().ToLower() == contrasena.Trim().ToLower()
-   )
-{
-
-}
-
-*/
                 }
+                if (CoreDelSistema.empresa.Usuario == usuario && CoreDelSistema.empresa.Contrasena == contrasena)
+                {
+                    return CoreDelSistema.empresa;
+
+                }
+
+
+            }
 
             return aux;
         }
@@ -289,6 +305,20 @@ if (item.Usuario.Trim().ToLower() == usuario.Trim().ToLower() &&
 
             }
 
+            return retorno;
+        }
+
+        public static bool CrearViaje(Viaje viaje)
+        {
+            bool retorno = false;
+          //  Viaje auxViaje;
+
+            if (viaje is not null)
+            {
+                 CoreDelSistema.viajes.Add(viaje);              
+                 retorno = true;
+                
+            }
             return retorno;
         }
         #endregion METODOS

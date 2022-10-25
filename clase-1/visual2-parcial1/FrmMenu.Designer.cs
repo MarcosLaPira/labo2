@@ -61,6 +61,7 @@
             this.btnCrearViaje.TabIndex = 3;
             this.btnCrearViaje.Text = "Crear nuevo viaje";
             this.btnCrearViaje.UseVisualStyleBackColor = true;
+            this.btnCrearViaje.Click += new System.EventHandler(this.btnCrearViaje_Click);
             // 
             // FrmMenu
             // 

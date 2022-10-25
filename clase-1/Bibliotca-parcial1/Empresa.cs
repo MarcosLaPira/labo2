@@ -8,30 +8,46 @@ namespace Bibliotca_parcial1
 {
     public  class Empresa
     {
-        List<Barco> barcos;
-        List<Viaje> viajes;
-        List<Pasajero> pasajerosHistorial;
-        List<Empleado> empleados;
-
-        private Empresa()
+        private List<Barco> barcos;
+        private List<Viaje> viajes;      
+        private  List<Empleado> empleados;         
+        private string usuario;  
+        private string contrasena;
+        
+        public Empresa()
         {
             this.barcos = new List<Barco>();
             this.viajes = new List<Viaje>();
-            this.pasajerosHistorial = new List<Pasajero>();
             this.empleados = new List<Empleado>();
+            usuario = "";
+            contrasena = "";
         }
-        public Empresa(List<Barco> barcos, List<Viaje> viajes, List<Pasajero> pasajerosHistorial, List<Empleado> empleados)
+     
+        public Empresa(List<Barco> barcos, List<Viaje> viajes, List<Empleado> empleados,string usuario,string contrasena)
         {
             this.barcos = barcos;
             this.viajes = viajes;
-            this.pasajerosHistorial = pasajerosHistorial;
+           
             this.empleados = empleados;
+            this.usuario = usuario; 
+            this.contrasena = contrasena;
         }
+
 
         public List<Barco> Barcos { get => barcos; }
         public List<Viaje> Viajes { get => viajes;  }
-        public List<Pasajero> PasajerosHistorial { get => pasajerosHistorial; }
+       
         public List<Empleado> Empleados { get => empleados; }
+
+        public string Usuario
+        {
+            get { return this.usuario; }
+        }
+        public string Contrasena
+        {
+            get { return this.contrasena; }
+        }
+
 
         /// <summary>
         /// muezstra informacion sencilla, salida y destino
@@ -88,7 +104,11 @@ namespace Bibliotca_parcial1
         }
 
        
-        //cantidad de pasajeros de cada curuzero
+        //mostrar historial de viajes 
+
+        //mostrar empleados 
+
+        //
 
         //destino mas elegido
     }

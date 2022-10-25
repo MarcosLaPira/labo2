@@ -52,7 +52,7 @@ namespace visual2_parcial1
                 //  { 
                 if (item.Barco.BarcoEnPuerto)
                 {
-                    estadoBarco = "En puerto";
+                    estadoBarco = "Disponible";
                 }
                 else
                 {
