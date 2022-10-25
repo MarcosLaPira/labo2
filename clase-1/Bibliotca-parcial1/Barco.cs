@@ -15,7 +15,7 @@ namespace Bibliotca_parcial1
         private int cantidadDeCasinos;
         private float capacidadDeBodega;
         private int capacidadDePersonas;
-        private bool barcoEnPuerto;
+        private bool estadDelBarco;
 
         private int camarotesPremiumDisponibles;
         private int camarotesTuristaDisponibles;
@@ -52,7 +52,7 @@ namespace Bibliotca_parcial1
             this.cantidadDeCasinos = cantidadDeCasinos;
             this.capacidadDeBodega = capacidadDeBodega;
             this.capacidadDePersonas = capacidadDePersonas;
-            this.barcoEnPuerto = estadoDelBarco;
+            this.estadDelBarco = estadoDelBarco;
 
             this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//defino cuantos camarotes tengo
 
@@ -87,9 +87,9 @@ namespace Bibliotca_parcial1
         /// </summary>
         public int CapacidadDePersonas { get => capacidadDePersonas; }
         /// <summary>
-        /// retorna true si el barco esta en puerto y false si esta en viaje. Permite setear estado
+        ///Retorna true si el barco tiene un viaje seteado y false si esta disponible
         /// </summary>
-        public bool BarcoEnPuerto { get => barcoEnPuerto; set => barcoEnPuerto = value; }
+        public bool BarcoEnEstadoDelBarco{ get => estadDelBarco; set => estadDelBarco = value; }
         /// <summary>
         /// retorna la cantidad de camarotes
         /// </summary>

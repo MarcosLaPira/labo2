@@ -307,7 +307,11 @@ namespace Bibliotca_parcial1
 
             return retorno;
         }
-
+        /// <summary>
+        /// agrega viaje a la lista estatica viajes
+        /// </summary>
+        /// <param name="viaje"></param>
+        /// <returns> true agregado con exito y false no lo agrego</returns>
         public static bool CrearViaje(Viaje viaje)
         {
             bool retorno = false;
@@ -316,8 +320,7 @@ namespace Bibliotca_parcial1
             if (viaje is not null)
             {
                  CoreDelSistema.viajes.Add(viaje);              
-                 retorno = true;
-                
+                 retorno = true;               
             }
             return retorno;
         }
