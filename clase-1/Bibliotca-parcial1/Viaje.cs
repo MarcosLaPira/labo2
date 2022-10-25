@@ -19,11 +19,15 @@ namespace Bibliotca_parcial1
         List<Pasajero> listaPasajeros;
         //list camarotes
         private int contadorDePasajeros;
+
+        List<Camarote> listCamarotes;
+        private bool estadoDelViaje;//true en puerto y false en viaje
+       
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
-      
-      
+
+
         public Viaje(Barco barco, Ciudad partida, Ciudad destino, DateTime fechaInicioViaje)
         {            
             this.barco = barco;
@@ -32,6 +36,23 @@ namespace Bibliotca_parcial1
             this.fechaInicioViaje = fechaInicioViaje;
 
             this.listaPasajeros = new List<Pasajero>();
+            this.listCamarotes = new List<Camarote>(barco.CantidadDeCamarotes);//defino cuantos camarotes tengo
+            this.estadoDelViaje = true;
+
+            administradorCamarotesList();
+
+        }
+        /// <summary>
+        /// constructor para podera crear un viaje en no disponible
+        /// </summary>
+        /// <param name="barco"></param>
+        /// <param name="partida"></param>
+        /// <param name="destino"></param>
+        /// <param name="fechaInicioViaje"></param>
+        /// <param name="estadoDelViaje"></param>
+        public Viaje(Barco barco, Ciudad partida, Ciudad destino, DateTime fechaInicioViaje, bool estadoDelViaje) : this(barco,partida,destino,fechaInicioViaje)
+        {
+            this.estadoDelViaje = estadoDelViaje;
 
         }
         #endregion CONSTRUCTORES
@@ -51,11 +72,14 @@ namespace Bibliotca_parcial1
        /// </summary>
         public Ciudad Destino { get => destino;  }
         /// <summary>
+        /// retorna lista completa de camarotes
+        /// </summary>
+        public List<Camarote> ListCamarotes { get => listCamarotes; set => listCamarotes = value; }
+        /// <summary>
         /// retorna fecha de inicio del viaje 
         /// </summary>
+        /// 
         public DateTime FechaInicioViaje { get => fechaInicioViaje;}
-         
-
         /// <summary>
         /// rrtorna duracion del viaje tipo int
         /// </summary>
@@ -110,9 +134,19 @@ namespace Bibliotca_parcial1
                 }
             }
         }
+       
+        
+        /// <summary>
+        /// Retorna estado del viaje, true en puerto y false en viaje
+        /// </summary>
+        public bool EstadoDelViaje
+        {
+            get { return this.estadoDelViaje; }
+        }
         /// <summary>
         /// retrona pasajeros del viaje tipo  List<Pasajero>
         /// </summary>
+
         public List<Pasajero> ListaPasajeros
         { 
             get => listaPasajeros;          
@@ -154,7 +188,59 @@ namespace Bibliotca_parcial1
                 return this.contadorDePasajeros;
             }
         }
-      
+
+        /// <summary>
+        /// retorna la cantidad de camarotes turista vacios 
+        /// </summary>
+        public int CantidadCamarotesTuristaVacios
+        {
+            get
+            {
+
+                int totalDeCamarotesTurista;
+                int contadorCamarotesTuristaVacios;
+
+                totalDeCamarotesTurista = barco.CantidadDeCamarotesTurista;//obtengo la cantidad de camarotes turista
+                contadorCamarotesTuristaVacios = 0;
+
+                foreach (var item in this.listCamarotes)//recorro lista de camrotes
+                {
+                    if (item.TipoDeClaseCamarote == false && item.ContadorDelCamarote == 0)//verifico que sea clase turista y que no hay nadie
+                    {
+                        contadorCamarotesTuristaVacios++;
+                    }
+                }
+
+                return contadorCamarotesTuristaVacios;
+            }
+        }
+       
+        /// <summary>
+        /// retorna la cantidad de camarotes premium vacios
+        /// </summary>
+        public int CantidadCamarotesPremiumVacios
+        {
+            get
+            {
+
+                int totalDeCamarotesPremium;
+                int contadorCamarotesPremiumVacios;
+
+                totalDeCamarotesPremium = this.barco.CantidadDeCamarotesPremium;
+                contadorCamarotesPremiumVacios = 0;
+
+                foreach (var item in this.listCamarotes)//recorro lista de camrotes
+                {
+                    if (item.TipoDeClaseCamarote == true && item.ContadorDelCamarote == 0)//verifico que sea clase turista y que no hay nadie
+                    {
+                        contadorCamarotesPremiumVacios++;
+                    }
+                }
+
+                return contadorCamarotesPremiumVacios;
+            }
+        }
+
         #endregion PROPIEDADES
 
         #region METODOS
@@ -172,12 +258,13 @@ namespace Bibliotca_parcial1
                 {
                     for (int i = 0; i < this.barco.CantidadDeCamarotesPremium; i++)//recorro camarotes
                     {
-                        if (this.barco.ListCamarotes[i].ContadorDelCamarote == 0)//verifico que el camarote no tenga ningun pasajero
+                        if (this.ListCamarotes[i].ContadorDelCamarote == 0)//verifico que el camarote no tenga ningun pasajero
                         {
-                            listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
-                            barco.ListCamarotes[i].AgregarPasajeroAlCamarote(pasajero);//agrego pasajero
+                            this.listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
+                            this.ListCamarotes[i].AgregarPasajeroAlCamarote(pasajero);//agrego pasajero
                             this.contadorDePasajeros++;
                             retorno = true;
+
                             break;
                         }
                     }
@@ -196,18 +283,19 @@ namespace Bibliotca_parcial1
         public bool AgregarPasajeroCamaroteVacioTurista(Pasajero pasajero)
         {
             bool retorno = false;
-            if (pasajero is not null && this.contadorDePasajeros < barco.CapacidadDePersonas && barco.BarcoEnPuerto == true)
+            if (pasajero is not null && this.contadorDePasajeros < this.barco.CapacidadDePersonas )
             {
                 if (pasajero.Clase == EClasePasajero.Turista)//busco solo en camarotes turista
                 {
-                    for (int i = 0; i < this.barco.CantidadDeCamarotesTurista; i++)//recorro camarotes
+                    for (int i = 0; i < this.barco.CantidadDeCamarotesTurista; i++)//recorro camarotes turistas
                     {
-                        if (this.barco.ListCamarotes[i].ContadorDelCamarote == 0)//verifico que el camarote no tenga ningun pasajero
+                        if (this.ListCamarotes[i].ContadorDelCamarote == 0)//verifico que el camarote no tenga ningun pasajero
                         {
-                            listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
-                            barco.ListCamarotes[i].AgregarPasajeroAlCamarote(pasajero);//agrego pasajero
+                            this.listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
+                            this.ListCamarotes[i].AgregarPasajeroAlCamarote(pasajero);//agrego pasajero
                             this.contadorDePasajeros++;
                             retorno = true;
+
                             break;
                         }
                     }
@@ -244,13 +332,13 @@ namespace Bibliotca_parcial1
         {
             bool retorno = false;
 
-            if (pasajero is not null && camarote is not null && this.contadorDePasajeros < barco.CapacidadDePersonas)
+            if (pasajero is not null && camarote is not null && this.contadorDePasajeros < this.barco.CapacidadDePersonas)
             {
                 if (!camarote.CamaroteLleno)
                 {
                     camarote.AgregarPasajeroAlCamarote(pasajero);
-                    listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
-                    contadorDePasajeros++;
+                    this.listaPasajeros.Add(pasajero);//agrego pasajero a la lista general 
+                    this.contadorDePasajeros++;
                     retorno = true;
                 }
                
@@ -269,10 +357,15 @@ namespace Bibliotca_parcial1
 
             if (viaje is not null)
             {
+                viaje.Barco.EstadoDelBarco = false;
                 CoreDelSistema.Viajes.Add(viaje);//agrego el viaje
-                
+
                 retorno = true;
             }
+            
+                
+               
+            
             return retorno;
         }
         public string MostrarInfoDelViaje()
@@ -295,7 +388,29 @@ namespace Bibliotca_parcial1
         {
             return MostrarInfoDelViaje();
         }
-        
+
+
+        private void administradorCamarotesList()
+        {
+
+            for (int i = 0; i < this.barco.CantidadDeCamarotes; i++)//recorro todos los camarotes del barco
+            {
+                this.listCamarotes.Add(new Camarote(false, i));//setea todos en vacios
+
+                if (i < this.barco.CantidadDeCamarotesPremium)
+                {
+                    this.listCamarotes[i].TipoDeClaseCamarote = true;//seteo el 35% de los camarotes en clase premium
+                }
+                else
+                {
+                    this.listCamarotes[i].TipoDeClaseCamarote = false;//seteo el resto de los camarotes en clase turista
+                }
+
+            }
+
+        }
+
+
         #endregion METODOS
         //camarotes disponibles clase turisata
 

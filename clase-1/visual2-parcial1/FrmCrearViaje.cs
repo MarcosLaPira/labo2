@@ -13,18 +13,33 @@ namespace visual2_parcial1
 {
     public partial class FrmCrearViaje : Form
     {
+        #region ATRIBUTOS
         Empresa empresa;
         List<Barco> barcos;
+        #endregion ATRIBUTOS
+
+        #region COSNTRUCTORES
+        /// <summary>
+        /// Constructor de FrmCrearViaje, recine una empresa de parametro
+        /// </summary>
+        /// <param name="empresa"></param>
         public FrmCrearViaje(Empresa empresa)
         {
             InitializeComponent();
-            barcos = new List<Barco>();
+            this.barcos = new List<Barco>();
             this.empresa = empresa;
         }
+        #endregion CONSTRUCTORES
 
+        #region METODOS
+        /// <summary>
+        /// Eb=vento de carga, setea combo box e invoca a actualizarLista barcos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmCrearViaje_Load(object sender, EventArgs e)
         {
-            ActualizarListaBarcos();
+            this.ActualizarListaBarcos();
             foreach (var item in CoreDelSistema.ciudades)
             {
                 this.cbPartida.Items.Add(item.Nombre);
@@ -33,21 +48,24 @@ namespace visual2_parcial1
           
         }
 
+        /// <summary>
+        /// Actualiza el datagrid de barcos
+        /// </summary>
         private void ActualizarListaBarcos()
         {
-            barcos = CoreDelSistema.Barcos;
+            this.barcos = CoreDelSistema.Barcos;
 
             string matricula;
             string capacidadPersonas;
             string estadoDelBarco;
 
-            foreach(var item in barcos)
+            foreach(var item in this.barcos)
             {
                 matricula = item.Matricula;
                 capacidadPersonas = item.CapacidadDePersonas.ToString();
               
 
-                if (item.BarcoEnPuerto)//true en puerto
+                if (item.EstadoDelBarco)//true en puerto
                 {
                     estadoDelBarco = "Disponible";
                 }
@@ -56,20 +74,25 @@ namespace visual2_parcial1
                     estadoDelBarco = "No disponible";
                 }
 
-                dtgBarcos.Rows.Add(matricula, capacidadPersonas, estadoDelBarco);
+               this.dtgBarcos.Rows.Add(matricula, capacidadPersonas, estadoDelBarco);
 
             }
         }
 
+        /// <summary>
+        /// Valida campos, si estan ok, obtien indice del datagrid. Chequea que el barco este disponoble, deser asi, crea el viaje y lo agrega en core del sistema
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtgBarcos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int posicion;
             Barco auxBarco;
+            Viaje auxViaje;
+            int posicion;
             int indicePartida = 0;
             int indiceDestino = 0;
             bool retorno;
-
-            Viaje auxViaje;
+       
             //valido que el combobox tenga datos
             if (
                   !string.IsNullOrEmpty(this.cbPartida.Text) &&
@@ -78,10 +101,10 @@ namespace visual2_parcial1
                )
             {
                 //valido el barco elegido en datagrid
-                posicion = dtgBarcos.CurrentRow.Index;//obtengo indice selccionado del data grid
+                posicion = this.dtgBarcos.CurrentRow.Index;//obtengo indice selccionado del data grid
                 auxBarco = CoreDelSistema.Barcos[posicion];//obtengo barco seleccionado
 
-                if (auxBarco is not null && auxBarco.BarcoEnPuerto)
+                if (auxBarco is not null && auxBarco.EstadoDelBarco)//Verifico que el barco obtenido no es nulo
                 {
                     for (int i = 0; i < CoreDelSistema.Ciudades.LongCount(); i++)
                     {
@@ -95,17 +118,17 @@ namespace visual2_parcial1
                         }
                     }
                    //creo el viaje 
+                   //instancio viaje
                     auxViaje = new Viaje(auxBarco, CoreDelSistema.Ciudades[indicePartida], CoreDelSistema.Ciudades[indiceDestino], this.mcFechaInicio.MinDate);
-                    if (auxViaje is not null)
+                    if (auxViaje is not null)//si viaje no es nulo
                     {
                         retorno = CoreDelSistema.CrearViaje(auxViaje);
                         if (retorno)
                         {
-                            auxBarco.BarcoEnPuerto = false;//seteo el barco en ocupado
+                            auxBarco.EstadoDelBarco = false;//seteo el barco en ocupado
                             //mensaje viaje creado
                             this.DialogResult = DialogResult.OK;
-                            MessageBox.Show(" El viaje fue creado con exito ", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                           
+                           MessageBox.Show(" El viaje fue creado con exito ", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);                          
                         }
                         else
                         {
@@ -130,7 +153,8 @@ namespace visual2_parcial1
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.Cancel;
         }
+        #endregion METODOS
     }
 }

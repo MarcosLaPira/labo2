@@ -61,7 +61,7 @@ namespace Bibliotca_parcial1
             foreach (var item in this.viajes)
             {
                 sb.Append("Nuestros viajes disponibles son:");
-                if (item.Barco.BarcoEnPuerto)// en caso de que el barco asignado al viaje este en puerto
+                if (item.EstadoDelViaje)// en caso de que el barco asignado al viaje este en puerto
                 {
                     sb.Append($"{item.Partida}-{item.Destino} ");//seteo info 
                     bandera = true;                    

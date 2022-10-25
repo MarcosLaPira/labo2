@@ -15,13 +15,14 @@ namespace Bibliotca_parcial1
         private int cantidadDeCasinos;
         private float capacidadDeBodega;
         private int capacidadDePersonas;
-        private bool estadDelBarco;
 
-        private int camarotesPremiumDisponibles;
-        private int camarotesTuristaDisponibles;
+        private bool estadoDelBarco;
+
+      // private int camarotesPremiumDisponibles;
+       // private int camarotesTuristaDisponibles;
 
 
-        List<Camarote> listCamarotes ;
+       // List<Camarote> listCamarotes ;
 
 
         #endregion ATRIBUTOS
@@ -52,11 +53,11 @@ namespace Bibliotca_parcial1
             this.cantidadDeCasinos = cantidadDeCasinos;
             this.capacidadDeBodega = capacidadDeBodega;
             this.capacidadDePersonas = capacidadDePersonas;
-            this.estadDelBarco = estadoDelBarco;
+            this.estadoDelBarco = estadoDelBarco;
 
-            this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//defino cuantos camarotes tengo
+           // this.listCamarotes = new List<Camarote>(cantidadDeCamarotes);//defino cuantos camarotes tengo
 
-            administradorCamarotesList();
+           // administradorCamarotesList();
         }
        
         #endregion CONSTRUCTORES
@@ -87,9 +88,9 @@ namespace Bibliotca_parcial1
         /// </summary>
         public int CapacidadDePersonas { get => capacidadDePersonas; }
         /// <summary>
-        ///Retorna true si el barco tiene un viaje seteado y false si esta disponible
+        ///Retorna true si el barco esta disponible  false si esta ocupado
         /// </summary>
-        public bool BarcoEnEstadoDelBarco{ get => estadDelBarco; set => estadDelBarco = value; }
+        public bool EstadoDelBarco{ get => estadoDelBarco; set => estadoDelBarco = value; }
         /// <summary>
         /// retorna la cantidad de camarotes
         /// </summary>
@@ -99,7 +100,7 @@ namespace Bibliotca_parcial1
         /// <summary>
         /// retorna lista completa de camarotes
         /// </summary>
-        public List<Camarote> ListCamarotes { get => listCamarotes; set => listCamarotes = value; }
+       // public List<Camarote> ListCamarotes { get => listCamarotes; set => listCamarotes = value; }
         /// <summary>
         /// retorna la cantidad de camarotes premium del barco
         /// </summary>
@@ -124,6 +125,7 @@ namespace Bibliotca_parcial1
                 return totalCamarotes - camarotesPremium;
             }
         }
+        /*
         /// <summary>
         /// retorna la cantidad de camarotes turista vacios 
         /// </summary>
@@ -175,12 +177,13 @@ namespace Bibliotca_parcial1
                 return  contadorCamarotesPremiumVacios;
             }
         }
+        */
 
         #endregion PROPIEDADES
 
         #region METODOS
 
-
+        /*
         private void administradorCamarotesList()
         {
 
@@ -200,7 +203,7 @@ namespace Bibliotca_parcial1
             }
            
         }
-       
+       */
         #endregion METODOS
 
 

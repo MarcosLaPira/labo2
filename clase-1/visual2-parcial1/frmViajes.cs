@@ -26,68 +26,76 @@ namespace visual2_parcial1
         }
         #endregion CONSTRUCTORES
 
+        #region PROPOIEDADES
+        /// <summary>
+        /// retrorna el viaje seleccionado
+        /// </summary>
+        public Viaje ViajeSelecionado
+        {
+            get { return this.viajes[indiceDelViajeSeleccionado]; }
+        }
+        #endregion PROPIEDADES
+
         #region METODOS
 
-        private void frmViajes_Load(object sender, EventArgs e)
-        {
-            ActualizarLista();
-        }
+        /// <summary>
+        /// setea data grid con los viajes de coredel sistema
+        /// </summary>
         public void ActualizarLista()
         {
-            viajes = CoreDelSistema.Viajes;//obtengo lista de viajes 
+            this.viajes = CoreDelSistema.Viajes;//obtengo lista de viajes 
 
             string partida;
             string destino;
-            string estadoBarco;
+            string estadoViaje;
 
             foreach (var item in viajes)
             {
                 //obtengo los nombres de los destinos
                 partida = item.Partida.Nombre;
                 destino = item.Destino.Nombre;
-              
-                if (item.Barco.BarcoEnPuerto)
+
+                if (item.EstadoDelViaje)
                 {
-                    estadoBarco = "Disponible";
+                    estadoViaje = "Disponible";
                 }
                 else
                 {
-                    estadoBarco = "No disponible";
+                    estadoViaje = "No disponible";
                 }
-                dtgViajes.Rows.Add(partida, destino, item.FechaInicioViaje.ToString(), estadoBarco);//, item.Barco.BarcoEnPuerto
-                                                                                                                                //  }
+                this.dtgViajes.Rows.Add(partida, destino, item.FechaInicioViaje.ToString(), estadoViaje);//, item.Barco.BarcoEnPuerto                                                                                                                                //  }
             }
 
         }
+
+        #region EVENTOS
+        /// <summary>
+        /// evento de carga, actualiza la lista de viajes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmViajes_Load(object sender, EventArgs e)
+        {
+            ActualizarLista();
+        }
+        /// <summary>
+        /// Obtiene indice selecionado del data grid y en caso del que viaje este disponible setea dialogo result en ok
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtgViajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicion;
 
             posicion = dtgViajes.CurrentRow.Index;//obtengo indice selccionado del data grid
-           Viaje auxViaje = viajes.ElementAt(posicion);//obtengo el viaje en el indice seleccionado
+           Viaje auxViaje = this.viajes.ElementAt(posicion);//obtengo el viaje en el indice seleccionado
                                                        // Viaje auxViaje = viajes[posicion];//obtengo el viaje en el indice seleccionado           
             if (auxViaje is not null)
             {
-                if (auxViaje.Barco.BarcoEnPuerto)
+                if (auxViaje.EstadoDelViaje)
                 {
-                    indiceDelViajeSeleccionado = posicion;
-                    this.DialogResult = DialogResult.OK;//para el subMenuVizualizaciones
-                   
-                    /*
-                    FrmCargarPasajero cargaPasajero = new FrmCargarPasajero(auxViaje);//instancio formulario de pasajero
-                    this.Hide();
-                    if (cargaPasajero.ShowDialog() == DialogResult.OK)
-                    {
-                        cargaPasajero.Hide();
-                    
-                        FrmCamarotes formCamarote = new FrmCamarotes(auxViaje);//instancio formulario de camarotes
-                        if (formCamarote.ShowDialog() == DialogResult.OK)
-                        {
-                            this.DialogResult = DialogResult.OK;//carga de pasaejro relaizada
-                            
-                        }
-                    }
-                    */
+                    this.indiceDelViajeSeleccionado = posicion;
+                    this.DialogResult = DialogResult.OK;//para el subMenuVizualizaciones                                    
                 }
                 else
                 {
@@ -96,19 +104,17 @@ namespace visual2_parcial1
             }          
 
         }
+
+        /// <summary>
+        /// evento boton volver, redireciona el menu, setea dialogo result en cancel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
-
-        /// <summary>
-        /// retrorna el viaje seleccionado
-        /// </summary>
-        public Viaje ViajeSelecionado
-        {
-            get { return viajes[indiceDelViajeSeleccionado]; }
-        }
-
+        #endregion eventos   
     }
     #endregion METODOS
 }

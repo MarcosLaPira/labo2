@@ -13,27 +13,38 @@ namespace visual2_parcial1
 {
     public partial class FrmCamarotes : Form
     {
+        #region ATRIBUTOS 
        
-       //// List<Camarote> auxCamarotes;
-        //  int indiceViaje;
         Viaje viaje;
         int indiceDelCamaroteSeleccionado;
-       
-         public FrmCamarotes(Viaje viaje)
+
+        #endregion ATRIBUTOS 
+
+        #region CONSTRUCTORES
+        public FrmCamarotes(Viaje viaje)
         {
             InitializeComponent();
             this.viaje =  viaje;
 
             ActualizarListaCamarotes();
         }
-       
+        #endregion CONSTRUCTORES
+
+        #region PROPIEDADES
+        public Camarote GetCamarote
+        {
+            get { return viaje.ListCamarotes[indiceDelCamaroteSeleccionado]; }
+        }
+        #endregion PROPIEDADES
+
+        #region METODOS
         private void ActualizarListaCamarotes()
         {
 
             ///////////////////
             List<Camarote> aux = new List<Camarote>();//instancio lista de camarotes
-             aux =  this.viaje.Barco.ListCamarotes;//obtengo lisat de camarotes de la base de datos
             string claseCamarote;
+             aux =  this.viaje.ListCamarotes;//obtengo lisat de camarotes de la base de datos
                  
                        
             foreach (Camarote camarote in aux)
@@ -46,23 +57,8 @@ namespace visual2_parcial1
                 {
                     claseCamarote = "Turista";
                 }
-                dtgCamarotes.Rows.Add(camarote.IdCamarote.ToString(), claseCamarote.ToString(), camarote.ContadorDelCamarote.ToString());                   
-            }
-
-                
-          
-            /*
-            foreach (var item in CoreDelSistema.Viajes)
-            {
-
-                viaje.Barco.ListCamarotes
-                // if (!item.CamaroteLleno)//muestro solo los camarotes que estan disponibles
-                // {
-                dtgCamarotes.Rows.Add(item.IdCamarote.ToString(), item.TipoDeClaseCamarote.ToString(), item.ContadorDelCamarote.ToString());
-
-                // }
-            }
-            */
+               this.dtgCamarotes.Rows.Add(camarote.IdCamarote.ToString(), claseCamarote.ToString(), camarote.ContadorDelCamarote.ToString());                   
+            }         
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -70,14 +66,14 @@ namespace visual2_parcial1
 
             int posicion;
 
-            posicion = dtgCamarotes.CurrentRow.Index;//obtengo indice selccionado del data grid
-            Camarote auxCamarote = viaje.Barco.ListCamarotes.ElementAt(posicion);//obtengo el camarote del  indice seleccionado
+            posicion = this.dtgCamarotes.CurrentRow.Index;//obtengo indice selccionado del data grid
+            Camarote auxCamarote = this.viaje.ListCamarotes.ElementAt(posicion);//obtengo el camarote del  indice seleccionado
                                                                                  // Viaje auxViaje = viajes[posicion];//obtengo el viaje en el indice seleccionado           
             if (auxCamarote is not null )
             {
                 if (!auxCamarote.CamaroteLleno)
                 {
-                    indiceDelCamaroteSeleccionado = posicion;
+                    this.indiceDelCamaroteSeleccionado = posicion;
                     this.DialogResult = DialogResult.OK;//para el subMenuVizualizaciones
                 }
                 else
@@ -86,10 +82,8 @@ namespace visual2_parcial1
                 }              
             }
         }
-        public Camarote GetCamarote
-        {
-            get { return viaje.Barco.ListCamarotes[indiceDelCamaroteSeleccionado]; }
-        }
+        #endregion METODOS
+      
 
     }
 }

@@ -14,8 +14,8 @@ namespace visual2_parcial1
     public partial class FrmCargarPasajero : Form
     {
         #region ATRIBUTOS
-        Viaje viaje;
-        Pasajero? auxPasajero;///
+        Viaje? viaje;
+        Pasajero? pasajero;///
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
@@ -27,15 +27,27 @@ namespace visual2_parcial1
         public FrmCargarPasajero(Viaje viaje):this()
         {
             this.viaje = viaje;
-            auxPasajero = null;
+            this.pasajero = null;
         }
 
         #endregion COSNTRUCTORES
 
-        #region METODOS
-        private void btnSiguiente_Click(object sender, EventArgs e)
+        #region PROPIEDADES
+        public Pasajero? GetPasajero
         {
-                   
+            get { return this.pasajero; }
+        }
+
+        #endregion PROPIEDADES
+
+        #region METODOS
+        /// <summary>
+        /// Evento botn siguiente, valida todos los campos ingresados, en caso de que este todo ok, instacia FrmPasaporte, si en el pasaporte sale todo ok, obtiene sus datos y luego crea un pasajero
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {                  
             bool flag = false;         
             EClasePasajero clasePasajero = EClasePasajero.Turista;
             int edad;
@@ -72,34 +84,14 @@ namespace visual2_parcial1
                         Pasaporte pasaporte = frmPasaporte.GetPasaporte;//obtengo los campos completados en frmPasaporte
                         if (pasaporte is not null)
                         {
-                            Pasajero pasajero = new Pasajero(nombre, apellido, edad,pasaporte , clasePasajero);//creo el pasajero
-                            if (pasajero is not null)
+                            Pasajero auxPasajero = new Pasajero(nombre, apellido, edad,pasaporte , clasePasajero);//creo el pasajero
+                            if (auxPasajero is not null)
                             {
-                                auxPasajero = pasajero;
-                                this.DialogResult = DialogResult.OK;
-
-                                /*
-                                if (pasajero.Clase == EClasePasajero.Premium)
-                                {
-                                    CoreDelSistema.AgregarPasajeroCamarotePremium(viaje, pasajero);
-                                    this.DialogResult = DialogResult.OK;
-                                }
-                                else
-                                {
-                                   if (pasajero.Clase == EClasePasajero.Turista)
-                                   {
-                                          CoreDelSistema.AgregarPasajeroCamaroteTurista(viaje, pasajero);
-                                          this.DialogResult = DialogResult.OK;
-                                        
-                                   }
-                                }
-                                */
-                            }
-                                                     
+                                this.pasajero = auxPasajero;
+                                this.DialogResult = DialogResult.OK;                            
+                            }                                                     
                         }                       
-
-                    }
-                  
+                    }                 
                 }
                 else
                 {
@@ -111,10 +103,7 @@ namespace visual2_parcial1
                 MessageBox.Show(" Campos incorrectos o invalidos ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public Pasajero GetPasajero
-        {
-            get { return auxPasajero; }
-        }
+       
         #endregion METODOS
     }
 }

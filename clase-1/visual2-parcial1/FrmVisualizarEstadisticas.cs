@@ -13,14 +13,28 @@ namespace visual2_parcial1
 {
     public partial class FrmVisualizarEstadisticas : FormPadre
     {
+        #region ATRIBUTOS
         Viaje viaje;
+        #endregion ATRIBUTOS
+
+        #region CONSTRUCTORES
+        /// <summary>
+        /// Constructor de FrmVisualizarEstadisticas, recibe un viaje de parametro
+        /// </summary>
+        /// <param name="viaje"></param>
         public FrmVisualizarEstadisticas(Viaje viaje)
         {
             InitializeComponent();
-
             this.viaje = viaje;
         }
+        #endregion ATRIBUTOS
 
+        #region METODOS
+        /// <summary>
+        /// Evento load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmVisualizarEstadisticas_Load(object sender, EventArgs e)
         {
             ActualizarListaCamarotesEstadisticas();
@@ -31,11 +45,11 @@ namespace visual2_parcial1
             int camarotesPremiumVacios;
             int camarotesTuristaVacios;
 
-            cantidadDePasajeros = viaje.CantidadDePasajeros;
-            fechaDeSalida = viaje.FechaInicioViaje.ToString();
-            estadoDeCrucero = viaje.Barco.BarcoEnPuerto;//true si el barco esta en puerto
-            camarotesPremiumVacios = viaje.Barco.CantidadCamarotesPremiumVacios;
-            camarotesTuristaVacios = viaje.Barco.CantidadCamarotesTuristaVacios;
+            cantidadDePasajeros = this.viaje.CantidadDePasajeros;
+            fechaDeSalida = this.viaje.FechaInicioViaje.ToString();
+            estadoDeCrucero = this.viaje.EstadoDelViaje;//true si el barco esta en puerto
+            camarotesPremiumVacios = this.viaje.CantidadCamarotesPremiumVacios;
+            camarotesTuristaVacios = this.viaje.CantidadCamarotesTuristaVacios;
 
             this.txtCantidadPasajeros.Text = cantidadDePasajeros.ToString();
             this.txtFechaSalida.Text = fechaDeSalida.ToString();
@@ -52,13 +66,15 @@ namespace visual2_parcial1
             this.txtCamarotesPremiumDisponibles.Text = camarotesPremiumVacios.ToString();
             this.txtCamarotesTuristaDispo.Text = camarotesTuristaVacios.ToString();
         }
-
+        /// <summary>
+        /// Actualiza el dataGrid de camarotes
+        /// </summary>
         private void ActualizarListaCamarotesEstadisticas()
         {
 
             ///////////////////
             List<Camarote> aux = new List<Camarote>();//instancio lista de camarotes
-            aux = this.viaje.Barco.ListCamarotes;//obtengo lisat de camarotes de la base de datos
+            aux = this.viaje.ListCamarotes;//obtengo lisat de camarotes de la base de datos
             string claseCamarote;
 
 
@@ -72,16 +88,20 @@ namespace visual2_parcial1
                 {
                     claseCamarote = "Turista";
                 }
-                dtgCamarotes.Rows.Add(camarote.IdCamarote.ToString(), claseCamarote.ToString(), camarote.ContadorDelCamarote.ToString());
+               this.dtgCamarotes.Rows.Add(camarote.IdCamarote.ToString(), claseCamarote.ToString(), camarote.ContadorDelCamarote.ToString());
             }
         }
-
+        /// <summary>
+        /// Evento al hacer click obtiene el camarote selecionado, abre form de vizualizar FrmVisualizarCamarote 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtgCamarotes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicion;
 
-            posicion = dtgCamarotes.CurrentRow.Index;//obtengo indice selccionado del data grid
-            Camarote auxCamarote = viaje.Barco.ListCamarotes.ElementAt(posicion);//obtengo el el camarote del indice seleccionado
+            posicion = this.dtgCamarotes.CurrentRow.Index;//obtengo indice selccionado del data grid
+            Camarote auxCamarote = this.viaje.ListCamarotes.ElementAt(posicion);//obtengo el el camarote del indice seleccionado
 
             if (auxCamarote is not null)
             {
@@ -90,36 +110,35 @@ namespace visual2_parcial1
                 if (visualizarCamarote.ShowDialog() == DialogResult.Cancel)
                 {
                     this.Show();
-                }
-                /*
-                FrmVisualizarCamarote visualizarCamarote = new FrmVisualizarCamarote(auxCamarote);      
-                this.Hide();
-                visualizarCamarote.Show();
-                */
-
+                }               
             }
         }
 
+        /// <summary>
+        /// Evento boton para vizualizar la lista de pasajeros del viaje 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnListaPasajeros_Click(object sender, EventArgs e)
         {
-            /*
-            FrmVisualizarPasajeros listaPasajeros = new FrmVisualizarPasajeros(this.viaje);
-            this.Hide();
-            listaPasajeros.Show();
-            */
+            
             FrmVisualizarPasajeros listaPasajeros = new FrmVisualizarPasajeros(this.viaje);
             this.Hide();
             if (listaPasajeros.ShowDialog() == DialogResult.Cancel)
             {
                 this.Show();
             }
-
-
         }
 
+        /// <summary>
+        /// Evento boton volver, redirecciona a menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+           this.DialogResult = DialogResult.Cancel;
         }
+        #endregion METODOS
     }
 }

@@ -13,8 +13,8 @@ namespace visual2_parcial1
 {
     public partial class FrmMenu : FormPadre
     {
-       private Empleado empleado;
-       private Empresa empresa;
+       private Empleado? empleado;
+       private Empresa? empresa;
 
         private FrmMenu()
         {
@@ -54,8 +54,7 @@ namespace visual2_parcial1
         {
 
             Viaje auxViaje;
-            Pasajero auxPasajero;
-
+            Pasajero? auxPasajero;
             FrmViajes formularioViajes = new FrmViajes();
             this.Hide();
 
@@ -113,7 +112,7 @@ namespace visual2_parcial1
             }
             
         }
-        public Empleado Empleado
+        public Empleado? Empleado
         {
             get { return this.empleado; }
         }
@@ -123,8 +122,7 @@ namespace visual2_parcial1
             FrmCrearViaje formViaje = new FrmCrearViaje(this.empresa);
             this.Hide();
             if (formViaje.ShowDialog() == DialogResult.OK)
-            {
-                
+            {                
                 this.Show();
             }
             else
@@ -134,9 +132,6 @@ namespace visual2_parcial1
                     this.Show();
                 }
             }
-            
-            
-
         }
     }
 }

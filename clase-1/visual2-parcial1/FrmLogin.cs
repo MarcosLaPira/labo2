@@ -4,14 +4,20 @@ namespace visual2_parcial1
 {
     public partial class FrmLogin : Form
     {
-       
+        #region CONSTRUCTOR
         public FrmLogin()
         {
             InitializeComponent();
-
-           
+          
         }
+        #endregion CONSTRUCTOR
 
+        #region METODOS
+        /// <summary>
+        /// Evento boton loguearse, vaslida que el usuario y constrasena correspondan a un empleado o administrador, de ser asi ingresa al sistema
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLoguearse_Click(object sender, EventArgs e)
         {
             if (this.txtContrasena is not null && this.txtUsuario is not null)
@@ -27,8 +33,7 @@ namespace visual2_parcial1
                         Empleado auxEmpleado = (Empleado)aux;
                         FrmMenu menu = new FrmMenu(auxEmpleado);
                         this.Hide();
-                        menu.Show();//llamo a nuevo form
-                        
+                        menu.Show();//llamo a nuevo form                        
                     }
                     else
                     {
@@ -37,15 +42,13 @@ namespace visual2_parcial1
                             Empresa auxEmpresa= (Empresa)aux;
                             FrmMenu menu = new FrmMenu(auxEmpresa);
                             this.Hide();
-                            menu.Show();//llamo a nuevo form
-                            
+                            menu.Show();//llamo a nuevo form                            
                         }
                     }
-                }
-              
+                }              
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
+                    MessageBox.Show("Usuario o contraseña incorrectos","Error");
                 }
 
 
@@ -54,34 +57,6 @@ namespace visual2_parcial1
 
 
         }
-        /*
-        private void btnLoguearse_Click(object sender, EventArgs e)
-        {
-            if (this.txtContrasena is not null && this.txtUsuario is not null)
-            {
-                string usuario = this.txtContrasena.Text;
-                string contrasena = this.txtContrasena.Text;
-
-                Empleado auxEmpleado = CoreDelSistema.LogearUsuario(usuario, contrasena);
-                if (auxEmpleado != null)
-                {                  
-                    this.Hide();//escondo login
-
-                    FrmMenu menu = new FrmMenu(auxEmpleado);
-                    menu.Show();//llamo a nuevo form
-
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
-                }
-
-
-               
-            }
-            
-           
-        }
-        */
+        #endregion CONSTRUCTOR
     }
 }

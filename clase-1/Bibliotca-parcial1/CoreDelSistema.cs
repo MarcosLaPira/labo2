@@ -14,27 +14,27 @@ namespace Bibliotca_parcial1
         #region ATRIBUTOS     
         static List<Viaje> viajes;     
         static List<Empleado> empleados;
-         public static List<Ciudad> ciudades;
+        public static List<Ciudad> ciudades;
         static List<Barco> barcos;
         static Empresa empresa;
         #endregion ATRIBUTOS
 
         #region CONSTRUCTORES
         static CoreDelSistema()
-        {          
-            viajes = new List<Viaje>();          
-            empleados = new List<Empleado>();
-            ciudades = new List<Ciudad>();
-            barcos = new List<Barco>();
-            empresa = new Empresa();//por defoult
-           
+        {
+            CoreDelSistema.viajes = new List<Viaje>();
+            CoreDelSistema.empleados = new List<Empleado>();
+            CoreDelSistema.ciudades = new List<Ciudad>();
+            CoreDelSistema.barcos = new List<Barco>();
+            CoreDelSistema.empresa = new Empresa();//por defoult
 
 
-            CargarClaseCiudades();
-            CargarBarcos();
-            CargarViajes();           
-            CargarEmpleados();
-            CargarEmpresa();
+
+            CoreDelSistema.CargarClaseCiudades();
+            CoreDelSistema.CargarBarcos();
+            CoreDelSistema.CargarViajes();
+            CoreDelSistema.CargarEmpleados();
+            CoreDelSistema.CargarEmpresa();
         }
         #endregion CONSTRUCTORES
 
@@ -42,43 +42,43 @@ namespace Bibliotca_parcial1
        private static void CargarClaseCiudades()
        {
             //sudamerica
-            ciudades.Add(new(EDestinos.Montevideo, "Montevideo", 0));
-            ciudades.Add(new(EDestinos.Ushuaia, "Ushuaia", 0));
-            ciudades.Add(new(EDestinos.Recife, "Recife", 0));
-            ciudades.Add(new(EDestinos.Santiago, "Santiago", 0));
-            ciudades.Add(new(EDestinos.Lima, "Lima", 0));
-            ciudades.Add(new(EDestinos.IslaDePascua, "Isla De Pascua", 0));
-            ciudades.Add(new(EDestinos.IslaGalápagos, "IslaGalápagos", 0));
-            ciudades.Add(new(EDestinos.PuertoMadryn, "Puerto Madryn", 0));
-            ciudades.Add(new(EDestinos.RíodeJaneiro, "Ríode Janeiro", 0));
-            ciudades.Add(new(EDestinos.Cartagena, "Cartagena", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Montevideo, "Montevideo", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Ushuaia, "Ushuaia", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Recife, "Recife", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Santiago, "Santiago", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Lima, "Lima", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.IslaDePascua, "Isla De Pascua", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.IslaGalápagos, "IslaGalápagos", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.PuertoMadryn, "Puerto Madryn", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.RíodeJaneiro, "Ríode Janeiro", 0));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Cartagena, "Cartagena", 0));
 
             //norteamerica
-            ciudades.Add(new(EDestinos.LaHabana, "La Habana", 1));
-            ciudades.Add(new(EDestinos.Venecia, "Venecia", 1));
-            ciudades.Add(new(EDestinos.Acapulco, "Acapulco", 1));
-            ciudades.Add(new(EDestinos.Miami, "Miami", 1));
-            ciudades.Add(new(EDestinos.NuevaYork, "Nueva York", 1));
-            ciudades.Add(new(EDestinos.Bangkok, "Bangkok", 1));
-            ciudades.Add(new(EDestinos.Taipei, "Taipei", 1));
-            ciudades.Add(new(EDestinos.Atenas, "Atenas", 1));
+            CoreDelSistema.ciudades.Add(new(EDestinos.LaHabana, "La Habana", 1));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Venecia, "Venecia", 1));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Acapulco, "Acapulco", 1));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Miami, "Miami", 1));
+            CoreDelSistema.ciudades.Add(new(EDestinos.NuevaYork, "Nueva York", 1));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Bangkok, "Bangkok", 1));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Taipei, "Taipei", 1));
+            CoreDelSistema.ciudades.Add(new(EDestinos.Atenas, "Atenas", 1));
         }
         private static void CargarEmpleados()
         {
-            empleados.Add(new("dieguito ", "boca ", 34, "ab", "ab", viajes));
-            empleados.Add(new("andy", "deusi", 40, "ba", "ba", viajes));
+            CoreDelSistema.empleados.Add(new("dieguito ", "boca ", 34, "ab", "ab", viajes));
+            CoreDelSistema.empleados.Add(new("andy", "deusi", 40, "ba", "ba", viajes));
 
         }
         private static void CargarBarcos()
         {
-           barcos.Add( new Barco("alfa", "el destructor", 50, 1, 1, 2000, 250, true));
-           barcos.Add(new Barco("beta", "sin descenso", 200, 3, 0, 6000, 500, false));
-            barcos.Add(new Barco("centauro", "libertadores", 500, 7, 3, 60000, 2000, true));
+           CoreDelSistema.barcos.Add( new Barco("alfa", "el destructor", 50, 1, 1, 2000, 250, true));
+           CoreDelSistema.barcos.Add(new Barco("beta", "sin descenso", 200, 3, 0, 6000, 500, true));
+            CoreDelSistema.barcos.Add(new Barco("centauro", "libertadores", 500, 7, 3, 60000, 2000, true));
         }
 
         private static void CargarEmpresa()
         {
-            empresa = new Empresa(CoreDelSistema.barcos,CoreDelSistema.viajes, CoreDelSistema.empleados,"Carlos","Carlos");
+            CoreDelSistema.empresa = new Empresa(CoreDelSistema.barcos,CoreDelSistema.viajes, CoreDelSistema.empleados,"Carlos","Carlos");
         }
         /// <summary>
         /// creo 2 viajes enteros, cada viaje tiene 3 pasajeros, el primer viaje esta navegando el sagundo en puerto
@@ -87,20 +87,32 @@ namespace Bibliotca_parcial1
         {
 
             //creo primer viaje. no esta en puerto
-            viajes.Add(new(
+
+          CrearViaje(new(
+                           CoreDelSistema.barcos[0], //new Barco("alfa123", "el destructor", 50, 1, 1, 2000, 250, true),
+
+                           CoreDelSistema.ciudades[1],
+
+                           CoreDelSistema.ciudades[12],
+
+                           new DateTime(2022, 9, 10)
+
+
+                      ));
+            /*
+            CoreDelSistema.viajes.Add(new(
                             CoreDelSistema.barcos[0], //new Barco("alfa123", "el destructor", 50, 1, 1, 2000, 250, true),
 
-                            ciudades[1],
+                            CoreDelSistema.ciudades[1],
 
-                            ciudades[12],
+                            CoreDelSistema.ciudades[12],
 
                             new DateTime(2022, 9, 10)
-
-
-                            
+                           
        
                        )  );
-            viajes[0].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
+            */
+           CoreDelSistema.viajes[0].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
 
                                                                         "marcos",
 
@@ -114,7 +126,7 @@ namespace Bibliotca_parcial1
 
                                                                         ));
 
-            viajes[0].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
+            CoreDelSistema.viajes[0].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
 
                                                                         "pichi",
 
@@ -127,7 +139,7 @@ namespace Bibliotca_parcial1
                                                                         EClasePasajero.Premium
 
                                                                          ));
-            viajes[0].AgregarPasajeroCamaroteVacioTurista(new Pasajero(
+            CoreDelSistema.viajes[0].AgregarPasajeroCamaroteVacioTurista(new Pasajero(
 
                                                                         "lauti",
 
@@ -141,20 +153,19 @@ namespace Bibliotca_parcial1
 
                                                                         ));
 
-            viajes.Add(new(
+            CrearViaje(new(
 
                           CoreDelSistema.barcos[1],// new Barco("beta", "sin descenso", 200, 3, 0, 6000, 500, false),
 
-                            ciudades[4],
+                           CoreDelSistema. ciudades[4],
 
-                           ciudades[6],
+                           CoreDelSistema.ciudades[6],
 
-                           new DateTime(2023, 10, 10)
-
-                         
+                           new DateTime(2023, 10, 10),
+                           false
 
                       ));
-            viajes[1].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
+            CoreDelSistema.viajes[1].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
 
                                                                         "aldo",
 
@@ -167,7 +178,7 @@ namespace Bibliotca_parcial1
                                                                         EClasePasajero.Premium
 
                                                                         ));
-            viajes[1].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
+            CoreDelSistema.viajes[1].AgregarPasajeroCamaroteVacioPremium(new Pasajero(
 
                                                                         "oscar",
 
@@ -180,7 +191,7 @@ namespace Bibliotca_parcial1
                                                                         EClasePasajero.Premium
 
                                                                         ));
-            viajes[1].AgregarPasajeroCamaroteVacioTurista(new Pasajero(
+           CoreDelSistema. viajes[1].AgregarPasajeroCamaroteVacioTurista(new Pasajero(
 
                                                                         "flavio",
 
@@ -200,17 +211,17 @@ namespace Bibliotca_parcial1
 
         public static List<Viaje> Viajes
         {           
-            get { return viajes; }
+            get { return CoreDelSistema.viajes; }
         }
 
         public static List<Barco> Barcos
         {
-            get { return barcos; }
+            get { return CoreDelSistema.barcos; }
         }
 
         public static List<Ciudad> Ciudades
         {
-            get { return ciudades; }
+            get { return CoreDelSistema.ciudades; }
         }
 
         #region METODOS
@@ -307,6 +318,7 @@ namespace Bibliotca_parcial1
 
             return retorno;
         }
+        
         /// <summary>
         /// agrega viaje a la lista estatica viajes
         /// </summary>
@@ -315,15 +327,16 @@ namespace Bibliotca_parcial1
         public static bool CrearViaje(Viaje viaje)
         {
             bool retorno = false;
-          //  Viaje auxViaje;
-
+         
             if (viaje is not null)
             {
+                viaje.Barco.EstadoDelBarco = false;
                  CoreDelSistema.viajes.Add(viaje);              
                  retorno = true;               
             }
             return retorno;
         }
+        
         #endregion METODOS
 
     }
