@@ -56,28 +56,7 @@ namespace clase8_biblio
             }
         }
 
-        /*
-        public double MostrarTotalFacturado(EVehiculo vehiculo)
-        {
-            double totalFacturado = 0;
-
-            if (vehiculo == EVehiculos.Auto)
-            {
-                totalFacturado = this.precioAuto
-            }
-            else
-            {
-                if (vehiculo == EVehiculos.Moto)
-                {
-                    totalFacturado = this.precioAuto
-                }
-                else
-                {
-                    totalFacturado = this.precioAuto
-                }
-            }
-        }
-        */
+     
         public static bool operator ==(Lavadero lavadero,Vehiculo vehiculo)
         {
             bool retorno = false;

@@ -7,7 +7,7 @@
             string numero;
             int numeroOk;
 
-            numero = "15";
+            numero = "s";
 
 
             if (NumeroEntero.TryParser(numero, out numeroOk))//invoco funcion 
@@ -16,6 +16,7 @@
             }
             else
             {
+                
                 Console.WriteLine("no fue posible parciar");
             }
         }
