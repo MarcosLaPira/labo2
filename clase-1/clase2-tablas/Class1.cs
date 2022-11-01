@@ -8,6 +8,7 @@ namespace clase2_tablas
 {
     public static class StringBuilder
     {
+        /*
         public static string ArmadoTablas(int numeroUno)
         {
             string buffer;
@@ -24,5 +25,6 @@ namespace clase2_tablas
              
             return;
         }
+        */
     }
 }
